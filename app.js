@@ -3,6 +3,12 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const passport =  require('passport');
+const User = require('./models/user');
+const session = require('express-session');
+const mongoose = require('mongoose');
+
+
 
 const indexRouter = require('./routes/index');
 const projectsRouter = require('./routes/projects');
@@ -10,6 +16,17 @@ const reviewsRouter = require('./routes/reviews');
 
 
 const app = express();
+
+// connect ro the database
+
+mongoose.connect('mongodb://localhost:27017/elapce', {useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex:true});
+
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log("we're connected!")
+});
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +38,21 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Configure passport and sessions
+app.use(session({
+  secret: 'hang ten dude',
+  resave: false,
+  saveUninitialized: true
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(User.createStrategy());
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+// Mount Routes
 app.use('/', indexRouter);
 app.use('/projects', projectsRouter);
 app.use('/projects/:id/reviews', reviewsRouter);
