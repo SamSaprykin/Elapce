@@ -1,0 +1,12 @@
+<h1>Projects index</h1>
+
+
+<% projects.forEach(function(project){ %>
+    <div>
+        <h2><%= project.title %></h2>
+        <div>Price from: <%= project.price %></div>
+        <p><%= project.description %></p>
+        <h5><%= project.location %></h5>
+        <a href="/projects/<%= project.id %>">View more</a>
+    </div> 
+<% }); %>

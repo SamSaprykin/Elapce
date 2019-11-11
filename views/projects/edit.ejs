@@ -1,0 +1,12 @@
+<h1>Edit Project</h1>
+
+
+
+<form action="/projects/<%= project.id %>?_method=PUT" method="POST">
+	<div><input type="text" name="project[title]" placeholder="Title" value="<%= project.title %>"></div>
+	<div><input type="text" name="project[price]" placeholder="Price" value="<%= project.price %>"></div>
+	<div><textarea name="project[description]" placeholder="Description" ><%= project.description %></textarea></div>
+	<div><input type="text" name="project[location]" placeholder="Location" value="<%= project.location %>"></div>
+
+	<input type="submit">
+</form>
