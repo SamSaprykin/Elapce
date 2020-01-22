@@ -24,7 +24,7 @@ const app = express();
 
 // connect ro the database
 
-mongoose.connect('mongodb://localhost:27017/elapce', {useNewUrlParser: true, useCreateIndex:true, useUnifiedTopology:true});
+mongoose.connect('mongodb+srv://sam:12ctyz12@cluster0-nouez.mongodb.net/elapce?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex:true, useUnifiedTopology:true});
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
