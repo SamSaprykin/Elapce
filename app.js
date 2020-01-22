@@ -1,3 +1,4 @@
+(require('dotenv').config({ silent: true }))
 
 const createError = require('http-errors');
 const express = require('express');
