@@ -1,4 +1,3 @@
-(require('dotenv').config({ silent: process.env.NODE_ENV === 'production' }))
 
 const createError = require('http-errors');
 const express = require('express');
@@ -13,8 +12,7 @@ const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const favicon = require('serve-favicon');
 
-//const seedProjects = require('./seeds');
-//seedProjects();
+
 
 const indexRouter = require('./routes/index');
 const projectsRouter = require('./routes/projects');
