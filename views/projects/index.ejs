@@ -1,12 +1,46 @@
-<h1>Projects index</h1>
+<% layout('layouts/boilerplate') -%>
+
+<head>
+    <link rel='stylesheet' href='/stylesheets/project-index.css' />
+    <link rel="stylesheet" href='/stylesheets/circles.css'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
 
 
-<% projects.forEach(function(project){ %>
-    <div>
-        <h2><%= project.title %></h2>
-        <div>Price from: <%= project.price %></div>
-        <p><%= project.description %></p>
-        <h5><%= project.location %></h5>
-        <a href="/projects/<%= project.id %>">View more</a>
-    </div> 
-<% }); %>
+<div id="map"></div>
+
+<div class="content-wrapper">
+    <% include ../partials/searchFilter %>
+    <div class="shape-white-catalog"></div>
+    <h1 class="main-title">Каталог</h1>
+
+    <div class='wrapper-project-index'>
+        <div class="shape-white-katalog"></div>
+        <% projects.docs.forEach(function(project){ %>
+            <div class="project-card">
+                
+                <a href="/projects/<%= project.id %>"><img class="title-image"
+                src="<%= project.images[0].url %>"
+                alt="<%= project.title %>"></a>    
+                
+                <h2 class="project-title-index"><%= project.title %></h2>
+               <h5 class="project-short-info"> Месторасположение:  <%= project.location %></h5>
+                <a class="project-price-index" href="/projects/<%= project.id %>"><div>Price from: <%= project.price %>$</div></a>
+                
+            </div> 
+        <% }); %>
+    </div>
+
+</div>
+
+
+
+
+
+<% include ../partials/paginateProjects %>
+
+<script>
+    mapboxgl.accessToken = "<%= mapBoxToken %>";
+    var projects = { features: <%- JSON.stringify(projects.docs) %> };
+</script>
+<script src="/javascripts/allPostsClusterMap.js"></script>

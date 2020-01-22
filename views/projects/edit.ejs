@@ -1,12 +1,125 @@
-<h1>Edit Project</h1>
+<% layout('layouts/boilerplate') -%>
 
+<form action="/projects/<%= project.id %>?_method=PUT" method="POST" id="postEditForm" enctype="multipart/form-data" class="ml-3">
+	<h1>Редактировать объект</h1>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Название объекта:</p>
+			<div><input type="text" name="project[title]" placeholder="Название" class="form-control" value="<%= project.title %>"></div>
+		</div>	
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Цена:</p>
+			<div><input type="number" name="project[price]" step="100" placeholder="Цена" class="form-control" value="<%= project.price %>"></div>
+		</div>
+	</div>
 
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label>Детальное описание объекта:</label>
+			<textarea name="project[description]" placeholder="Описание"  class="form-control col-md-6" rows="3"><%= project.description %></textarea>
+		</div>
+	</div>
 
-<form action="/projects/<%= project.id %>?_method=PUT" method="POST">
-	<div><input type="text" name="project[title]" placeholder="Title" value="<%= project.title %>"></div>
-	<div><input type="text" name="project[price]" placeholder="Price" value="<%= project.price %>"></div>
-	<div><textarea name="project[description]" placeholder="Description" ><%= project.description %></textarea></div>
-	<div><input type="text" name="project[location]" placeholder="Location" value="<%= project.location %>"></div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<div class="custom-file col-md-6 mb-3">
+				<label class="custom-file-label" for="inputGroupFile01">Фотографии:</label>
+				<input type="file" accept="images/*" name="images" id="inputGroupFile01" class="custom-file-input" multiple  />	
+				
+			</div>
+		</div>
+	</div>
 
-	<input type="submit">
+	
+	
+	<div class="d-flex flex-row flex-wrap mb-3 justify-content-center">
+		
+			<% project.images.forEach(function(image, i) { %>
+				<div class="card m-1" style="width: 18rem;">
+					<img class="card-img-top" src="<%= image.url %>"/>
+					<div class="card-body">
+						<label for="image<%= i %>">Delete?</label>
+						<input type="checkbox" class="imageDeleteCheckbox" name="deleteImages[]" id="image<%= i %>" value="<%= image.public_id %>">
+					</div>
+				</div>	
+			<% }) %>
+	
+	</div>
+
+	</div>
+	
+	
+	
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<label>Местоположение(координаты либо город, улица если координаты не предусмотрены)</label>
+			<div><input type="text" name="project[location]" placeholder="Местоположение" class="form-control col-md-4" value="<%= project.location %>"></div>	
+		</div>
+		
+	</div>
+		
+	
+	
+	<div class="form-group col-md-6 border border-dark">
+		<p>Назначение объекта - опционально:</p>
+		<input type="radio" id="invest" name="project[appointment]" value="Инвестиции" <%= project.appointment === 'Инвестиции' ? 'checked' : '' %> >
+		<label for="invest">Инвестиции</label>
+		<input type="radio" id="rent" name="project[appointment]" value="Аренда" <%= project.appointment === 'Аренда' ? 'checked' : '' %>>
+		<label for="rent">Аренда</label>
+		<input type="radio" id="personal" name="project[appointment]" value="Личное использование" <%= project.appointment === 'Личное использование' ? 'checked' : '' %>>
+		<label for="personal">Личное использование</label>
+	</div>
+	
+	<div class="form-group col-md-6 border border-dark">
+		<p>Тип обьекта - обязательно:</p>
+		<input type="radio" id="apartement" name="project[type]" value="Апартаменты" <%= project.type === 'Апартаменты' ? 'checked' : '' %> >
+		<label for="apartement">Апартаменты</label>
+		<input type="radio" id="villa" name="project[type]" value="Вилла" <%= project.type === 'Вилла' ? 'checked' : '' %>>
+		<label for="villa">Вилла</label>
+		<input type="radio" id="plot" name="project[type]" value="Участок земли" <%= project.type === 'Участок земли' ? 'checked' : '' %>>
+		<label for="plot">Участок земли</label>
+		<input type="radio" id="commercial" name="project[type]" value="Коммерческая недвижимость" <%= project.type === 'Коммерческая недвижимость' ? 'checked' : '' %>>
+		<label for="commercial">Коммерческая недвижимость</label>
+		<input type="radio" id="renovation" name="project[type]" value="Объект под реконструкцию" <%= project.type === 'Объект под реконструкцию' ? 'checked' : '' %>>
+  		<label for="renovation">Объект под реконструкцию</label>
+	</div>
+	<div class="form-group col-md-6 border border-dark">
+		<p>Расстояние до моря - опционально(для курортной недвижимости):</p>
+		<input type="radio" id="100" name="project[seaDistance]" value="100" <%= project.seaDistance = '100' ? 'checked' : '' %>>
+		<label for="100">До 100 метров</label>
+		<input type="radio" id="1000" name="project[seaDistance]" value="1000" <%= project.seaDistance ='1000' ? 'checked' : '' %>>
+		<label for="1000">До 1000 метров</label>
+		<input type="radio" id="2000" name="project[seaDistance]" value="2000" <%= project.seaDistance = '2000' ? 'checked' : '' %>>
+		<label for="2000">До 2000 метров</label>
+	</div>
+	<div class="form-group col-md-6 border border-dark">
+		<p>Количество спален:</p>
+		<input type="checkbox" id="1" name="project[bedrooms]" value="1" <%= project.bedrooms.includes('1') ? 'checked' : '' %> >
+		<label for="1bedrooms">1 спальня</label>
+		<input type="checkbox" id="2" name="project[bedrooms]" value="2" <%= project.bedrooms.includes('2') ? 'checked' : '' %>>
+		<label for="2bedrooms">2 спальни</label>
+		<input type="checkbox" id="3" name="project[bedrooms]" value="3" <%= project.bedrooms.includes('3') ? 'checked' : '' %>>
+		<label for="3bedrooms">3 спальни</label>
+		<input type="checkbox" id="4" name="project[bedrooms]" value="4" <%= project.bedrooms.includes('4') ? 'checked' : '' %>>
+		<label for="4bedrooms">4 спальни</label>
+		<input type="checkbox" id="5" name="project[bedrooms]" value="5" <%= project.bedrooms.includes('5') ? 'checked' : '' %>>
+		<label for="5bedrooms">5 спален</label>
+		<input type="checkbox" id="5+" name="project[bedrooms]" value="6" <%= project.bedrooms.includes('6') ? 'checked' : '' %>>
+		<label for="5+">Более 5</label>
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Площадь объекта:</p>
+			<div><input type="number" name="project[area]" step="1" placeholder="Площадь" class="form-control col-md-4 mb-3" value="<%= project.area %>"></div>	
+			
+		</div>
+	</div>
+	
+	
+	<input type="submit" value="Обновить">
 </form>
+
+<script src="/javascripts/project-edit.js">
+</script>

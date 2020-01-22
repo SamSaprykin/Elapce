@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') -%>
+<head>
+	<link rel='stylesheet' href='/stylesheets/login.css' />
+</head>
+<div class="col-md-6 login-form-2">
+	<form action="/register" method="POST" enctype="multipart/form-data">
+		<div>
+			<label for="username" class="labelText">Имя пользователя:</label>
+			<input type="text" id="username" name="username" placeholder="Имя пользователя" class="form-control" required>
+		</div>
+		<div>
+			<label for="password" class="labelText">Пароль:</label>
+			<input type="password" id="password" name="password" placeholder="Пароль" class="form-control" required>
+		</div>
+		<div>
+			<label for="email" class="labelText">Электронный адрес:</label>
+			<input type="email" id="email" name="email" placeholder="Электронный адрес" class="form-control" required>
+		</div>
+		<label for="email" class="labelText">Profile photo:</label>
+		<div class="input-group mb3 mt3">
+			
+			<div class="input-group-prepend">
+			  <span class="input-group-text">Загрузить</span>
+			</div>
+			<div class="custom-file">
+			  <input type="file" class="custom-file-input" id="image" name="image">
+			  <label for="image" class="custom-file-label">Выбрать файлы:</label>
+			</div>
+		</div>
+		<input type="submit" class="btnSubmit">
+	</form>
+</div>

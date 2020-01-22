@@ -1,0 +1,348 @@
+body {
+    background-color: #EEF0F3;
+}
+
+* {
+    font-family: 'Lato', sans-serif;
+}
+
+
+
+.footer-wrapper-form {
+    width: 100%;
+    height: auto;
+    background-color:#83A6F6 ;
+    box-sizing: border-box;
+    padding-bottom:35px;
+    position: relative;   
+}
+
+.footer-form {
+    width:100%;
+    height:auto;
+    margin:0 auto;
+    padding-top: 33px;
+    position: relative;
+    z-index:1000;   
+}
+
+
+.footer-form form {
+    
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+
+.footer-form h2 {
+    color: white;
+    font-size: 24px;
+    line-height: 27px;
+    text-align: center;
+    margin-top:33px;
+}
+
+.footer-form h5 {
+    
+    
+    font-size: 18px;
+    line-height: 27px;
+    /* or 27px */
+    color: white;
+    text-align: center;
+    letter-spacing: -0.03em;
+}
+
+
+.input-group-footer {
+    width:100%;
+    height:auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding:0 16px;
+    margin-top:37px;
+}
+
+.input-group-footer input {
+    width:100%;
+    margin-bottom: 14px;
+    height: 42px;
+    border-radius: 7px;
+    font-size: 14px;
+    line-height: 17px;
+}
+
+
+.input-group-footer input[type=submit] {
+    background-image: linear-gradient(315.87deg, #F34B31 -11.35%, #FFA782 106.98%);
+    color:white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    box-shadow: none;
+    text-transform:uppercase;
+    width:100%;
+    border:none;
+    margin:15px 0;
+} 
+
+
+
+.input-group-footer input[type=text], input[type=tel] {
+    padding:26.5px 50px 27px 20px; 
+    color: #4B535F;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 7px;
+    
+    
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.footer-contacts {
+    background: #4966A9;
+    width:100%;
+    height: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    
+    padding:1rem 23px 1rem 48px;
+}
+
+.links-footer-list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    height: 140px;
+    max-width:235px;
+    margin:28px 0 33px;
+}
+
+
+.links-footer ul li {
+    margin: 9px 0;
+    display: block;
+    width:150px;
+}
+
+
+.links-footer ul li a {
+    list-style-type: none;
+    color:white;
+    text-decoration: none;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    height: 35.6px;
+    width:94px;
+    padding:0;
+}
+
+.social-footer {
+    max-width:167px;
+    margin-bottom:58px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.icons-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width:140px;
+    margin-bottom:28px;
+}
+
+.icons-wrapper a {
+    display: block;
+}
+
+.icons-wrapper i {
+    color:white;
+    font-size:23px;
+    font-weight: 400;
+}
+
+.footer-mobile {
+    color:white;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    font-family: 'Lato', sans-serif;
+    display: inline-block;
+    margin-bottom:20px;
+    
+}
+
+.contact-us {
+    background: #89A7FB;
+    border:none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    
+    height:60px;
+    padding: 16px 99px;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.footer-logo {
+    background-image: url('./../images/elapce-logo.png');
+    width:149px;
+    height: 50px;
+    margin-right:81px;
+}
+
+
+
+
+
+/* Desktop menu */
+@media all and (min-width: 900px) {
+    .footer-wrapper-form {
+        padding-bottom: 286px;
+        position: relative;
+    }
+    .footer-form {
+        max-width:800px;
+        width:auto;
+        position: relative;
+    }
+    .input-group-footer input[type=submit] {
+        padding:27px 25px;
+        margin:0 11px;
+    } 
+
+    .input-group-footer input {
+        width:228px;
+        margin:0 10px;
+        height: 76px;
+    }
+
+    .input-group-footer {
+        width:100%;
+        height:76px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .footer-logo {
+        margin-right: 0;
+        min-width: 148px;
+    }
+    .footer-contacts {
+        height: 196px;
+        justify-content: space-between;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        box-sizing: border-box;
+        width:auto;
+    }
+
+    .links-footer-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-items:center;
+        height: 30px;
+        max-width:809px;
+        margin:0 15px;
+    }
+
+    .links-footer ul li {
+        margin:0 15px;
+        width:auto;
+    }
+
+    .social-footer {
+        width:872px;
+        max-width:900px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        margin:0;
+    }
+
+    .contact-us {
+        background: #89A7FB;
+        border:none;
+        box-sizing: border-box;
+        border-radius: 5px;
+        padding: 20px 24px;
+        
+    }
+
+    .footer-mobile-wrapper {
+        margin-left:3vw;
+    }
+
+    .footer-mobile {
+        display: inline-block;
+        width:auto;
+        margin:0 auto;
+    }
+
+    .icons-wrapper {
+        margin:0;
+        flex-wrap: wrap;
+    }
+
+    .footer-form h2 {
+        
+        font-weight:700;
+        font-size: 54px;
+        
+    }
+
+    .footer-form {
+        width:100%;
+        height:auto;
+        margin:0 auto;
+        padding-top: 267px;    
+    }
+
+    
+}
+
+
+@media (max-width: 1280px) {
+    
+    .icons-wrapper {
+        display: none;
+    }
+}
+
+
+/* modal */
+.modal {
+    background-color:rgba(131,166,246, 0.3)  ;
+    z-index: 9999;
+}
+.modal-dialog {
+    max-width:800px;
+}

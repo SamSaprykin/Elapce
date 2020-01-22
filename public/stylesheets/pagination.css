@@ -1,0 +1,19 @@
+body {
+    background-color: #EEF0F3;
+}
+
+.pagination-wrapper {
+    margin:82px 117px;
+}
+
+.alert-light {
+    background-color: #EEF0F3;
+    border-color: transparent;
+    margin:0 auto;
+    width:250px;
+    text-align: center;
+}
+
+.pagination {
+    margin:0 auto;
+}

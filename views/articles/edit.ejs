@@ -1,0 +1,89 @@
+<% layout('layouts/boilerplate') -%>
+
+
+
+<form action="/articles/<%= article.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="ml-3">
+	<h1>Обновить статью:</h1>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Название статьи:</p>
+			<input type="text" name="title" class="form-control" value="<%= article.title %>">
+		</div>	
+	</div>
+	
+	
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Текст статьи:</p>
+			<textarea name="body" class="form-control col-md-12" rows="20" ><%= article.body %></textarea>
+		</div>
+		
+	</div>
+	<div class="form-row "></div>
+		<div class="custom-file col-md-6 mb-3">
+			
+			<label class="custom-file-label" for="inputGroupFile01">Фотографии к статье:</label>
+			<input type="file" accept="images/*" name="images" id="inputGroupFile01" class="custom-file-input" multiple  />	
+		</div>	
+		<!-- <input name="file1" type="file" accept="application/pdf"> */ -->
+		
+    </div>
+    
+    
+    
+    
+	
+
+	<div class="d-flex flex-row flex-wrap mb-3 justify-content-center">
+		
+		<% article.images.forEach(function(image, i) { %>
+			<div class="card m-1" style="width: 18rem;">
+				<img class="card-img-top" src="<%= image.url %>"/>
+				<div class="card-body">
+					<label for="image<%= i %>">Delete?</label>
+					<input type="checkbox" class="imageDeleteCheckbox" name="deleteImages[]" id="image<%= i %>" value="<%= image.public_id %>">
+				</div>
+			</div>	
+		<% }) %>
+
+	</div>
+
+	<div class="form-row">
+		<div class="form-group col-md-6 border border-dark">
+			<p>Категория:</p>
+				<input type="radio" id="residence" name="article[category]" value="ВНЖ" <%= article.category === 'ВНЖ' ? 'checked' : '' %> >
+				<label for="residence">ВНЖ</label>
+				<input type="radio" id="invest" name="article[category]" value="Инвестиции" <%= article.category === 'Инвестиции' ? 'checked' : '' %>>
+				<label for="invest">Инвестиции</label>
+				<input type="radio" id="taxes" name="article[category]" value="Налоги" <%= article.category === 'Налоги' ? 'checked' : '' %>>
+				<label for="taxes">Налоги</label>
+				<input type="radio" id="buying" name="article[category]" value="Покупка и оформление" <%= article.category === 'Покупка и оформление' ? 'checked' : '' %>>
+				<label for="buying">Покупка и оформление</label>
+				<input type="radio" id="markets" name="article[category]" value="Рынки и цены" <%= article.category === 'Рынки и цены' ? 'checked' : '' %>>
+				<label for="markets">Рынки и цены</label>
+
+				
+		</div>	
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Вступление - первые две строки:</p>
+			<input type="text" name="introduction" class="form-control" value="<%= article.introduction %>">
+		</div>	
+	</div>
+
+
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Заключение, после второго фото:</p>
+			<input type="text" name="conclusions" class="form-control" value="<%= article.conclusions %>">
+		</div>	
+	</div>
+    
+	
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<input class="btn btn-light mt-2" type="submit">
+		</div>
+	</div>
+</form>

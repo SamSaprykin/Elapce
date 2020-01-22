@@ -1,0 +1,346 @@
+/* Start Copter Animation*/
+
+@keyframes example1 {
+  25%   { 
+    transform: rotate(6deg) translateY(-70%) translateX(110%); 		
+  }
+  50% {
+    transform: rotate(-1deg) translateY(-80%) translateX(-20%);  
+  }
+  75% {
+    transform: rotate(8deg) translateY(-40%) translateX(-50%);  
+  }
+  100% { 
+    transform: translateX(0%) rotate(-6deg); 
+  }
+ }
+
+/* End Copter Animation*/
+
+
+
+/* Mobile styles start */
+.main-section {
+    height: auto;
+    width:100%;
+    margin-top:-30px;
+    display: flex;
+    padding:0 3vw;
+    flex-direction: column-reverse;
+    justify-content: space-evenly;
+    position: relative;
+    
+}
+
+.right-section {
+  max-width:910px;
+  width:100%;
+  height:auto;
+  margin-top:0;
+  position: relative;
+}
+
+.left-section {
+    max-width:719px;
+    width:100%;
+    height:auto;
+    
+    margin-top: 15px;
+}
+
+.copter {
+    background-image: url('../images/copter.png');
+    max-width:100px;
+    height:60px;
+    background-repeat: no-repeat;
+    background-position:25% 50%;
+    background-size: 100%;
+    margin-left:75%;
+    margin-top:-30px;
+    animation: none;
+    transform: rotate(45deg);
+}
+
+
+
+.index-articles-title {
+  margin-top:15px;
+  font-size: 16px;
+  line-height: 30px;
+  /* or 150% */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  text-decoration-line: underline;
+  text-align: left;
+  color: #5570BA;
+}
+
+
+
+
+.title-mobile {
+    font-size: 30px;
+    line-height: 130%;
+    color: #4B535F;
+    display: block;
+    margin:0;
+}
+
+
+.header-title {
+    font-size: 65.6106px;
+    margin:0;
+    
+    font-weight: 700;
+    line-height: 114.9%;
+    color: #4B535F;
+    display: none;
+}
+
+
+.text-index-title {
+    max-width: 540px;
+    font-family: 'Lato' sans-serif;
+    font-size: 18px;
+    line-height: 180%;
+    /* or 32px */
+    
+    letter-spacing: -0.03em;
+    
+    color: #000000;
+    margin-top:52px;
+    opacity: 0.7;
+    display: none;
+  }
+  .main-section .input-group {
+    background: #FFFFFF;
+    border-radius: 7px;
+    max-width:500px;
+    width:100%;
+    height: auto;
+    margin:0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+  }
+  
+  
+  .input-submit-head {
+    background-image: linear-gradient(315.87deg, #F34B31 -11.35%, #FFA782 106.98%);
+    padding: 14px 175px;
+    margin:10px auto;
+    color:white;
+    border:none;
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 19px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  
+  .input-text-head {
+    border:none;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+    width:90%;
+    margin:0 auto;
+    display: block;
+    height:52px;
+    color: #2F3B43;
+    background: url('../images/ellipsis.png') no-repeat;
+    border-bottom: 1px solid #9EC1E1;
+    background-position:155px 25px ;
+  }
+
+
+  .second {
+    border-bottom: none;
+  }
+
+  .input-text-head:focus {
+    outline: none;
+    background:none;
+    
+  }
+  
+  .input-text-head:focus::-webkit-input-placeholder {
+    color: transparent;   
+  }
+
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #2F3B43;
+}
+
+
+
+
+
+@media all and (min-width: 900px) {
+    .main-section {
+        flex-direction: row;
+        margin-top:-97px;
+    }
+    .right-section {
+        margin-top:240px;
+    }
+    .header-title {
+        
+        display: block;
+    }
+    .copter {
+      background-image: url('../images/copter.png');
+      max-width:250px;
+      height:205px;
+      margin: 0;
+      background-repeat: no-repeat;
+      background-position:25% 50%;
+      margin-bottom:-110px;
+      transform: rotate(-6deg);
+      animation: example1 10s linear infinite;
+  }
+
+    .title-mobile {
+        display: none;
+    }
+
+    .main-section .input-group {
+        max-width:730px;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .input-submit-head {
+    background-image: linear-gradient(315.87deg, #F34B31 -11.35%, #FFA782 106.98%);
+    padding: 27px 41px 27px 40px;
+    margin:12px 11px 12px 20px;
+    color:white;
+    border:none;
+    text-transform: uppercase;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 22px;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+
+    .text-index-title {
+        display: block;
+    }
+
+    .input-text-head {
+    border:none;
+    font-style: normal;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+    max-width:242px;
+    
+    height:100%;
+    min-height:52px;
+    color: #2F3B43;
+    background: url('../images/ellipsis.png') no-repeat;
+    
+    background-position:155px 25px ;
+    }
+
+    .second {
+        background-position:65px 25px ;
+        border-left: none;
+        padding-left: 0;
+    }
+    
+    .left-section {
+        
+        
+        margin-top: 140px;
+    }
+}
+
+@media (max-width:1460px) and (min-width:700px) {
+    .main-section { 
+        padding:0 3vw;
+        box-sizing: border-box;
+    }
+    
+    
+    .left-section {
+      margin:inherit auto;
+    }
+    .input-group {
+        margin-top:25px;
+        flex-direction: column;
+        max-width:400px;
+        width:100%;
+      }
+    .input-text-head {
+        margin:5px auto;
+        width:100%;
+        max-width:90%;
+        border-bottom: 1px solid #9EC1E1;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .input-submit-head {
+        background-image: linear-gradient(315.87deg, #F34B31 -11.35%, #FFA782 106.98%);
+        padding: 18px 109px;
+        margin:10px auto;
+        color:white;
+        border:none;
+        text-transform: uppercase;
+        font-style: normal;
+        font-size: 16px;
+        line-height: 19px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    
+    .header-title {
+      margin:0 32px ;
+      font-weight: normal;
+    }
+    .text-index-title {
+        max-width: 400px;
+        font-family: 'Lato' sans-serif;
+        font-size: 14px;
+        line-height: 180%;
+        /* or 32px */
+        
+        letter-spacing: -0.03em;
+        
+        color: #000000;
+        margin-top:52px;
+        opacity: 0.7;
+        display: none;
+    }
+    .copter {
+      background-image: url('../images/copter.png');
+      max-width:150px;
+      height:205px;
+      margin: 0;
+      background-repeat: no-repeat;
+      background-position:25% 50%;
+      margin-bottom:-110px;
+      margin-left:40%;
+      margin-top:-30px;
+      transform: rotate(45deg);
+      animation: example1 10s linear infinite;
+  }
+  
+}
+
+@media (max-width:1280px) and (min-width:900px) {
+      
+    .header-title {
+        font-size: 40px;
+        
+    }
+    .right-section {
+      margin-top:200px;
+    }   
+}​

@@ -1,0 +1,32 @@
+<% layout('layouts/boilerplate') -%>
+<head>
+    <link rel='stylesheet' href='/stylesheets/guide-index.css' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+
+
+<div class="wrapper-guides">
+    <div class="shape-white-articles"></div>
+    
+        <% guides.docs.forEach(function(guide){ %>
+        
+            
+            
+            <figure class="card-wrapper">
+                <a href="/guides/<%= guide.id %>" class=""><img class="card-image" 
+                    src="<%= guide.images[0].url %>"
+                    alt="<%= guide.title %>"></a>    
+                    
+                    <a href="/guides/<%= guide.id %>" >
+                        <h3 class="guide-text"><%= guide.title %></h3>
+                    </a>
+            </figure>
+            
+        
+    
+    
+        <% }); %>
+    </div>
+    
+</div>

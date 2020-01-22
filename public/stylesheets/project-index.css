@@ -1,0 +1,142 @@
+body {
+    background-color: #EEF0F3;
+}
+
+a:hover {
+    text-decoration: none !important;
+    color: #5570BA;
+}
+
+.content-wrapper {
+    max-width:1535px;
+    margin:0 auto;
+    padding: 0 15px;
+}
+
+#map {
+    max-width: 1920px;
+    margin:0 auto;
+}
+
+.wrapper-project-index {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1000;
+}
+
+
+.project-card {
+    max-width:485px;
+    margin:0 10px 40px;
+    height:auto;
+    box-sizing: border-box;
+}    
+
+.title-image {
+    padding: 0 15px;
+    max-width:470px;
+    height:auto;   
+}
+
+.project-title-index {
+    font-family: 'Lato';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px; 
+    line-height: 130%;
+    /* identical to box height, or 31px */
+    color: #4B535F;
+    display: inline-block;
+    border-bottom: 2px solid #4B535F;
+    padding-bottom: 3px;
+    margin:10.5px 0 9px;
+    margin-left:16px;
+}
+
+
+.project-price-index {
+    font-family: 'Montserrat', sans-serif;
+    /* identical to box height */
+    color: #5570BA;
+    border-radius: 12px;
+    font-size: 18px;
+    line-height: 22px;
+}
+
+.project-price-index div {
+    margin-left:16px;
+    
+}
+
+.main-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    line-height: 130%;
+    color: #4B535F;
+    margin:34px 0 24px;
+    
+}
+
+.project-short-info {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    
+    margin-bottom: 7.5px;
+    margin-left:16px;
+    color: #4B535F;
+
+    opacity: 0.6;
+    border-radius: 5px;
+}
+
+@media all and (min-width: 900px) { 
+    
+    .project-card {
+        margin:0 10px 80px;
+    }
+
+    .content-wrapper {
+        padding:0;
+    }
+
+    .title-image {
+        height:352px;
+        max-width:485px;
+        padding:0;   
+    }
+    
+    .project-title-index {
+        font-size: 24px;
+        margin-left:0;
+        margin-top:28px;
+    }
+    
+    
+    .project-price-index {
+        font-size: 28px;
+        line-height: 27px;
+    }
+
+    .project-price-index div {
+        margin-left:0;
+    }
+    
+    .main-title {
+        font-size: 65.6106px;
+        font-weight: 700;
+        
+    }
+    
+    .project-short-info {
+        font-size: 20px;
+        line-height: 24px;
+        margin-left:0;
+        margin-bottom: 27px;
+    }
+
+
+}   

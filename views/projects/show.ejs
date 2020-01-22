@@ -1,30 +1,284 @@
-<h1><%= project.title %></h1>
-<div>Price from: <%= project.price %></div>
-<p><%= project.description %></p>
-<h5><%= project.location %></h5>
-<div class="centered-div">
-    <% project.images.forEach(function(image) { %>
-        <img src="<%= image.url %>" alt="Elapce objects" style="width:315px; margin:10px">   
-    <% }) %>
-</div>
-<div>
-     <a href="/projects/<%= project.id %>/edit">
-        <button>Edit</button>
-    </a> 
-</div>
-<div>
-    <form action="/projects/<%= project.id %>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete">
+<% layout('layouts/project-show-layout') -%>
+
+<head>
+    <link rel='stylesheet' href='/stylesheets/lightbox.css' />
+    
+</head>
+
+<div class="content-project-wrapper">
+    
+    <h1 class="project-title"><%= project.title %></h1>
+    
+    <img class="top-image" src="<%= project.images[0].url %>" alt="<%= project.title %>">
+    <div class="swiper-container-mobile" style="margin-bottom: 1rem;">
+        <div class="swiper-wrapper"> 
+            <% project.images.forEach(function(image,i) { %>
+                <img class="swiper-slide" src="<%= image.url %>" >
+                
+            <% }) %> 
+                
+        </div>     
+    </div>
+    
+    <div class="information-wrapper" >
+        <div class="text-information">
+            <div class="text-content"><%= project.description %></div>
+        </div>
+        <div class="details-information">
+            <div><span class="description-title">Местоположение </span> <span class="location-info"><%= project.location %></span> </div>
+            <div class="info-wrapper"><span class="description-title">Площадь </span> <span class="details-info"><%= project.area %> м2</span> </div> 
+            <div class="info-wrapper"><span class="description-title">Количество спален </span> <span class="details-info"><%= project.bedrooms %> </span> </div>
+            <div class="info-wrapper"><span class="description-title">Расстояние до моря </span> <span class="details-info"><%= project.seaDistance %> метров </span> </div>
+            <div class="info-wrapper"><span class="description-title">Тип обьекта </span> <span class="details-info"><%= project.type %> </span> </div>
+            <div class="info-wrapper"><span class="description-title">Рекомендации </span> <span class="details-info"><%= project.appointment %> </span> </div>      
+            <div class="price-wrapper"><span class="details-price"><%= project.price %> $</span> </div>
+            <div class="wrapper-icons">
+                <i class="fas fa-phone contact-icon"></i>
+                <i class="fab fa-whatsapp contact-icon margin-icon"></i> 
+                <input type="submit" value="Узнать детали" class="input-submit-head margin-show" name="" id="">
+            </div>
+            <form action="/projects/<%= project.id %>/addTofavourite" method="POST">
+                <input class="add-favourite" type="submit" value="Добавить в избранное">
+            </form>
+            <span class="description-title">Рейтинг объекта </span>
+            <% for(let i = 0; i < 5; i++) { %>
+                <% if(i < floorRating) { %>
+                <!-- display a full star -->
+                <i class="fas fa-star yellow"></i>
+                <% } else if((project.avgRating - i) > 0 && (project.avgRating - i) < 1) { %>
+                <!-- display a half star -->
+                <i class="fas fa-star-half-alt yellow"></i>
+                <% } else { %>
+                <!-- display an empty star -->
+                <i class="far fa-star yellow"></i>
+                <% } %>
+            <% } %>
+            
+            
+            <div class="additional-info">
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    
+    
+    <h2 class="project-title gallery-title mobile-hover">Галерея</h2>
+    <div class="gallery-show">
+            <div class="shape-white-project"></div>
+            
+            
+            <% project.images.forEach(function(image,i) { %>
+                <img src="<%= image.url %>" class="gallery-item" onclick="openLightbox(<%= i %>);">
+                
+            <% }) %> 
+            
+              
+            
+          
+          
+          <div id="Lightbox" class="modal">
+          
+                <div class="swiper-container" >
+                    <div class="swiper-wrapper"> 
+                            <% project.images.forEach(function(image,i) { %>
+                                
+                                
+                                        <div class="swiper-slide c-gallery-modal__slide" style="background-color: transparent;">
+                                        
+                                            <img data-src="<%= image.url %>" class="image-gallery  swiper-lazy">
+                                            <div class="swiper-lazy-preloader swiper-lazy-preloader-black"></div>
+                                            <span class="slide-title"><%= i+1 %>/<%= project.images.length %>  </span>
+                                        </div> 
+                                        
+                                       
+                            <% }) %> 
+                            
+                              
+                    </div>
+                    <i class="far fa-window-close close-gallery" onclick="closeLightbox();"></i>        
+                </div>
+          </div>
+    </div>
+    
+    
+    <h2 class="project-title gallery-title">Местоположение</h2>
+    <div class="map-container">
+        
+        <div class="map-info">
+            <h5 class="map-position-title">Испания, Гранада, Маракена, Урбанизация Ула</h5>
+            <a href="#" class="city-link">О Гранаде</a>
+            <p class="map-distance">20 км до аэропорта</p>
+            <p class="map-distance">8 км до центра города</p>
+        </div>
+        <div id='map'></div>
+    </div>
+
+
+   
+
+
+
+    
+    <h2 class="project-title gallery-title">Отзывы</h2>
+    <% if(currentUser) { %>
+    <h3>Добавить отзыв</h3>
+    <form action="/projects/<%= project.id %>/reviews" method="POST">
+        <textarea name="review[body]" required></textarea>
+        <fieldset class="starability-basic">
+            <legend>Рейтинг</legend>
+            <button class="clear-rating btn btn-light mt-2" type="button">Очистить рейтинг</button>
+            <input type="radio" id="rate0" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No rating." />
+            <input type="radio" id="rate1" name="review[rating]" value="1" />
+            <label for="rate1" title="Terrible">1 star</label>
+            <input type="radio" id="rate2" name="review[rating]" value="2" />
+            <label for="rate2" title="Not good">2 stars</label>
+            <input type="radio" id="rate3" name="review[rating]" value="3" />
+            <label for="rate3" title="Average">3 stars</label>
+            <input type="radio" id="rate4" name="review[rating]" value="4" />
+            <label for="rate4" title="Very good">4 stars</label>
+            <input type="radio" id="rate5" name="review[rating]" value="5" />
+            <label for="rate5" title="Amazing">5 stars</label>
+
+            
+        </fieldset>
+        
+        <input type="submit" class="btn btn-light mt-2">
     </form>
+    
+        <% } else { %>
+            <h3 class="create-review"> <a href="/login?returnTo=true">Создать отзыв</a></h3> 
+        <% } %>
+    
+        <% project.reviews.forEach(function(review){ %>
+            <div class="review-body"> 
+                    Автор:<%= review.author.username %><br> 
+                    <%= review.body %><br>
+                    Rating: <%= review.rating %>
+                    
+            </div>
+            <% if(currentUser && review.author.equals(currentUser._id)) { %>
+            <div>
+                <button class="toggle-edit-form">Edit</button>
+                <form action="/projects/<%= project.id %>/reviews/<%= review.id %>?_method=PUT" method="POST" class="edit-review-form">
+                    <textarea name="review[body]" required><%= review.body %></textarea>
+                    <fieldset class="starability-basic">
+                        <legend>Rating:</legend>
+                        <button class="clear-rating" type="button">Очистить рейтинг</button>
+                        <input type="radio" id="edit-rate0" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No rating." />
+                        <input type="radio" id="edit-rate1" name="review[rating]" value="1" />
+                        <label for="edit-rate1" title="Terrible">1 star</label>
+                        <input type="radio" id="edit-rate2" name="review[rating]" value="2" />
+                        <label for="edit-rate2" title="Not good">2 stars</label>
+                        <input type="radio" id="edit-rate3" name="review[rating]" value="3" />
+                        <label for="edit-rate3" title="Average">3 stars</label>
+                        <input type="radio" id="edit-rate4" name="review[rating]" value="4" />
+                        <label for="edit-rate4" title="Very good">4 stars</label>
+                        <input type="radio" id="edit-rate5" name="review[rating]" value="5" />
+                        <label for="edit-rate5" title="Amazing">5 stars</label>
+                    </fieldset>
+                    
+                    <input type="submit" value="Update" class="btn btn-light mt-2">   
+                </form>
+    
+                <script>
+                    $('#edit-rate<%= review.rating %>').prop('checked', true);
+                </script>
+                
+                <form action="/projects/<%= project.id %>/reviews/<%= review.id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete">
+                </form>
+    
+                
+            </div>
+            <% } %>
+            
+    
+        <% }); %>
+        
+        <!-- display all reviews -->
+        <% if (currentUser && currentUser.username === 'admin') { %>
+
+        
+            <div>
+                <a href="/projects/<%= project.id %>/edit">
+                    <button class="btn btn-light mt-2">Изменить объект</button>
+                </a> 
+            </div>
+            <div>
+                <form action="/projects/<%= project.id %>?_method=DELETE" method="POST">
+                    <input type="submit" value="Удалить обьект"  class="btn btn-light mt-2">
+                </form>
+            </div>
+        <% } %>
+    
+</div>
+
+<div class="more-objects">
+    <h2 class="project-title gallery-title more-title" >Больше объектов</h2>
+    <div class="more-wrapper">
+        
+        <% projectsMore.forEach(function(project){ %>
+            <div class="project-card">
+                
+                <a href="/projects/<%= project._id %>"><img class="title-image"
+                src="<%= project.images[0].url %>"
+                alt="<%= project.title %>"></a>    
+                
+                <h2 class="project-title-index"><%= project.title %></h2>
+               <h5 class="project-short-info"> Месторасположение:  <%= project.location %></h5>
+                <a class="project-price-index" href="/projects/<%= project._id %>"><div>Цена от: <%= project.price %>$</div></a>
+                
+            </div> 
+        <% }); %>
+    </div>
+    
 </div>
 
 
 
-<style>
- .centered-div {
-     margin: 0 auto;
-     width:90%;
-     display: flex;
-     flex-wrap: wrap;
- }
-</style>
+<script>
+   
+  
+  function openLightbox(n) {
+    
+    document.getElementById('Lightbox').style.display = 'block';
+    
+    var mySwiper = new Swiper ('.swiper-container', {
+        lazy: {
+        //  tell swiper to load images before they appear
+        loadPrevNext: true,
+        // amount of images to load
+      	loadPrevNextAmount: 2,
+        },
+        // Optional parameters
+        slidesPerView:'auto',
+        spaceBetween: 30,
+        centeredSlides: true,
+        fadeEffect: {
+            crossFade:true
+        },
+        grabCursor: true,
+        initialSlide: n
+    });
+  };
+  
+  function closeLightbox () {
+    document.getElementById('Lightbox').style.display = 'none';
+    
+  }
+  
+  var swiper = new Swiper('.swiper-container-mobile', {
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    grabCursor: true
+    
+  });
+
+  </script>
+
+
+
+

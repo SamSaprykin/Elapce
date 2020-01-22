@@ -1,11 +1,239 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<% layout('layouts/boilerplate') -%>
+<head>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
+    <link rel="stylesheet" href="/stylesheets/index-first-section.css">
+    <link rel="stylesheet" href="/stylesheets/index-second-section.css">
+    <link rel="stylesheet" href='/stylesheets/circles.css'>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+
+<div class="main-section">
+    <div class="shape-orange"></div>
+    <div class="left-section"> 
+      <h1 class="header-title">ELAPCE - ваш гид по</h1>
+      <h1 class="header-title">миру зарубежной</h1>
+      <h1 class="header-title">недвижимости</h1>
+      
+      <p class='text-index-title'>
+          Oferujemy dwie strategie: prostą działalność wynajmu z wydajnością 5% rocznie i bardziej złożony scenariusz - projekty o wartości dodanej z wydajnością 15% rocznie.
+      </p>
+      <form action="/projects" method="GET">
+        <div class="input-group"> 
+            <input type="text" class="input-text-head" placeholder="Местоположение" name="search" id="">
+            <input type="number" id="max" name="price[max]" min="0" max="10000000" step="500" placeholder="Цена до" class="input-text-head" >
+            <input type="submit" value="искать" class="input-submit-head">
+        </div>
+      </form>
+      
+      
+    </div>
+    <div class="right-section">
+            <h3 class="title-mobile"> Elapce - гид по миру </h3>
+            <h3 class="title-mobile"> недвижимости </h3>
+            <div class="copter"></div>
+            
+            
+            
+                <div class="card-image" style="background-image: url('../images/buildings-middle.png');min-height: 15rem;" data-image-full="../images/buildings.png">
+                    
+                    <img src="../images/buildings-middle.png" style="background-size: contain;" alt="Buildings" />    
+                </div>    
+            
+            
+      </div>
+    </div>
+    
+</div >
+
+<div class="second-section">
+    <h3 class="title-second-mobile">Лучшие предложения</h3>
+    <div class="map-points-wrapper">
+                <div class="shape-white"></div>
+                <div class="card-image map-points" style="background-image: url('../images/map-points-middle.png');" data-image-full="../images/map-points.png">
+                
+                    <img src="../images/map-points-middle.png" alt="Map-points" />    
+                </div>  
+            
+              
+        
+    </div>
+    <div class="proposition-section">
+        <div class="content-wrapper">
+            <h3 class="title-proposition">Лучшие предложения</h3>
+            <p class="text-proposition">
+                С другой стороны дальнейшее развитие различных форм деятельности представляет
+                собой интересный эксперимент проверки дальнейших направлений развития.
+                Равным образом дальнейшее развитие различных
+                форм деятельности позволяет оценить значение модели развития.
+            </p>
+        </div> 
+    </div>
+</div>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper"> 
+            <% projectSwiper.forEach(function(project){ %>
+
+                        
+                    
+                        <div class="swiper-slide" style="background-color: transparent;">
+                            <a href="/projects/<%= project.id %>"><img class="title-image image-gallery"
+                                src="<%= project.images[0].url %>"
+                                alt="<%= project.title %>"></a>       
+                            <h2 class="project-title-index"><%= project.title %></h2>
+                            <h5 class="project-short-info"> Месторасположение:  <%= project.location %></h5>
+                            <a class="project-price-index" href="/projects/<%= project.id %>"><div>Цена от: <%= project.price %>$</div></a>      
+                        </div> 
+                        
+                    
+                        
+                
+            <% }) %>
+            
+    </div>
+    <div class="new-objects-catalog">
+        <span  class="button-link-body"><a href="/projects">Каталог </a> <span class="bg"></span> </span>
+          
+    </div>        
+</div>
+<div class="about-section">
+    <div class="shape-orange-about"></div>
+    <div class="about-text">
+        <h4 class="about-title">О нас</h4>
+        <p class="about-info">
+            Идейные соображения высшего порядка, а также реализация намеченных плановых 
+            заданий требуют определения и уточнения направлений прогрессивного развития.
+            Значимость этих проблем настолько очевидна, что сложившаяся структура организации 
+            обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.
+        </p>
+        <span  class="button-link-body"><a href="/about-us">Больше о нас</a> <span class="bg"></span> </span> 
+    </div>
+    <div class="about-blocks">
+        
+        <div class="about-item-block white-block">
+            <div class="card-image keys-about" style="background-image: url('../images/keys-middle.png');" data-image-full="../images/keys.png">
+                <img src="../images/keys-middle.png" alt="Keys" />    
+            </div>
+            <span class="text-about-content keys-content">Naszym priorytetem jest uczynienie z Ciebie idealnej oferty, a nie otrzymanie prowizji.</span>  
+        </div>
+        <div class="about-item-block">
+            <div class="card-image search-about" style="background-image: url('../images/search-middle.png');" data-image-full="../images/search.png">
+                <img src="../images/search-middle.png" alt="Search" />    
+            </div>
+            <span class="text-about-content search-content">Doskonale znamy rynki, z którymi współpracujemy</span>  
+        </div>
+        <div class="about-item-block bottom-row-block">
+            <div class="card-image buildings-about" style="background-image: url('../images/buildings-about-middle.png');" data-image-full="../images/buildings-about.png">
+                <img src="../images/buildings-about-middle.png" alt="Buildings about" />    
+            </div>
+            <span class="text-about-content buildings-content">Śledzimy dynamikę konstrukcji każdego obiektu</span class="text-about-content">  
+        </div>
+        <div class="about-item-block bottom-row-block">
+            <div class="card-image globe-about" style="background-image: url('../images/globe-middle.png');" data-image-full="../images/globe.png">
+                <img src="../images/globe-middle.png" alt="Globe" />    
+            </div>
+            <span class="text-about-content globe-content">Osobiście znasz wszystkie przedmioty, które sprzedajemy</span>  
+        </div>
+    </div>
+</div>
+<div class="goals-section">
+    <h1 class="title-proposition">Предложения для каждого</h1>
+    <h3 class="title-second-mobile">Предложения для каждого</h3>
+    <div class="goals-images-wrapper">
+        <div class="image-goal-wrapper">
+            <div class="card-image goal-image" style="background-image: url('../images/personal-middle.png');" data-image-full="../images/personal.png">
+                <img src="../images/personal-middle.png" alt="Personal" />    
+            </div>
+            <a class="bottom-text goal-text" href="http://localhost:3000/projects?search=&location=&price%5Bmin%5D=&price%5Bmax%5D=&appointment=%D0%9B%D0%B8%D1%87%D0%BD%D0%BE%D0%B5+%D0%B8%D1%81%D0%BF%D0%BE%D0%BB%D1%8C%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5&seaDistance=&area=">Личное использование</a>
+        </div>
+        <div class="image-goal-wrapper">
+            <div class="card-image goal-image margin-image" style="background-image: url('../images/rent-middle.png');" data-image-full="../images/rent.png">
+                <img src="../images/rent-middle.png" alt="Rent" />    
+            </div>
+            
+            <a class="bottom-text goal-text" href="http://localhost:3000/projects?search=&location=&price%5Bmin%5D=&price%5Bmax%5D=&appointment=%D0%90%D1%80%D0%B5%D0%BD%D0%B4%D0%B0&seaDistance=&area=">Аренда</a>
+        </div>
+        <div class="image-goal-wrapper">
+            <div class="card-image goal-image" style="background-image: url('../images/invest-middle.png');" data-image-full="../images/invest.png">
+                <img src="../images/invest-middle.png" alt="Invest" />    
+            </div>
+            <div class="top-text goal-text">Хотите инвестировать?</div>
+            <div class="centered-text goal-text">Доходность 17 - 30%</div>
+            <a class="bottom-text goal-text" href="http://localhost:3000/projects?search=&location=&price%5Bmin%5D=&price%5Bmax%5D=&appointment=%D0%98%D0%BD%D0%B2%D0%B5%D1%81%D1%82%D0%B8%D1%86%D0%B8%D0%B8&seaDistance=&area=">Инвестиции</a>
+        </div>
+        
+        
+        
+    </div>
+    
+</div>
+<div class="swiper-container" style="margin-bottom: 1rem;">
+    <h1 class="news-title">Новости и статьи </h1>
+    <div class="swiper-wrapper"> 
+            <% articlesMain.forEach(function(article){ %>
+
+                        
+                    
+                        <div class="swiper-slide" style="background-color: transparent;">
+                            <a href="/articles/<%= article.id %>"><img class="title-image image-gallery"
+                                src="<%= article.images[0].url %>"
+                                alt="<%= article.title %>"></a>       
+                            <a class="project-price-index" href="/articles/<%= article.id %>"><div class="index-articles-link"><%= article.title %></div></a>      
+                        </div> 
+                        
+                    
+                        
+                
+            <% }) %>
+            
+    </div>
+    <div class="new-objects-catalog">
+        <span  class="button-link-body"><a href="/articles">Все новости</a> <span class="bg"></span> </span>  
+    </div>        
+</div>
+<div id="map"></div>
+
+
+
+
+<script>
+    mapboxgl.accessToken = "<%= mapBoxToken %>";
+    var projects = { features: <%- JSON.stringify(projects) %> };
+  
+</script>
+<script src="/javascripts/allPostsClusterMap.js"></script>
+<script>
+    window.addEventListener('load', function() {
+	
+        // setTimeout to simulate the delay from a real page load
+        setTimeout(lazyLoad, 1000);
+	
+    });
+
+   
+
+    function lazyLoad() {
+        var card_images = document.querySelectorAll('.card-image');
+        
+        // loop over each card image
+        card_images.forEach(function(card_image) {
+            var image_url = card_image.getAttribute('data-image-full');
+            var content_image = card_image.querySelector('img');
+            
+            // change the src of the content image to load the new high res photo
+            content_image.src = image_url;
+            
+            // listen for load event when the new photo is finished loading
+            content_image.addEventListener('load', function() {
+                // swap out the visible background image with the new fully downloaded photo
+                card_image.style.backgroundImage = 'url(' + image_url + ')';
+                // add a class to remove the blur filter to smoothly transition the image change
+                card_image.className = card_image.className + ' is-loaded';
+            });
+            
+        });
+        
+    }
+
+    
+</script>

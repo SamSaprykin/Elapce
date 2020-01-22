@@ -1,0 +1,40 @@
+<% layout('layouts/boilerplate') -%>
+<head>
+    <link rel='stylesheet' href='/stylesheets/article-show.css' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<div class="article-wrapper">
+    <h1 class="title-article"><%= article.title %></h1>
+    <div class="wrapper-link-icons">
+        <a class="link-all-theme" href="http://localhost:3000/articles?search=&category=<%= article.category %>">Все по теме <span style="text-transform: lowercase;"><%= article.category %></span></a>
+        <div class="icons-group">
+            <a href=""><i class="fab fa-twitter icon-artcile"></i></a>
+            <a href=""><i class="fab fa-facebook-f icon-artcile"></i></a>
+        </div>
+        
+    </div>
+    
+    <img class="article-image" src="<%= article.images[0].url %>" alt="<%= article.title %>">
+    
+    <p class="article-intro"><%= article.introduction %></p>
+    <h5 class="article-category"><%= article.category %></h5>
+    <p class="article-text"><%= article.body %></p>
+
+    <img class="article-image" src="<%= article.images[1].url %>" alt="<%= article.title %>">
+
+    <p class="article-conclusion" ><%= article.conclusions %></p>
+
+    <% if (currentUser && currentUser.username === 'admin') { %>
+        <div>
+            <a href="/articles/<%= article.id %>/edit">
+            <button class="btn btn-light mt-2">Edit</button>
+        </a> 
+        </div>
+        <div>
+        <form action="/articles/<%= article.id %>?_method=DELETE" method="POST">
+            <input type="submit" class="btn btn-light mt-2" value="Delete">
+        </form>
+        </div>
+    <% } %>
+</div>

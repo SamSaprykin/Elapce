@@ -1,0 +1,219 @@
+.article-wrapper {
+    width: 100%;
+    max-width: 1152px;
+    height: auto;
+    margin:0 auto;
+}
+
+
+.title-article {
+   /* H1 */
+
+    font-family: 'Montserrat';
+    font-size: 30px;
+    line-height: 130%;
+    /* identical to box height, or 75px */
+    margin-bottom: 21px;
+    margin-top: 23px;
+    /* dark */
+    padding: 0 16px;
+    color: #4B535F;
+}
+
+.article-text {
+    
+    max-width: 766px;
+    width:100%;
+    display:block;
+    font-family: 'Lato', sans-serif;
+    margin:0 auto;
+    font-size: 14px;
+    line-height: 170%;
+    color: #000000;
+    opacity: 0.7;
+    text-align: left;
+    margin:0 auto 32px;
+    padding: 0 16px;
+}
+
+.article-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.link-all-theme {
+    font-family: 'Lato',sans-serif;
+    
+    margin-bottom:37px;
+    display: inline-block;
+    font-size: 16px;
+    line-height: 100%;
+    line-height: 36px;
+    border-bottom: 1px solid #5570BA;
+    color: #5570BA;
+}
+
+.link-all-theme:hover {
+   text-decoration: none;
+}
+
+.wrapper-link-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    margin: 0 16px;
+}
+
+.icon-artcile {
+    font-size: 16px;
+    border-radius: 16px;
+    text-align: center;
+    color:white;
+    width:32px;
+    height: 32px;
+    background-color: #4B535F;
+    padding:8px;
+}
+
+
+.article-intro {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 170%;
+    /* or 51px */
+    text-align: justify;
+    margin:35px 0 18px;
+    color: #4B535F;
+    padding: 0 16px;
+}
+
+.article-category {
+    /* h2 */
+    margin:71px 16px 44px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    line-height: 27px;
+    /* identical to box height */
+
+
+    /* dark */
+
+    color: #4B535F;
+}
+
+.article-conclusion {
+    /* p_big */
+    max-width: 766px;
+    width:100%;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
+    line-height: 170%;
+    /* or 38px */
+    margin:32px auto 79px;
+    padding: 0 16px;
+    color: #000000;
+
+    opacity: 0.7;
+}
+
+
+
+@media all and (min-width: 900px) {
+    
+    
+    
+    .title-article {
+       /* H1 */
+        font-size: 65.6106px;
+        line-height: 114.9%;
+        /* identical to box height, or 75px */
+        margin-bottom: 26px;
+        margin-top: 11px;
+        /* dark */
+    }
+    
+    .article-text {
+        font-size: 18px;
+        line-height: 210%;
+        text-align: justify;
+        margin:0 auto 81px;
+    }
+    
+    .article-image {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .link-all-theme {
+        
+        font-weight: 500;
+        font-size: 28px;
+        line-height: 36px;
+        
+    }
+    
+    .link-all-theme:hover {
+       text-decoration: none;
+    }
+    
+    .wrapper-link-icons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: baseline;
+    }
+    
+    .icon-artcile {
+        font-size: 16px;
+        border-radius: 16px;
+        text-align: center;
+        color:white;
+        width:32px;
+        height: 32px;
+        background-color: #4B535F;
+        padding:8px;
+    }
+    
+    
+    .article-intro {
+        
+        font-size: 30px;
+        line-height: 170%;
+        
+        margin:81px 0 71px;
+        
+    }
+    
+    .article-category {
+       
+        margin:71px auto 44px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 54px;
+        line-height: 60px;
+        /* identical to box height */
+    
+    
+        /* dark */
+    
+        color: #4B535F;
+    }
+    
+    .article-conclusion {
+        /* p_big */
+        max-width: 766px;
+        width:100%;
+        font-family: 'Lato', sans-serif;
+        font-size: 18px;
+        line-height: 210%;
+        /* or 38px */
+        margin:52px auto;
+    
+        color: #000000;
+    
+        opacity: 0.7;
+    }
+    
+}

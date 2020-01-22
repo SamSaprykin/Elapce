@@ -1,0 +1,25 @@
+<% if(success && success.length) { %>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3 class="alert alert-success" role="alert">
+                    <%= success %>
+                </h3>
+            </div>
+        </div>
+    </div>
+<% } %>
+
+<% if(error && error.length) { %>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm">
+                <h3 class="alert alert-warning" role="alert">
+                    <%= error %>
+                </h3>
+            </div>
+        </div>
+    </div>
+<% } %>
+
+

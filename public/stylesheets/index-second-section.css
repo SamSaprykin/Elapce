@@ -1,0 +1,149 @@
+
+
+.second-section {   
+    margin-top: 55px; 
+    display: flex;
+    flex-direction: column;
+    padding: 0 16px;
+    position: relative;
+}
+
+.map-points {
+    
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin:0 auto;
+}
+  
+.map-points-wrapper {
+    
+    max-width:910px;
+    width:100%;
+    height:auto;
+}
+
+
+.content-wrapper {
+    margin:0;
+    
+}
+
+.title-second-mobile {
+    font-family: 'Lato', sans-serif;
+    font-size: 24px;
+    line-height: 27px;
+    color: #4B535F;
+    margin-bottom:48px;
+    font-weight: 600;
+}
+  
+
+.title-proposition {
+    display: none;
+}
+.text-proposition {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 14px;
+    line-height: 170%;
+    /* or 32px */
+    max-width: 578px;
+    margin-top:24px;
+    color: #000000;
+    opacity: 0.7;
+    margin-bottom: 60px;
+}
+  
+.proposition-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+
+
+@media all and (min-width: 900px) {
+    .second-section {
+        margin-bottom:175px;
+        margin-top: 104px;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+    .map-points {
+    
+        background-size: 100%;
+        background-repeat: no-repeat;
+        margin:0 auto;
+    }
+      
+    .map-points-wrapper {
+        
+        max-width:910px;
+        width:100%;
+        height:auto;
+    }
+    
+    
+    .content-wrapper {
+        margin-left:80px;
+        
+    }
+    
+    .title-second-mobile {
+        display: none;
+    }
+      
+    
+    .title-proposition {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 54px;
+        line-height: 52px;
+        color: #4B535F;
+        font-weight:600;
+        display: block;
+    }
+    .text-proposition {
+        
+        font-size: 18px;
+        line-height: 180%;
+        /* or 32px */
+        
+        margin-top:45px;
+        
+    }
+      
+    .proposition-section {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+}
+
+
+@media all and (max-width: 1480px) {
+    
+    .second-section {
+        margin-bottom:30px;
+    }
+  
+    .title-proposition,.about-title, .news-title {
+        
+        font-size: 36px;
+        line-height: 40px;
+        margin-left: 0;
+        
+    }
+    .text-proposition {
+        
+        font-size: 16px;
+        line-height: 150%;
+        /* or 32px */
+        
+        margin-top:30px;
+        
+    }
+}

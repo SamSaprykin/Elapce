@@ -1,0 +1,51 @@
+
+<head>
+    <link rel='stylesheet' href='/stylesheets/pagination.css' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<div class="pagination-wrapper">
+    <div class="pagination">
+        <ul class="pagination text-center">
+            <% if(projects.page - 1) { %>
+                <li class="page-item"><a class="page-link" href="/projects?page=<%= projects.page - 1 %>">Prev</a></li>
+            <% } %>
+            <% if(projects.page > 9) { %>
+                <li class="page-item"><a class="page-link" href="/projects?page=1">1</a></li>
+            <% } %>   
+            <% var i = ((projects.page) > 2 ? projects.page - 2 : 1) %>
+            <% if (i !== 1) { %>
+                <li class="page-item"><a class="page-link">...</a></li>
+            <% } %>
+            <% if(projects.pages> 1 && projects.docs.length) { %>
+                <% for (; i <= (projects.page + 2) && i <= projects.pages; i++) { %>
+                    <% if (i == projects.page) { %>
+                        <li class="page-item"><a class="page-link"><%= i %></a></li>
+                    <% } else { %>
+                        <li class="page-item"><a class="page-link" href="/projects?page=<%= i %>"
+                            <%= i === projects.page ? 'style=color:#000;' : '' %>
+                            
+                        ><%= i %></a></li>
+                    <% } %>
+                    <% if (i == projects.page + 2 && i < projects.pages) { %>
+                        <li class="page-item"><a class="page-link">...</a></li>
+                    <% } %>
+                <% } %>
+            <% } %>
+            <% if((projects.page + 1) <= projects.pages) { %>
+                <li class="page-item"><a class="page-link" href="/projects?page=<%= projects.page + 1 %>">Next</a></li>
+            <% } %>
+    
+            
+        </ul>
+
+        
+    </div>
+
+    <div class="alert alert-light" role="alert">
+        <%= projects.length %>
+        Страница <%= projects.page %> из <%= projects.pages %>.
+    </div>
+</div>
+
+

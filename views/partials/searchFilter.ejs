@@ -1,0 +1,143 @@
+<head>
+	<link rel='stylesheet' href='/stylesheets/search-filter.css' />
+</head>
+<form action="/projects" method="GET">
+	
+	  
+	<div>
+		<input type="search" class="search-input" placeholder="Искать" name="search" id="seach" value="<%= query.search %>">
+		<div class="input-group">
+			<div class="select">
+				<select placeholder="Тип обьекта" name="type" id="slct" value="<%= query.type %>">
+					<option disabled selected hidden>Тип объекта:</option>
+					<option value="Апартаменты" class="option">Апартаменты</option>
+					<option value="Вилла" class="option">Вилла</option>
+					<option value="Участок земли" class="option">Участок земли</option>
+					<option value="Коммерческая" class="option">Коммерческая</option>
+					<option value="Под реконструкцию" class="option">Под реконструкцию</option>
+				</select>
+			</div>
+			
+			
+			
+			<input type="text" class="input-text-head second" placeholder="Местоположение" id="location" name="location" value="<%= query.location %>">
+			<input type="number" id="min" class="input-text-head small-word" name="price[min]" min="0" max="1000000" step="1" placeholder="Цена от" value="<%= query.price.min %>">
+			<input type="number" id="max" class="input-text-head small-word" name="price[max]" min="0" max="10000000" step="1" placeholder="Цена до" value="<%= query.price.max %>">
+			
+			<input type="text" class="input-text-head small-word" placeholder="Площадь" name="" id="">
+			<input type="button" class="input-text-head second filter-additional" value="Расширенный фильтр" id="collapsible" >
+			
+			<input type="submit" value="искать" class="input-submit-head">
+			<div id="content" style="max-height:0px;" >
+				<div class="footer-search search-main">
+					<div class="left-side-search">
+						<fieldset>
+							<label for="seaDistance">Расстояние до моря</label>
+							<input type="number" step="10" class="form-control" placeholder="Расстояние до моря" id="seaDistance" name="seaDistance" value="<%= query.seaDistance %>">
+						</fieldset>
+						<fieldset>
+							<label for="area">Площадь до(м2):</label>
+							<input type="number" class="form-control" placeholder="Площадь" id="area" name="area" value="<%= query.area %>">
+						</fieldset>
+					</div>
+					
+				
+					<fieldset>
+					
+					  <legend>Ширина поиска</legend>
+					  <div>
+						<input type="radio" name="distance" class="checbox" id="distance25" value="25" <%= query.distance === '25' ? 'checked' : '' %>>
+						<label for="distance25">50 км</label>
+					  </div>
+					  <div>
+						<input type="radio" name="distance" class="checbox" id="distance50" value="50" <%= query.distance === '50' ? 'checked' : '' %>>
+						<label for="distance50">100 км</label>
+					  </div>
+					  <div>
+						<input type="radio" name="distance" class="checbox" id="distance100" value="100" <%= query.distance === '100' ? 'checked' : '' %>>
+						  <label for="distance100">200 км</label>
+					  </div>
+					  <div>
+						  <a href="#" id="clear-distance" class="reset-form">Очистить</a>
+					  </div>
+					</fieldset>
+				
+					<fieldset>
+						<legend>Количество спален</legend>
+						<input type="checkbox" id="one-bedroom" name="bedrooms[]" value="1" <%= query.bedrooms.includes('1') ? 'checked' : '' %>>
+						<label for="one-bedroom">1 спальня</label><br>
+						<input type="checkbox" id="two-bedroom" name="bedrooms[]" value="2" <%= query.bedrooms.includes('2') ? 'checked' : '' %>>
+						<label for="two-bedroom">2 спальни</label><br>
+						<input type="checkbox" id="three-bedroom" name="bedrooms[]" value="3" <%= query.bedrooms.includes('3') ? 'checked' : '' %>>
+						<label for="three-bedroom">3 спальни</label><br>
+						<input type="checkbox" id="four-bedroom" name="bedrooms[]" value="4" <%= query.bedrooms.includes('4') ? 'checked' : '' %>>
+						<label for="four-bedroom">4 спальни</label><br>
+						<input type="checkbox" id="five-bedroom" name="bedrooms[]" value="5" <%= query.bedrooms.includes('5') ? 'checked' : '' %>>
+						<label for="five-bedroom">5 спален</label><br>
+						<input type="checkbox" id="more-bedroom" name="bedrooms[]" value="6" <%= query.bedrooms.includes('5+') ? 'checked' : '' %>>
+						<label for="more-bedroom">6 и более</label>
+					</fieldset>
+				
+					
+				
+					<fieldset>
+						<legend>Цель покупки</legend>
+						<div>
+							<input type="radio" id="invest" class="checbox" name="appointment" value="Инвестиции" <%= query.appointment.includes('Инвестиции') ? 'checked' : '' %>>
+							<label for="invest">Инвестиции</label>
+						</div>
+						<div>
+							<input type="radio" id="rent" class="checbox" name="appointment" value="Аренда" <%= query.appointment.includes('Аренда') ? 'checked' : '' %>> 
+							<label for="rent">Аренда</label>
+						</div>
+						<div>
+							<input type="radio" id="personal" class="checbox" name="appointment" value="Личное использование" <%= query.appointment.includes('Личное использование') ? 'checked' : '' %>>
+							<label for="personal">Личное использование</label>
+						</div>
+					</fieldset>
+				</div>
+				
+				
+				<div class="footer-search">
+					<div>
+						<a href="/projects" class="reset-form">Cбросить форму поиска</a>
+					</div>
+					
+					<input type="submit" value="искать" class="input-submit-head">
+				</div>
+				
+		  	</div>
+
+			
+		</div>
+	</div>
+	
+</form>
+
+<script src="/javascripts/use-my-location.js"></script>
+<script>
+	var coll = document.getElementById("collapsible");
+	var content = document.getElementById("content")
+	var hide = document.getElementById("hide")
+	
+	coll.addEventListener("click", function() {
+		
+		if(content.style.maxHeight == "0px") {
+			content.style.maxHeight = "1000px"
+			coll.value="Скрыть фильтр"
+		}
+		else {
+			content.style.maxHeight = "0px"
+			coll.value="Расширенный фильтр"
+		}
+		
+	});
+
+	
+
+
+	
+
+</script>
+
+	  

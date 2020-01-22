@@ -1,0 +1,29 @@
+<% layout('layouts/boilerplate') -%>
+
+<head>
+	<link rel='stylesheet' href='/stylesheets/contacts.css' />
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+	<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.js'></script>
+	<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.4.1/mapbox-gl.css' rel='stylesheet' />
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<div class="contacts-wrapper">
+	<div class="content-contacts">
+		<h1 class="contact-main-info">Контакты</h1>
+		<p class="contacts-title">Телефон</p>
+		<span class="contacts-data">+380631187452 <i class="fab fa-viber"></i><i class="fab fa-whatsapp-square"></i></span>
+		<span class="contacts-data">+380441985733</span>
+		<p class="contacts-title">Skype</p>
+		<span class="contacts-data">elapce_skype_main</span>
+		<p class="contacts-title">Email</p>
+		<span class="contacts-data">info@elapce.com</span>
+		<p class="contacts-title">Адрес</p>
+		<span class="contacts-data">Московская 41/8</span>
+	</div>
+	<div id="map"></div>
+</div>
+
+
+<script src='/javascripts/contacts.js'></script>

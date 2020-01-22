@@ -1,0 +1,92 @@
+<% layout('layouts/boilerplate') -%>
+
+
+
+<form action="/guides/<%= guide.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="ml-3">
+	<h1>Обновить гид</h1>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Название района или города:</p>
+			<input type="text" name="title" placeholder="Название" class="form-control" value="<%= guide.title %>">
+		</div>	
+	</div>
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Название района или города:</p>
+			<input type="text" name="location" placeholder="Местоположение" class="form-control" value="<%= guide.location %>">
+		</div>	
+	</div>
+	
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Текст гида:</p>
+			<textarea name="body" placeholder="Текст гида"  class="form-control col-md-12" rows="20"><%= guide.body %></textarea>
+		</div>
+		
+	</div>
+	<div class="form-row "></div>
+		<div class="custom-file col-md-6 mb-3">
+			
+			<label class="custom-file-label" for="inputGroupFile01">Фотографии к гиду:</label>
+			<input type="file" accept="images/*" name="images" id="inputGroupFile01" class="custom-file-input" multiple  />	
+		</div>	
+		<!-- <input name="file1" type="file" accept="application/pdf"> */ -->
+		
+    </div>
+
+    <div class="d-flex flex-row flex-wrap mb-3 justify-content-center">
+		
+		<% guide.images.forEach(function(image, i) { %>
+			<div class="card m-1" style="width: 18rem;">
+				<img class="card-img-top" src="<%= image.url %>"/>
+				<div class="card-body">
+					<label for="image<%= i %>">Delete?</label>
+					<input type="checkbox" class="imageDeleteCheckbox" name="deleteImages[]" id="image<%= i %>" value="<%= image.public_id %>">
+				</div>
+			</div>	
+		<% }) %>
+
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-3">
+            <p>Данные для диаграмы:</p>
+        
+            <% guide.data.forEach(function(data, i) { %>
+                <input type="text" name="data" placeholder="Данные" class="form-control" id="<%= i %>" value="<%= data %> ">
+            <% }) %>
+        </div>
+        <div class="form-group col-md-3">   
+            <p>Подпись для диаграмы:</p>
+            <% guide.labels.forEach(function(label, i) { %>
+                <input type="text" name="labels" placeholder="Данные" class="form-control" id="<%= i %>" value="<%= label %> ">
+            <% }) %>
+        </div>   
+    </div>
+    
+    
+    
+  
+    
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Вступление - первые две строки:</p>
+			<input type="text" name="introduction" class="form-control" value="<%= guide.introduction %>">
+		</div>	
+	</div>
+
+
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<p>Заключение, после второго фото:</p>
+			<input type="text" name="conclusions" class="form-control" value="<%= guide.conclusions %>">
+		</div>	
+	</div>
+
+	
+	
+	<div class="form-row">
+		<div class="form-group col-md-6">
+			<input type="submit" class="btn btn-light mt-2">
+		</div>
+	</div>
+</form>

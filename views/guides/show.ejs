@@ -1,0 +1,97 @@
+<% layout('layouts/boilerplate') -%>
+<head>
+    <link rel='stylesheet' href='/stylesheets/article-show.css' />
+    <link rel='stylesheet' href='/stylesheets/guide-show.css' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<div class="article-wrapper">
+    <h1 class="title-article"><%= guide.title %></h1>
+    <div class="wrapper-link-icons">
+        <a class="link-all-theme" href="http://localhost:3000/projects?search=&location=<% guide.location %>&price%5Bmin%5D=&price%5Bmax%5D=&seaDistance=&area=">Объекты в <%= guide.location %>  <span style="text-transform: lowercase;"><% guide.location %></span></a>
+        <div class="icons-group">
+            
+            <a href=""><i class="fab fa-twitter icon-artcile"></i></a>
+            <a href=""><i class="fab fa-facebook-f icon-artcile"></i></a>
+            
+        </div>
+        
+    </div>
+    
+    <img class="article-image" src="<%= guide.images[0].url %>" alt="<%= guide.title %>">
+    
+    <div class="map-container">
+        
+        <div class="map-info">
+            
+            <a href="#" class="city-link"><%= guide.location %></a>
+            <p class="map-distance">20 км до аэропорта</p>
+            <p class="map-distance">8 км до центра города</p>
+        </div>
+        <div id='map'></div>
+    </div>
+    
+    <p class="article-intro"><%= guide.introduction %></p>
+   
+    <p class="article-text"><%= guide.body %></p>
+
+    <img class="article-image" src="<%= guide.images[1].url %>" alt="<%= guide.title %>">
+
+    <p class="article-conclusion" ><%= guide.conclusions %></p>
+    <canvas id="myChart" width="100" height="50"></canvas>
+    
+    
+    <% if (currentUser && currentUser.username === 'admin') { %>
+        <div>
+            <a href="/guides/<%= guide.id %>/edit">
+            <button class="btn btn-light mt-2">Edit</button>
+        </a> 
+        </div>
+        <div>
+        <form action="/guides/<%= guide.id %>?_method=DELETE" method="POST">
+            <input class="btn btn-light mt-2" type="submit" value="Delete">
+        </form>
+        </div>
+    <% } %>
+    
+</div>
+
+
+
+
+<script>
+    var guide = <%- JSON.stringify(guide) %>;
+</script>
+<script src='/javascripts/guide-show.js'></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+<script>
+var dataGr = [<%= guide.data %>];
+var labelsGr = [<%= guide.labels %>];
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: labelsGr,
+        datasets: [{
+            label: 'Стоимость м2',
+            data: dataGr,
+            backgroundColor: [
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+            ],
+            borderWidth: 2
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+</script>

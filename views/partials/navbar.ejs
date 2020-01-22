@@ -1,0 +1,59 @@
+<head>
+    <link rel='stylesheet' href='/stylesheets/navbar.css' />
+    <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+</head>
+
+<style>
+    
+</style>
+<nav>
+    <ul class="menu">
+        <li class="logo"><a href="/"><div class="navbar-logo"></div></a></li>
+        
+            
+        <li class="item"><a href="/projects">Каталог</a></li>
+        <li class="item"><a href="/articles">Статьи</a></li>
+        <li class="item"><a href="/guides">Гид по городам</a></li>
+        <li class="item"><a href="#/about-us">О нас</a></li>
+        <li class="item"><a href="/contacts">Контакты</a></li>
+        <li class="item icons">
+            <a href=""><i class="fab fa-instagram"></i></a>
+            <a href=""><i class="fab fa-facebook-f"></i></a>
+            <a href=""><i class="fab fa-linkedin-in"></i></a>
+        </li>
+        <% if(!currentUser) { %>
+        <li class="item button-navbar">
+            <a href="/register">Регистрация</a>
+        </li>
+        <li class="item button-navbar">
+            <a href="/login">Войти</a>
+        </li>
+        <% } else { %>
+    
+            <li  class="item profile-link"><a href="/profile">Профиль</a></li></button>
+            <li class="item button-navbar logout">
+                <a href="/logout">Выйти</a>
+            </li>
+            
+        <% } %>
+        <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+    </ul>
+</nav>
+
+
+
+<script>
+    $(function() {
+        $(".toggle").on("click", function() {
+            if ($(".item").hasClass("active")) {
+                $(".item").removeClass("active");
+                $(this).find("a").html("<i class='fas fa-bars'></i>");
+            } else {
+                $(".item").addClass("active");
+                $(this).find("a").html("<i class='fas fa-times'></i>");
+            }
+        });
+    });
+</script>

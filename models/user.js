@@ -3,14 +3,17 @@ const passportLocalMongoose = require('passport-local-mongoose');
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema ({
-    email: String,
-    image: String,
-    posts: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Post'
-        }
-    ]
+    email: { type: String, unique: true, required: true },
+	image: { 
+		secure_url: {type: String, default: '/images/profile.jpg'},
+		public_id: String
+	},
+	favoriteLinks: [{
+        url:String,
+        id:String
+    }],
+	resetPasswordToken: String,
+	resetPasswordExpires: Date
 });
 
 

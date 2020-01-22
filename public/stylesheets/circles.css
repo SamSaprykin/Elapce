@@ -1,0 +1,144 @@
+.shape-orange {
+	
+	background-image: url('../images/orange-circles-main.svg');
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 140%;
+	
+	background-size: contain;
+	position: absolute;
+	z-index: -100;
+	background-position: right;
+	top:-4%;
+	
+}
+
+
+@media all and (max-width: 900px) {
+	.shape-orange {
+		height: 100%;
+		max-width:90%;
+		top:-20%;
+		right:0;
+	}
+
+	.shape-orange-about {
+		width: 80%;
+		height: 100%;	
+	}
+}
+
+@media (max-width:1460px) and (min-width:700px) { 
+	.shape-orange {
+		height: 120%;
+		top:-30%;
+	}
+}
+
+.shape-white {
+	background-image: url('../images/white-circles-main.png');;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 180%;
+	
+	background-size: contain;
+	position: absolute;
+	z-index: -100;
+	left:-2%;
+	top:-10%;
+}
+
+
+@media all and (max-width: 900px) {
+	.shape-white {
+		width: 100%;
+		height: 100%;
+		
+	}
+
+	
+}
+
+.shape-white-project {
+	background-image: url('../images/white-circles-project-page.svg');;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	max-width:1820px;
+	max-height: 1400px;
+	background-size: contain;
+	position: absolute;
+	z-index: -100;
+	left:-14%;
+	top:-65%;
+}
+
+
+
+
+.shape-white-catalog {
+	background-image: url('../images/white-circles-main.png');;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	max-width:1820px;
+	background-size: contain;
+	position: absolute;
+	z-index: -100;
+	left:-2%;
+	top:60%;
+}
+
+
+.shape-white-articles {
+	background-image: url('../images/white-circles-articles.svg');;
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 100%;
+	max-width:1820px;
+	background-size: contain;
+	position: absolute;
+	z-index: -100;
+	left:-2%;
+	top:-10%;
+}
+
+@media  (max-width: 1080px) { 
+	.shape-white-catalog {
+		display: none;
+	}
+}
+
+.shape-blue {
+	background-image: url('../images/blue-circles.svg');;
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	
+}
+
+.shape-orange-about {
+	
+	background-image: url('../images/orange-circles-about.svg');
+	background-repeat: no-repeat;
+	width: 100%;
+	height: 154%;
+	
+	background-size: cover;
+	position: absolute;
+	z-index: -100;
+	background-position: 10% 67%;
+	
+	
+}
+
+@media all and (max-width: 900px) {
+	
+
+	.shape-orange-about {
+		width: 80%;
+		height: 100%;	
+	}
+}
+
