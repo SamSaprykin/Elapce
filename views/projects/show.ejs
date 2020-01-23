@@ -41,18 +41,21 @@
                 <input class="add-favourite" type="submit" value="Добавить в избранное">
             </form>
             <span class="description-title">Рейтинг объекта </span>
-            <% for(let i = 0; i < 5; i++) { %>
-                <% if(i < floorRating) { %>
-                <!-- display a full star -->
-                <i class="fas fa-star yellow"></i>
-                <% } else if((project.avgRating - i) > 0 && (project.avgRating - i) < 1) { %>
-                <!-- display a half star -->
-                <i class="fas fa-star-half-alt yellow"></i>
-                <% } else { %>
-                <!-- display an empty star -->
-                <i class="far fa-star yellow"></i>
+            <div class="rating">
+                <% for(let i = 0; i < 5; i++) { %>
+                    <% if(i < floorRating) { %>
+                    <!-- display a full star -->
+                    <i class="fas fa-star yellow"></i>
+                    <% } else if((project.avgRating - i) > 0 && (project.avgRating - i) < 1) { %>
+                    <!-- display a half star -->
+                    <i class="fas fa-star-half-alt yellow"></i>
+                    <% } else { %>
+                    <!-- display an empty star -->
+                    <i class="far fa-star yellow"></i>
+                    <% } %>
                 <% } %>
-            <% } %>
+            </div>
+            
             
             
             <div class="additional-info">
