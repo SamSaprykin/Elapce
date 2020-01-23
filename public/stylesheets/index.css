@@ -11,7 +11,7 @@ a:hover {
 /* Lazy Load Styles */
 .card-image {
 	display: block;
-	min-height: 14rem; /* layout hack */
+	
 	
 	background-size: cover;
 	filter: blur(3px); /* blur the lowres image */
@@ -151,13 +151,16 @@ a:hover {
     display: inline-block;
     border-bottom: 2px solid #4B535F;
     padding-bottom: 3px;
-    margin:28px 0 9px;
+    margin:10px 0 5px;
+    
 }
 
 
 .project-price-index {
+    font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     line-height: 30px;
+    color: #4B535F;
 }
 
 
@@ -178,10 +181,11 @@ a:hover {
 
 .project-short-info {
     font-family: 'Ubuntu', sans-serif;
-    font-size: 20px;
-    line-height: 24px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
     /* identical to box height */
-    margin-bottom: 27px;
+    margin-bottom: 7.5px;
 
     color: #4B535F;
     text-align: left;
@@ -264,8 +268,9 @@ a:hover {
   position:absolute;
   z-index:-1;
   top:60px;
-  left:20px;
-  width:90%;
+  
+  
+  width:100%;
   height:90%;
   content:"";
   background-color: #D7E1F7;
@@ -333,21 +338,21 @@ a:hover {
 }
 
 .search-content {
-  margin-top:-190px;
+  margin-top:-70px;
   margin-left:150px;
   width: 240px;
   
 }
 
 .buildings-content {
-  margin-top:-170px;
+  margin-top:-90px;
   margin-left:150px;
   width: 196px;
   
 }
 
 .globe-content {
-  margin-top:-195px;
+  margin-top:-95px;
   margin-left:150px;
   width: 187px;
   
@@ -492,20 +497,24 @@ a:hover {
   }
 
     .project-price-index {
-      font-family: 'Montserrat', sans-serif;
       font-size: 28px;
       line-height: 27px;
       /* identical to box height */
-      color: #5570BA;
-      border-radius: 12px;
-      
   }
 
   .project-title-index {
     font-size: 24px;
+    margin:28px 0 9px;
   }
 
-  
+  .project-short-info {
+    
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height */
+    margin-bottom: 27px;
+
+}
   
 
   .swiper-wrapper {
@@ -841,17 +850,19 @@ a:hover {
   
   .button-link-body a {
     font-size: 14px;
-    padding:16px 92px;
+    padding:16px 70px;
     display: inline-block;
   }
 
   .about-item-block {
+    width:100%;
     max-width:300px;
+    left:0;
   }
 
   .text-about-content {
     max-width:144px;
-    margin-top:-195px;
+    margin-top:-105px;
     margin-left:130px;
   }
   .about-section {
@@ -860,6 +871,14 @@ a:hover {
   .keys-about {
     max-width: 121px;
     margin-bottom: 10px;
+  }
+
+  .keys-content {
+    margin-top: -175px;
+  }
+
+  .search-content {
+    margin-top: -90px;
   }
 
   .goal-image {
@@ -873,11 +892,17 @@ a:hover {
   }
 
   h3.title-second-mobile {
-    margin-bottom: 38px;
+    margin-bottom: 48px;
   }
 
   .about-section .about-text .about-title, h1.news-title {
     font-size: 24px;
+  }
+
+  .image-gallery {  
+    min-height: auto;
+    height: auto;
+      
   }
   
 }

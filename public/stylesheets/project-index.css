@@ -29,14 +29,15 @@ a:hover {
 
 .project-card {
     max-width:485px;
-    margin:0 10px 40px;
+    margin:0 0 40px;
     height:auto;
     box-sizing: border-box;
 }    
 
 .title-image {
-    padding: 0 15px;
+    
     max-width:470px;
+    width:100%;
     height:auto;   
 }
 
@@ -51,8 +52,8 @@ a:hover {
     display: inline-block;
     border-bottom: 2px solid #4B535F;
     padding-bottom: 3px;
-    margin:10.5px 0 9px;
-    margin-left:16px;
+    margin-top:10px;
+    
 }
 
 
@@ -63,12 +64,10 @@ a:hover {
     border-radius: 12px;
     font-size: 18px;
     line-height: 22px;
-}
-
-.project-price-index div {
-    margin-left:16px;
     
 }
+
+
 
 .main-title {
     font-family: 'Montserrat', sans-serif;
@@ -84,11 +83,8 @@ a:hover {
     font-size: 14px;
     line-height: 17px;
     /* identical to box height */
-    
-    margin-bottom: 7.5px;
-    margin-left:16px;
+    margin-bottom:7.5px;
     color: #4B535F;
-
     opacity: 0.6;
     border-radius: 5px;
 }

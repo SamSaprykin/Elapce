@@ -335,6 +335,15 @@ body {
     div.footer-contacts {
         padding:20px 16px;
     }
+
+    span.footer-mobile {
+        color:white;
+    }
+
+    button.contact-us {
+        padding:16px 99px;
+        font-size: 14px;
+    }
 }
 
 @media (max-width: 1280px) {
