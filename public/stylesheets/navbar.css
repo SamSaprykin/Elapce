@@ -100,7 +100,8 @@ ul {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 0;
+    
+    margin-bottom: 30px;
 }
 .toggle {
     order: 1;
@@ -147,6 +148,7 @@ ul {
     
     .menu {
         justify-content: center;
+        margin-bottom: 0;
     }
     .logo {
         max-width:250px;

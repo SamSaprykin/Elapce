@@ -716,8 +716,12 @@ a:hover {
     .wrapper-icons {
         margin-top:26px;
     }
-
-    
+    .more-objects {
+        padding:42px 0 51px; 
+    }
+    .project-card {
+        margin:0;
+    }
     
 }
 

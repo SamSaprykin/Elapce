@@ -336,8 +336,8 @@ body {
         padding:20px 16px;
     }
 
-    span.footer-mobile {
-        color:white;
+    .footer-mobile {
+        color:white !important;
     }
 
     button.contact-us {
