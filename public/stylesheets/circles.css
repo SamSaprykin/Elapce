@@ -137,8 +137,13 @@
 	
 
 	.shape-orange-about {
-		width: 80%;
+		max-width: 90%;
 		height: 100%;	
 	}
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+	.shape-orange {
+		top: -30%;
+	}
+}

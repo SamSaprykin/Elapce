@@ -41,10 +41,10 @@ a:hover {
 .button-link-body {
   display: block;
   text-align: center;
-  height: 68px;
+  height: auto;
   background: #FFFFFF;
   border-radius: 5px;
-  padding:16px 85px;
+  padding:16px 102px;
   color: #5570BA;
   text-decoration: none;
   margin:0 16px;
@@ -57,7 +57,7 @@ a:hover {
   font-size: 24px;
   line-height: 29px;
   /* identical to box height */
-
+  
   text-align: right;
   text-transform: uppercase;
   text-decoration: none;
@@ -833,7 +833,54 @@ a:hover {
 }
 
 
+@media (min-width: 320px) and (max-width: 480px) {
 
+  .button-link-body {
+    padding:0;
+  }
+  
+  .button-link-body a {
+    font-size: 14px;
+    padding:16px 92px;
+    display: inline-block;
+  }
+
+  .about-item-block {
+    max-width:300px;
+  }
+
+  .text-about-content {
+    max-width:144px;
+    margin-top:-195px;
+    margin-left:130px;
+  }
+  .about-section {
+    margin-bottom:60px;
+  }
+  .keys-about {
+    max-width: 121px;
+    margin-bottom: 10px;
+  }
+
+  .goal-image {
+    max-width:288px;
+    max-height:216px;
+    padding:0 16px;
+  }
+  
+  .margin-image {
+    margin:16px 0;
+  }
+
+  h3.title-second-mobile {
+    margin-bottom: 38px;
+  }
+
+  .about-section .about-text .about-title, h1.news-title {
+    font-size: 24px;
+  }
+  
+}
 
 
 
@@ -851,3 +898,5 @@ a:hover {
     align-items: center;
   } 
 }​
+
+

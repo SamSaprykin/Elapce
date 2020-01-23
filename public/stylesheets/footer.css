@@ -330,6 +330,13 @@ body {
 }
 
 
+
+@media (min-width: 320px) and (max-width: 480px) {
+    div.footer-contacts {
+        padding:20px 16px;
+    }
+}
+
 @media (max-width: 1280px) {
     
     .icons-wrapper {

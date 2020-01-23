@@ -334,6 +334,23 @@
   
 }
 
+@media (min-width: 320px) and (max-width: 480px) {
+  
+  .main-section .input-group {
+    
+    max-width:288px;
+    width:100%;
+
+  }
+
+  .input-submit-head {
+    
+    padding: 14px 106px;
+    
+  }
+  
+}
+
 @media (max-width:1280px) and (min-width:900px) {
       
     .header-title {
@@ -344,3 +361,5 @@
       margin-top:200px;
     }   
 }​
+
+
