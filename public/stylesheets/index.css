@@ -135,7 +135,7 @@ a:hover {
   object-fit: cover;
   max-width:480px;
   width: 100%;
-  min-height: 360px;
+  
   height:auto;  
 }
 
@@ -595,7 +595,7 @@ a:hover {
   /* Lazy Load Styles */
   .card-image {
     display: block;
-    min-height: 35rem; /* layout hack */
+     /* layout hack */
     
     
     filter: blur(3px); /* blur the lowres image */
