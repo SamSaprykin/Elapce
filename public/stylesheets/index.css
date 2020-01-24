@@ -129,9 +129,7 @@ a:hover {
   align-items: baseline;
 }
 
-.swiper-slide .image-gallery {
-  min-height: auto;
-}
+
 
 .image-gallery {  
   object-fit: cover;
@@ -139,6 +137,10 @@ a:hover {
   width: 100%;
   min-height: 360px;
   height:auto;  
+}
+
+.swiper-slide .image-gallery {
+  min-height: 240px;
 }
 
 .project-title-index {
@@ -901,11 +903,7 @@ a:hover {
     font-size: 24px;
   }
 
-  .image-gallery {  
-    min-height: auto;
-    height: auto;
-      
-  }
+  
   
 }
 
