@@ -129,13 +129,15 @@ a:hover {
   align-items: baseline;
 }
 
-
+.swiper-slide .image-gallery {
+  min-height: auto;
+}
 
 .image-gallery {  
   object-fit: cover;
   max-width:480px;
   width: 100%;
-  
+  min-height: 360px;
   height:auto;  
 }
 
@@ -595,7 +597,7 @@ a:hover {
   /* Lazy Load Styles */
   .card-image {
     display: block;
-     /* layout hack */
+    min-height: 35rem; /* layout hack */
     
     
     filter: blur(3px); /* blur the lowres image */
