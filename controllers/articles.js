@@ -1,6 +1,9 @@
 const Article = require('../models/article');
 const moment = require('moment');
 const { cloudinary } = require('../cloudinary');
+const showdown  = require('showdown');
+
+converter = new showdown.Converter();
 
 module.exports = {
 	// Posts Index
@@ -46,8 +49,12 @@ module.exports = {
 
         req.body.article.author =  req.user._id;
         req.body.article.creationDate =  moment().format("YYYY-MM-DD").toString();
+        text = req.body.article.body;
+        html = converter.makeHtml(text);
+        req.body.article.body = html
+        console.log(req.body.article.body)
+        console.log(html)
         let article = new Article(req.body.article);
-        console.log(req.body)
         await article.save();
         res.redirect(`/articles/${article.id}`);
         

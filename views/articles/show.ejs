@@ -19,7 +19,7 @@
     
     <p class="article-intro"><%= article.introduction %></p>
     <h5 class="article-category"><%= article.category %></h5>
-    <p class="article-text"><%= article.body %></p>
+    <div class="article-text" id="root"></div>
 
     <img class="article-image" src="<%= article.images[1].url %>" alt="<%= article.title %>">
 
@@ -38,3 +38,21 @@
         </div>
     <% } %>
 </div>
+
+
+<script>
+    
+    var body = { features: <%- JSON.stringify(article.body) %> };
+     
+    let stringHTML = body.features;
+    
+    //Create temp element holder
+    let tempElement = document.createElement("div");
+    //Add fetched HTML to tempElement
+    tempElement.innerHTML = body.features;
+    console.log(tempElement)
+    //Now you can query it as it was a normal DOM element
+    
+
+    document.getElementById('root').appendChild(tempElement);
+</script>

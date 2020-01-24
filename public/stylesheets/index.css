@@ -138,9 +138,6 @@ a:hover {
   height:auto;  
 }
 
-.swiper-slide .image-gallery {
-  min-height: 240px;
-}
 
 .project-title-index {
     font-style: normal;
@@ -498,7 +495,7 @@ a:hover {
   .image-gallery {  
     object-fit: cover;
     max-width:485px;
-    min-height:352px;  
+    min-height: 360px;;  
   }
 
     .project-price-index {
@@ -848,7 +845,10 @@ a:hover {
 
 
 @media (min-width: 320px) and (max-width: 480px) {
-
+  .swiper-slide .image-gallery {
+    min-height: 240px;
+  }
+  
   .button-link-body {
     padding:0;
   }
@@ -926,7 +926,7 @@ a:hover {
   }
 
   .swiper-wrapper {
-    margin-left:-160px;
+    margin-left:-60px;
   }
 }
 
