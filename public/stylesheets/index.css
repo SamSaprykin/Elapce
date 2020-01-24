@@ -33,7 +33,6 @@ a:hover {
 
 
 
-
 /* Mobile Styles */  
 
 /* Section About */ 
@@ -47,7 +46,7 @@ a:hover {
   padding:16px 102px;
   color: #5570BA;
   text-decoration: none;
-  margin:0 16px;
+  margin:0 auto;
   max-width:500px;
   
 }
@@ -901,14 +900,35 @@ a:hover {
     margin-bottom: 48px;
   }
 
-  .about-section .about-text .about-title, h1.news-title {
-    font-size: 24px;
-  }
-
+  
   
   
 }
 
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  
+  
+  h3.title-second-mobile, h3.news-title, h3.about-title {
+    margin:48px auto ;
+    text-align: center;
+    font-size:32px;
+  }
+
+  h3.title-mobile {
+    margin-top:16px;
+    font-size:36px;
+    font-weight: 700;
+  }
+  .about-section {
+    margin-bottom:58px;
+  }
+
+  .swiper-wrapper {
+    margin-left:-160px;
+  }
+}
 
 
 

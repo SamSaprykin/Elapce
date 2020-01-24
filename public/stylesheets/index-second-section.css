@@ -1,7 +1,6 @@
 
 
 .second-section {   
-    margin-top: 55px; 
     display: flex;
     flex-direction: column;
     padding: 0 16px;
@@ -131,8 +130,6 @@
     }
   
     .title-proposition,.about-title, .news-title {
-        
-        font-size: 36px;
         line-height: 40px;
         margin-left: 0;
         
