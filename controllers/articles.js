@@ -47,6 +47,7 @@ module.exports = {
         req.body.article.author =  req.user._id;
         req.body.article.creationDate =  moment().format("YYYY-MM-DD").toString();
         let article = new Article(req.body.article);
+        console.log(req.body)
         await article.save();
         res.redirect(`/articles/${article.id}`);
         
@@ -94,8 +95,8 @@ module.exports = {
         article.title = req.body.title;
         article.body = req.body.body;
         article.category = req.body.article.category;
-        article.conclusions =  req.body.conclusions;
-        article.introduction =  req.body.introduction;
+        article.conclusions =  req.body.article.conclusions;
+        article.introduction =  req.body.article.introduction;
         
         
         article.save();
