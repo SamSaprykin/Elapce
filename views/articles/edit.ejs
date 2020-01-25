@@ -87,3 +87,17 @@
 		</div>
 	</div>
 </form>
+
+<script>
+    
+    var body = { features: <%- JSON.stringify(article.body) %> };
+     
+    let stringHTML = body.features;
+    
+    //Create temp element holder
+    let tempElement = document.createElement("div");
+    //Add fetched HTML to tempElement
+    tempElement.innerHTML = body.features;
+
+    document.getElementById('root').appendChild(tempElement);
+</script>

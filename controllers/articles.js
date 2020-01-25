@@ -100,12 +100,14 @@ module.exports = {
     
         
         article.title = req.body.title;
-        article.body = req.body.body;
+        text = req.body.body;
+        html = converter.makeHtml(text);
+        article.body = html;
         article.category = req.body.article.category;
         article.conclusions =  req.body.article.conclusions;
         article.introduction =  req.body.article.introduction;
-        
-        
+        console.log(req.body.body)
+        console.log(req.body)
         article.save();
 
         res.redirect(`/articles/${article.id}`);
