@@ -42,7 +42,7 @@ a:hover {
 }
 
 .map-position-title {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     
     font-size: 28px;
     line-height: 42px;
@@ -59,7 +59,7 @@ a:hover {
 
 .city-link {
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     font-size: 24px;
     line-height: 29px;
     /* identical to box height */
@@ -70,7 +70,7 @@ a:hover {
 }
 
 .map-distance {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     font-weight: 600;
     font-size: 20px;
     line-height: 42px;
@@ -133,7 +133,7 @@ a:hover {
 
 .text-content {
     height: auto;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     font-size: 14px;
     line-height: 170%;
     /* or 38px */
@@ -161,7 +161,7 @@ a:hover {
 }
 
 .description-title {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     max-width: 300px;
     width: 50%;
     display: inline-block;
@@ -184,7 +184,7 @@ a:hover {
 }
 
 .details-info {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     font-weight: 600;
     font-size: 16px;
     line-height: 100%;
@@ -195,7 +195,7 @@ a:hover {
 }
 
 .details-price {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: "Lato-Regular";
     
     font-weight:600;
     font-size: 24px;
@@ -228,7 +228,7 @@ a:hover {
     color:white;
     border:none;
     text-transform: uppercase;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -286,7 +286,7 @@ a:hover {
   .slide-title {
       
       display: inline-block;
-      font-family: 'Lato', sans-serif;
+      font-family: "Lato-Regular";
       font-style: normal;
       font-weight: 500;
       font-size: 18px;
@@ -343,7 +343,7 @@ a:hover {
   }
 
   .add-favourite {
-    font-family: 'Lato',sans-serif;
+    font-family: "Lato-Regular";
     padding: 5px 8px;
     margin:37px 0;
     display: inline-block;
@@ -375,7 +375,7 @@ a:hover {
 
 
 .project-title-index {
-    font-family: 'Lato';
+    font-family: "Lato-Regular";
     font-style: normal;
     font-weight: bold;
     font-size: 16px;
@@ -538,7 +538,7 @@ a:hover {
       }
 
       .add-favourite {
-        font-family: 'Lato',sans-serif;
+        font-family: "Lato-Regular";
         padding: 10px 16px;
         margin:37px 0;
         display: inline-block;

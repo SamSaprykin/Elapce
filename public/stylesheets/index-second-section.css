@@ -33,10 +33,15 @@
     line-height: 27px;
     color: #4B535F;
     margin-bottom:48px;
+    margin-top:55px;
     font-weight: 600;
 }
   
-
+.proposition {
+    
+    margin-top:-125px;
+    
+}
 .title-proposition {
     display: none;
 }

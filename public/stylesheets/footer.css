@@ -3,7 +3,8 @@ body {
 }
 
 * {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
+
 }
 
 
@@ -185,7 +186,8 @@ body {
     font-weight: 500;
     font-size: 16px;
     line-height: 22px;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
+
     display: inline-block;
     margin-bottom:20px;
     

@@ -1,14 +1,16 @@
 body {
     font-weight:500;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
 }
 
 .wrapper-not-found {
     width: 100%;
     max-width:800px;
     height: auto;
-    margin: 30px auto 110px;
+    margin: 32px auto;
+    padding:0 16px;
     text-align: center;
+    position: relative;
 }
 
 a {
@@ -21,19 +23,53 @@ a:hover {
     text-decoration: none;
 }
 
-.btn {
-    background-color: #83A6F6;
-    padding:20px 24px;
-    border-radius: 12px;
-}
 
-h2 {
+
+.not-found-title {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 24px;
+    line-height: 114.9%;
+    text-align: center;
     color: #4B535F;
-    margin-top:0;
-    margin-bottom: 30px;
 }
 
 img {
-    margin-top: 16px;
-    margin-bottom:-40px;
+    width:100%;
+    max-width:582px;
+    margin-top: -70px;
+}
+
+.notfound-bg {
+	background-image: url('../images/404.svg');
+	background-repeat: no-repeat;
+    width: 100%;
+    max-width: 662px;
+	height: 100%;
+	background-size: 100%;
+	position: absolute;
+	z-index: -100;
+	background-position: center;
+	left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+}
+
+@media all and (min-width: 900px) { 
+    .wrapper-not-found {
+        margin: 121px auto 110px;
+        padding:0;
+        
+        
+    }
+    
+    .not-found-title {
+        
+        font-size: 42px;
+        line-height: 114.9%;
+        
+    }
 }

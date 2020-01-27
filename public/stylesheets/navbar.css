@@ -25,7 +25,7 @@ ul {
 }
 
 .item a {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     font-style: normal;
     font-weight: bold;
     font-size: 20px;
@@ -73,7 +73,7 @@ ul {
 }
 
 .button-navbar a {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     color: #FFFFFF;
     font-size: 16px;
     line-height: 19px;

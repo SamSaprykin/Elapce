@@ -19,7 +19,8 @@
 }
 
 .map-position-title {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
+
     
     font-size: 28px;
     line-height: 42px;
@@ -32,7 +33,8 @@
 
 .city-link {
     display: inline-block;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
+
     font-size: 24px;
     line-height: 29px;
     /* identical to box height */
@@ -47,7 +49,8 @@
 }
 
 .map-distance {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
+
     font-weight: 600;
     font-size: 20px;
     line-height: 42px;

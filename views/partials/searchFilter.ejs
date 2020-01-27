@@ -1,28 +1,77 @@
 <head>
 	<link rel='stylesheet' href='/stylesheets/search-filter.css' />
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
 </head>
 <form action="/projects" method="GET">
 	
 	  
 	<div>
-		<input type="search" class="search-input" placeholder="Искать" name="search" id="seach" value="<%= query.search %>">
+		<input type="search" class="search-input" placeholder="Искать" name="search" id="seach" value="<%= query.search %>"> 
 		<div class="input-group">
-			<div class="select">
-				<select placeholder="Тип обьекта" name="type" id="slct" value="<%= query.type %>">
-					<option disabled selected hidden>Тип объекта:</option>
-					<option value="Апартаменты" class="option">Апартаменты</option>
-					<option value="Вилла" class="option">Вилла</option>
-					<option value="Участок земли" class="option">Участок земли</option>
-					<option value="Коммерческая" class="option">Коммерческая</option>
-					<option value="Под реконструкцию" class="option">Под реконструкцию</option>
-				</select>
+			
+			<button class="input-text-head" id="input-position" type="button">
+				<% if(query.type.length === 0){ %>
+					Тип недвижимости
+				  <% } else { %>  
+					<%= query.type %> 
+				 <% } %>
+				
+			</button>
+			<div uk-dropdown="mode: click;animation: uk-animation-slide-top-small;pos: bottom-justify">
+				<ul class="uk-nav uk-dropdown-nav">
+					<li class="uk-active"><input type="radio" name="type" value="Апартаменты" id="radio1" class="radio-hidden uk-dropdown-close-checkbox"></input><label  for='radio1'>Апартаменты</label></li>
+					<li class="uk-active"><input type="radio" name="type" value="Вилла" id="radio2" class="radio-hidden uk-dropdown-close-checkbox"></input><label  for='radio2'>Вилла</label></li>
+					<li class="uk-active"><input type="radio" name="type" value="Участок земли" id="radio3" class="radio-hidden uk-dropdown-close-checkbox"></input><label  for='radio3'>Участок земли</label></li>
+					<li class="uk-active"><input type="radio" name="type" value="Коммерческая" id="radio4" class="radio-hidden uk-dropdown-close-checkbox"></input><label  for='radio4'>Коммерческая</label></li>
+					<li class="uk-active"><input type="radio" name="type" value="Под реконструкцию" id="radio5" class="radio-hidden uk-dropdown-close-checkbox"></input><label  for='radio5' class="label-last">Под реконструкцию</label></li>
+				</ul>
 			</div>
 			
 			
+			<button class="input-text-head second" id="input-location" type="button">
+				<% if(query.location.length === 0){ %>
+					Местоположение
+				  <% } else { %>  
+					<%= query.location %> 
+				 <% } %>
+				
+			</button>
+			<div uk-dropdown="mode: click;animation: uk-animation-slide-top-small;pos: bottom-left" class="location-dropdown">
+				<ul class="uk-nav uk-dropdown-nav">
+					<div class="uk-margin">
+							<input class="search-location"  type="search" placeholder="Искать..." id="location" name="location" value="<%= query.location %>" >
+					</div>
+					<ul class="list-variants"><li>Испания</li><li>Польша</li><li>Таиланд</li><li>Турция</li><li>Эстония</li><li>Венгрия</li></ul>
+				</ul>
+				
+			</div>
+			<button class="input-text-head second" id="input-price" type="button">
+				<% if(query.price.min.length === 0){ %>
+					Цена
+				  <% } else { %>  
+					<%= query.price.min %> - <%= query.price.max %>
+				 <% } %>
+				
+			</button>
+			<div uk-dropdown="mode: click;animation: uk-animation-slide-top-small;pos: bottom-left" class="price-dropdown">
+				<ul class="uk-nav uk-dropdown-nav">
+					<div class="uk-margin">
+						<div class="wrapper-price-inputs">
+							<input type="number" id="min" class="input-price" name="price[min]" min="0" max="1000000" step="1000" placeholder="от" value="<%= query.price.min %>">
+							<input type="number" id="max" class="input-price" name="price[max]" min="0" max="10000000" step="1000" placeholder="до" value="<%= query.price.max %>">
+							<button class="price-button"></button>
+						</div>	
+					</div>
+					<ul class="list-variants"><li>до 50 000</li><li>50 000 - 100 000</li><li>100 000 - 150 000</li><li>150 000 - 250 000</li><li>от 250 000</li></ul>
+				</ul>
+				
+			</div>
 			
-			<input type="text" class="input-text-head second" placeholder="Местоположение" id="location" name="location" value="<%= query.location %>">
-			<input type="number" id="min" class="input-text-head small-word" name="price[min]" min="0" max="1000000" step="1" placeholder="Цена от" value="<%= query.price.min %>">
-			<input type="number" id="max" class="input-text-head small-word" name="price[max]" min="0" max="10000000" step="1" placeholder="Цена до" value="<%= query.price.max %>">
 			
 			<input type="text" class="input-text-head small-word" placeholder="Площадь" name="" id="">
 			<input type="button" class="input-text-head second filter-additional" value="Расширенный фильтр" id="collapsible" >
@@ -132,12 +181,41 @@
 		}
 		
 	});
+	
+	
+	$(document).ready(function() {
+		var $dropdown = UIkit.dropdown('.uk-dropdown', {
+    		delayHide: 1
+		  });
+		  
+		
+		
+		var inputPosition = document.getElementById("input-position")
+		
+		$('.uk-dropdown-close-checkbox').on('click', function() {
+			if( $(this).is(':checked') ) $dropdown.hide();
+			var checkCheck = $('.uk-dropdown-close-checkbox:checked')[0].value
+			inputPosition.textContent = checkCheck
+				
+		});
+
+		$('.price-button').on('click', function(e){
+			e.preventDefault();
+			UIkit.dropdown($('.uk-dropdown')[2]).hide();
+			var inputsPrice = $('.input-price')
+			var priceButton = document.getElementById('input-price')
+			
+			var valueOne = inputsPrice[0].value.toString()
+			var valueTwo = inputsPrice[1].value.toString()
+			console.log(valueOne)
+			console.log(valueTwo)
+			priceButton.textContent = "".concat(valueOne, " - ").concat(valueTwo);
+		})
+	});
+
 
 	
-
-
 	
-
 </script>
 
 	  

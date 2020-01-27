@@ -108,7 +108,7 @@
     letter-spacing: -0.03em;
     
     color: #000000;
-    margin-top:52px;
+    margin:52px 0 73px;
     opacity: 0.7;
     display: none;
   }
@@ -257,7 +257,7 @@
     .left-section {
         
         
-        margin-top: 140px;
+        margin-top: 206px;
     }
 }
 

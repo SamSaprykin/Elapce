@@ -10,3 +10,11 @@ body {
   font:12px/20px 'Helvetica Neue', 'Arial', sans-serif
 }
 
+@font-face {
+  font-family: "Lato-Regular";
+
+  src: url("../fonts/Lato-Regular.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+       
+}

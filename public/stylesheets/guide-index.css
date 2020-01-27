@@ -24,7 +24,8 @@
     left: 50%;
     transform: translate(-50%, -50%);
     border:none;
-    font-family: 'Lato' sans-serif;
+    font-family: "Lato-Regular";
+
     font-style: normal;
     font-weight: bold;
     font-size: 36px;

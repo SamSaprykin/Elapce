@@ -21,11 +21,10 @@
 }
 
 .article-text {
-    
     max-width: 766px;
     width:100%;
     display:block;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     margin:0 auto;
     font-size: 14px;
     line-height: 170%;
@@ -42,8 +41,7 @@
 }
 
 .link-all-theme {
-    font-family: 'Lato',sans-serif;
-    
+    font-family: "Lato-Regular";    
     margin-bottom:37px;
     display: inline-block;
     font-size: 16px;
@@ -78,7 +76,7 @@
 
 
 .article-intro {
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -108,7 +106,7 @@
     /* p_big */
     max-width: 766px;
     width:100%;
-    font-family: 'Lato', sans-serif;
+    font-family: "Lato-Regular";
     font-size: 14px;
     line-height: 170%;
     /* or 38px */
@@ -206,7 +204,7 @@
         /* p_big */
         max-width: 766px;
         width:100%;
-        font-family: 'Lato', sans-serif;
+        font-family: "Lato-Regular";
         font-size: 18px;
         line-height: 210%;
         /* or 38px */

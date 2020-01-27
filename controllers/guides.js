@@ -15,7 +15,7 @@ module.exports = {
             limit:16,
             sort: {'_id': -1}
         });
-        console.log({guides})
+        
 		res.render('guides/index', {guides});
 	},
 	guideNew(req, res, next) {
