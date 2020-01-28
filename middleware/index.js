@@ -190,7 +190,8 @@ const middleware = {
 			}
 
 			if (area) {
-				dbQueries.push({ area: {$lte: area }})
+				if (area.min) dbQueries.push({ area: { $gte: area.min } });
+				if (area.max) dbQueries.push({ area: { $lte: area.max } });
 			}
 			// check if avgRating exists, if it does then we know that the user
 			// submitted the search/filter form with a avgRating query (0 - 5 stars)
@@ -238,7 +239,7 @@ const middleware = {
 					req.query[key] = [];
 				}
 				if (key === 'area') {
-					req.query[key] = [];
+					req.query[key] = { min: '', max: '' };
 				}
 				if (key === 'type') {
 					req.query[key] = [];

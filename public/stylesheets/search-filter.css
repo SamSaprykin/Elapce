@@ -40,12 +40,15 @@ body {
   font-size: 18px;
   line-height: 22px;
   /* identical to box height */
-  width:220px;
-  padding:0 8px;
+  width:221px;
   height:52px;
   color: #2F3B43;
   background: url('../images/ellipsis.png') no-repeat;
   background-position:  center right ;
+}
+
+.small {
+  width:170px;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -56,28 +59,6 @@ body {
     border-left: 2px solid rgba(158, 193, 225, 0.5) ;
     padding-left: 12px;
 }
-
-.filter-additional {
-  background: none;
-  border:1px solid #FFA782;
-  border-radius: 5px;
-  margin: 0 7px 0 7px;
-  height:76px;
-  width:230px;
-  padding: 27px 15px 27px 15px;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 22px;
-}
-
-.small-word {
-    background-position:105px 25px ;
-    border-left: 2px solid rgba(158, 193, 225, 0.5) ;
-    padding-left: 12px;
-}
-
-
 
 
 
@@ -98,7 +79,6 @@ body {
   height:80px;
   margin:0;
   padding: 0 45px;
-  
   font-style: normal;
   font-weight: 500;
   font-size: 20px;
@@ -186,6 +166,30 @@ input[type=number] {
   color: #5570BA;
 }
 
+.uk-checkbox:checked {
+  background-color: #5570BA !important;
+  border-radius: 9px !important;
+}
+
+.bedrooms-dropdown {
+  width:176px !important;
+}
+
+
+
+.bedrooms-dropdown .uk-active {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+  color: #2F3B43;
+}
+
+.bedrooms-dropdown .uk-checkbox {
+  margin-right: 8px;
+  margin-top:0;
+  width:16px;
+}
 /* FINISHED NEW STYLES */
 
 fieldset {
@@ -211,9 +215,13 @@ fieldset {
 }
 
 .reset-form {
-  
-  font-family: 'Montserrat', sans-serif;
+  color: #666666;
   font-size: 22px;
+  opacity: 0.7;
+}
+
+.reset-form:hover {
+  color:#5570BA;
 }
 
 .checbox {
@@ -280,6 +288,12 @@ input[type="search"]::-webkit-search-cancel-button  {
   padding: 9px 38px 32px !important;
 }
 
+.additional-variants {
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+}
+
 .list-variants li {
   font-family: 'Lato-Regular';
   font-size: 18px;
@@ -291,8 +305,13 @@ input[type="search"]::-webkit-search-cancel-button  {
   margin-top: 15px;
 }
 
-.price-dropdown {
+.price-dropdown, .area-dropdown {
   width: 445px !important;
+  padding:0 !important;
+}
+
+.filter-dropdown {
+  width:753px !important;
   padding:0 !important;
 }
 
@@ -304,7 +323,7 @@ input[type="search"]::-webkit-search-cancel-button  {
   align-items: center;
 }
 
-.input-price {
+.input-price, .input-area {
   width:150px;
   height: 51px;
   padding:13px 21px;
@@ -316,21 +335,24 @@ input[type="search"]::-webkit-search-cancel-button  {
   color: #2F3B43;
 }
 
-.input-price:focus {
+.input-distance {
+  width:182px;
+  margin-top:-6px;
+}
+
+.input-price:focus, .input-area:focus {
   outline: none !important;
   border: 2px solid RGBA(74,82,94,0.3);
 }
 
-.input-price::placeholder {
+.input-price::placeholder,.input-area::placeholder  {
   font-size: 18px;
   line-height: 22px;
-  /* identical to box height */
-
-  
+  /* identical to box height */  
   color: #C9CBCF;
 }
 
-.price-button {
+.price-button, .area-button {
   width: 55px;
   height: 51px;
   background-image: url('../images/button-price-image.svg'), linear-gradient(290.75deg, #F34B31 -11.35%, #FFA782 106.98%);
@@ -341,50 +363,43 @@ input[type="search"]::-webkit-search-cancel-button  {
   border-radius: 3px;
 }
 
-@media all and (min-width: 900px) { }
+.additional-filter {
+  width:131px;
+  margin:31px auto;
+}
 
-
-
-
-
-@media (max-width: 1600px ) {
+.wrapper-additional {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  margin-top:31px;
   
+}
 
-  .input-text-head, .select, .input-submit-head {
-    font-size: 14px;
-    max-width: 190px;
-  }
+.additional-container {
+  width:33.3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
 
-  .search-input {
-    font-size: 16px;
-  }
-  .small-word  {
-    max-width: 150px;
-  }
-
-  .input-submit-head {
-    margin:12px 11px;
-  }
-  .select {
-    display: none;
-  }
+.additional-container span {
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+  text-align: center;
+  color: #2F3B43;
+  opacity: 0.7;
+  margin-bottom: 24px;
 }
 
 
 
 
-@media (max-width: 1200px ) {
-  .input-text-head, .input-submit-head {
-    font-size: 12px;
-    max-width: 160px;
-  }
-  .small-word  {
-    max-width: 110px;
-    margin-left: 6px;
-  }
 
-  
-}
+
 
 
 
