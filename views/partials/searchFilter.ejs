@@ -11,7 +11,7 @@
 	
 	  
 	<div>
-		<input type="search" class="search-input" placeholder="Искать" name="search" id="seach" value="<%= query.search %>"> 
+		
 		<div class="input-group">
 			
 			<button class="input-text-head" id="input-position" type="button">
@@ -24,11 +24,26 @@
 			</button>
 			<div uk-dropdown="mode: click;animation: uk-animation-slide-top-small;pos: bottom-justify">
 				<ul class="uk-nav uk-dropdown-nav">
-					<li class="uk-active"><input type="radio" name="type" value="Апартаменты" id="radio1" class="radio-hidden uk-dropdown-close-checkbox"></input><label  for='radio1'>Апартаменты</label></li>
-					<li class="uk-active"><input type="radio" name="type" value="Вилла" id="radio2" class="radio-hidden uk-dropdown-close-checkbox"></input><label  for='radio2'>Вилла</label></li>
-					<li class="uk-active"><input type="radio" name="type" value="Участок земли" id="radio3" class="radio-hidden uk-dropdown-close-checkbox"></input><label  for='radio3'>Участок земли</label></li>
-					<li class="uk-active"><input type="radio" name="type" value="Коммерческая" id="radio4" class="radio-hidden uk-dropdown-close-checkbox"></input><label  for='radio4'>Коммерческая</label></li>
-					<li class="uk-active"><input type="radio" name="type" value="Под реконструкцию" id="radio5" class="radio-hidden uk-dropdown-close-checkbox"></input><label  for='radio5' class="label-last">Под реконструкцию</label></li>
+					<li class="uk-active">
+						<input type="radio" name="type" value="Апартаменты" id="radio1" class="radio-hidden uk-dropdown-close-checkbox"></input>
+						<label  for='radio1'>Апартаменты</label>
+					</li>
+					<li class="uk-active">
+						<input type="radio" name="type" value="Вилла" id="radio2" class="radio-hidden uk-dropdown-close-checkbox"></input>
+						<label  for='radio2'>Вилла</label>
+					</li>
+					<li class="uk-active">
+						<input type="radio" name="type" value="Участок земли" id="radio3" class="radio-hidden uk-dropdown-close-checkbox"></input>
+						<label  for='radio3'>Участок земли</label>
+					</li>
+					<li class="uk-active">
+						<input type="radio" name="type" value="Коммерческая" id="radio4" class="radio-hidden uk-dropdown-close-checkbox"></input>
+						<label  for='radio4'>Коммерческая</label>
+					</li>
+					<li class="uk-active">
+						<input type="radio" name="type" value="Под реконструкцию" id="radio5" class="radio-hidden uk-dropdown-close-checkbox"></input>
+						<label  for='radio5' class="label-last">Под реконструкцию</label>
+					</li>
 				</ul>
 			</div>
 			
@@ -46,7 +61,14 @@
 					<div class="uk-margin">
 							<input class="search-location"  type="search" placeholder="Искать..." id="location" name="location" value="<%= query.location %>" >
 					</div>
-					<ul class="list-variants"><li>Испания</li><li>Польша</li><li>Таиланд</li><li>Турция</li><li>Эстония</li><li>Венгрия</li></ul>
+					<ul class="list-variants">
+						<li data-country="Испания, Аликанте" class="data-location">Испания, Аликанте</li>
+						<li data-country="Польша, Варшава" class="data-location">Польша, Варшава</li>
+						<li data-country="Таиланд, Пхукет" class="data-location">Таиланд, Пхукет</li>
+						<li data-country="Турция, Аланья" class="data-location">Турция, Аланья</li>
+						<li data-country="Эстония, Таллин" class="data-location">Эстония, Таллин</li>
+						<li data-country="Венгрия,Будапешт" class="data-location">Венгрия,Будапешт</li>
+					</ul>
 				</ul>
 				
 			</div>
@@ -62,12 +84,17 @@
 				<ul class="uk-nav uk-dropdown-nav">
 					<div class="uk-margin">
 						<div class="wrapper-price-inputs">
-							<input type="number" id="min" class="input-price" name="price[min]" min="0" max="1000000" step="1000" placeholder="от" value="<%= query.price.min %>">
-							<input type="number" id="max" class="input-price" name="price[max]" min="0" max="10000000" step="1000" placeholder="до" value="<%= query.price.max %>">
+							<input type="number" id="price-min" class="input-price" name="price[min]" min="0" max="1000000" step="1000" placeholder="от" value="<%= query.price.min %>">
+							<input type="number" id="price-max" class="input-price" name="price[max]" min="0" max="10000000" step="1000" placeholder="до" value="<%= query.price.max %>">
 							<button class="price-button"></button>
 						</div>	
 					</div>
-					<ul class="list-variants"><li>до 50 000</li><li>50 000 - 100 000</li><li>100 000 - 150 000</li><li>150 000 - 250 000</li><li>более 250 000</li></ul>
+					<ul class="list-variants">
+						<li data-priceMin="0" data-priceMax="50000" class="data-price">до 50 000</li>
+						<li data-priceMin="50000" data-priceMax="100000" class="data-price">50 000 - 100 000</li>
+						<li data-priceMin="100000" data-priceMax="150000" class="data-price">100 000 - 150 000</li>
+						<li data-priceMin="150000" data-priceMax="250000" class="data-price">150 000 - 250 000</li>
+						<li data-priceMin="250000" data-priceMax="5000000" class="data-price">более 250 000</li></ul>
 				</ul>
 				
 			</div>
@@ -85,7 +112,7 @@
 					<li class="uk-active"><input type="checkbox" name="bedrooms[]"  id="check2" class="uk-dropdown-close-bedrooms uk-checkbox" value="2" <%= query.bedrooms.includes('2') ? 'checked' : '' %>></input><label  for='check2'>2</label></li>
 					<li class="uk-active"><input type="checkbox" name="bedrooms[]"  id="check3" class="uk-dropdown-close-bedrooms uk-checkbox" value="3" <%= query.bedrooms.includes('3') ? 'checked' : '' %>></input><label  for='check3'>3</label></li>
 					<li class="uk-active"><input type="checkbox" name="bedrooms[]"  id="check4" class="uk-dropdown-close-bedrooms uk-checkbox" value="4" <%= query.bedrooms.includes('4') ? 'checked' : '' %>></input><label  for='check4'>4</label></li>
-					<li class="uk-active"><input type="checkbox" name="bedrooms[]"  id="check5" class="uk-dropdown-close-bedrooms uk-checkbox" value="5" <%= query.bedrooms.includes('4+') ? 'checked' : '' %>></input><label  for='check5' class="label-last">более 4</label></li>
+					<li class="uk-active"><input type="checkbox" name="bedrooms[]"  id="check5" class="uk-dropdown-close-bedrooms uk-checkbox" value="4+" <%= query.bedrooms.includes('4+') ? 'checked' : '' %>></input><label  for='check5' class="label-last">более 4</label></li>
 				</ul>
 			</div>
 			
@@ -102,12 +129,17 @@
 				<ul class="uk-nav uk-dropdown-nav">
 					<div class="uk-margin">
 						<div class="wrapper-price-inputs">
-							<input type="number" id="min" class="input-area" name="area[min]" min="0" max="1000" step="1" placeholder="от" value="<%= query.area.min %>">
-							<input type="number" id="max" class="input-area" name="area[max]" min="0" max="1000" step="1" placeholder="до" value="<%= query.area.max %>">
+							<input type="number" id="area-min" class="input-area" name="area[min]" min="0" max="1000" step="1" placeholder="от" value="<%= query.area.min %>">
+							<input type="number" id="area-max" class="input-area" name="area[max]" min="0" max="1000" step="1" placeholder="до" value="<%= query.area.max %>">
 							<button class="area-button"></button>
 						</div>	
 					</div>
-					<ul class="list-variants"><li>до 50 </li><li>50  - 70</li><li>70 - 100</li><li>100 - 120</li><li>более 120</li></ul>
+					<ul class="list-variants">
+						<li class="data-area" data-areaMin="0" data-areaMax="50" >до 50 </li>
+						<li class="data-area" data-areaMin="50" data-areaMax="70">50  - 70</li>
+						<li class="data-area" data-areaMin="70" data-areaMax="100">70 - 100</li>
+						<li class="data-area" data-areaMin="100" data-areaMax="120">100 - 120</li>
+						<li class="data-area" data-areaMin="120" data-areaMax="500">более 120</li></ul>
 				</ul>
 				
 			</div>
@@ -125,30 +157,30 @@
 							<div class="additional-container">
 								<span>Цель покупки</span>
 								<li class="uk-active">
-									<input type="radio" id="invest" class="radio-hidden uk-dropdown-close-checkbox" name="appointment" value="Инвестиции" <%= query.appointment.includes('Инвестиции') ? 'checked' : '' %>>
+									<input type="radio" id="invest" class="radio-hidden" name="appointment" value="Инвестиции" <%= query.appointment.includes('Инвестиции') ? 'checked' : '' %>>
 									<label for="invest">Инвестиции</label>
 								</li>
 								<li class="uk-active">
-									<input type="radio" id="rent" class="radio-hidden uk-dropdown-close-checkbox" name="appointment" value="Аренда" <%= query.appointment.includes('Аренда') ? 'checked' : '' %>> 
+									<input type="radio" id="rent" class="radio-hidden" name="appointment" value="Аренда" <%= query.appointment.includes('Аренда') ? 'checked' : '' %>> 
 									<label for="rent">Аренда</label>
 								</li>
 								<li class="uk-active">
-									<input type="radio" id="personal" class="radio-hidden uk-dropdown-close-checkbox" name="appointment" value="Личное использование" <%= query.appointment.includes('Личное использование') ? 'checked' : '' %>>
+									<input type="radio" id="personal" class="radio-hidden" name="appointment" value="Личное использование" <%= query.appointment.includes('Личное использование') ? 'checked' : '' %>>
 									<label for="personal">Личное использование</label>
 								</li>
 							</div>
 							<div class="additional-container">
 								<span>Ширина поиска</span>
 								<li class="uk-active">
-									<input type="radio" name="distance" class="radio-hidden uk-dropdown-close-checkbox" id="distance25" value="25" <%= query.distance === '25' ? 'checked' : '' %>>
+									<input type="radio" name="distance" class="radio-hidden " id="distance25" value="25" <%= query.distance === '25' ? 'checked' : '' %>>
 									<label for="distance25">50 км</label>
 								</li>
 								<li class="uk-active">
-									<input type="radio" name="distance" class="radio-hidden uk-dropdown-close-checkbox" id="distance50" value="50" <%= query.distance === '50' ? 'checked' : '' %>>
+									<input type="radio" name="distance" class="radio-hidden" id="distance50" value="50" <%= query.distance === '50' ? 'checked' : '' %>>
 									<label for="distance50">100 км</label>
 								</li>
 								<li class="uk-active">
-									<input type="radio" name="distance" class="radio-hidden uk-dropdown-close-checkbox" id="distance100" value="100" <%= query.distance === '100' ? 'checked' : '' %>>
+									<input type="radio" name="distance" class="radio-hidden " id="distance100" value="100" <%= query.distance === '100' ? 'checked' : '' %>>
 									  <label for="distance100">200 км</label>
 								</li>
 								<div>
@@ -162,52 +194,11 @@
 				
 			</div>
 			<input type="submit" value="искать" class="input-submit-head">
-			<div id="content" style="max-height:0px;" >
-				<div class="footer-search search-main">
-					<div class="left-side-search">
-						
-						<fieldset>
-							<label for="area">Площадь до(м2):</label>
-							<input type="number" class="form-control" placeholder="Площадь" id="area" name="area" value="<%= query.area %>">
-						</fieldset>
-					</div>
-					
-				
-					<fieldset>
-					
-					  <legend>Ширина поиска</legend>
-					  <div>
-						<input type="radio" name="distance" class="checbox" id="distance25" value="25" <%= query.distance === '25' ? 'checked' : '' %>>
-						<label for="distance25">50 км</label>
-					  </div>
-					  <div>
-						<input type="radio" name="distance" class="checbox" id="distance50" value="50" <%= query.distance === '50' ? 'checked' : '' %>>
-						<label for="distance50">100 км</label>
-					  </div>
-					  <div>
-						<input type="radio" name="distance" class="checbox" id="distance100" value="100" <%= query.distance === '100' ? 'checked' : '' %>>
-						  <label for="distance100">200 км</label>
-					  </div>
-					  <div>
-						  <a href="#" id="clear-distance" class="reset-form">Очистить</a>
-					  </div>
-					</fieldset>
-				
-				</div>
-				
-				
-				<div class="footer-search">
-					<div>
-						<a href="/projects" class="reset-form">Cбросить форму поиска</a>
-					</div>
-					
-					<input type="submit" value="искать" class="input-submit-head">
-				</div>
-				
-		  	</div>
+			
 
 			
 		</div>
+		<input type="search" class="search-input" placeholder="Искать" name="search" id="seach" value="<%= query.search %>"> 
 	</div>
 	
 </form>
@@ -245,6 +236,63 @@
 			console.log(valueTwo)
 			priceButton.textContent = "".concat(valueOne, " - ").concat(valueTwo);
 		})
+
+		$('.data-location').on('click', function(e) {
+			e.preventDefault();
+			document.getElementById('location').value = $(this)[0].dataset.country;
+			if(document.getElementById('location').value.length) {
+				document.getElementById('input-location').textContent = document.getElementById('location').value;
+			}
+			
+			
+		})
+
+		$('.data-price').on('click', function(e) {
+			e.preventDefault();
+			document.getElementById('price-max').value = $(this)[0].dataset.pricemax;
+			document.getElementById('price-min').value = $(this)[0].dataset.pricemin;
+			
+		});
+
+		$(document).ready(function (){
+			var bedroomsValue = [];
+			
+			
+			$('.uk-dropdown-close-bedrooms').change(function() {
+				var checked = ($(this).val());
+				if ($(this).is(':checked')) {
+					
+					bedroomsValue.push(checked);
+					document.getElementById('input-bedrooms').textContent = bedroomsValue;
+					
+				} else {
+					bedroomsValue.splice($.inArray(checked, bedroomsValue),1);
+					document.getElementById('input-bedrooms').textContent = bedroomsValue;
+				}
+			});
+			
+			if ( $('.uk-dropdown-close-bedrooms').is(':checked')) {
+				$.each($('.uk-dropdown-close-bedrooms:checked'), function(){
+                	bedroomsValue.push($(this).val());
+				});
+				console.log(bedroomsValue)
+			}
+			
+		})
+
+		$('.data-area').on('click', function(e) {	
+			document.getElementById('area-max').value = $(this)[0].dataset.areamax;
+			document.getElementById('area-min').value = $(this)[0].dataset.areamin;
+		})
+		$('.area-button').on('click',function(e){
+			e.preventDefault();
+			UIkit.dropdown($('.uk-dropdown')[4]).hide();
+		})
+		$('.additional-filter').on('click', function(e) {
+			e.preventDefault();
+			UIkit.dropdown($('.uk-dropdown')[5]).hide();
+		})
+		
 	});
 
 

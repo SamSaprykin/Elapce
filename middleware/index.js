@@ -4,6 +4,7 @@ const Project  = require('../models/project');
 const Article  = require('../models/article');
 const Guide = require('../models/guide');
 const { cloudinary } = require('../cloudinary');
+const bboxPolygon = require('@turf/bbox-polygon');
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapBoxToken });
@@ -133,10 +134,18 @@ const middleware = {
 					const response = await geocodingClient
 					.forwardGeocode({
 						query: location,
-						limit: 1
+						limit: 1,
+						types: ['country','region','postcode','district','place','locality','neighborhood','address'],
+						language: ['ru-Ru']
 					})
 					.send();
-					coordinates = response.body.features[0].geometry.coordinates;
+					
+					//coordinates = response.body.features[0].geometry.coordinates;
+					var bbox = response.body.features[0].bbox;
+					
+					var poly = bboxPolygon.default(bbox);
+					coordinates = poly.geometry.coordinates;
+					console.log(coordinates)
 				} 
 				// geocode the location to extract geo-coordinates (lat, lng)
 				
@@ -145,17 +154,18 @@ const middleware = {
 				// get the max distance or set it to 25 mi
 				let maxDistance = distance || 25;
 				// we need to convert the distance to meters, one mile is approximately 1609.34 meters
-				maxDistance *= 1609.34;
+				maxDistance *= 1609.34 ;
 				// create a db query object for proximity searching via location (geometry)
 				// and push it into the dbQueries array
+				
+				
 				dbQueries.push({
 				  geometry: {
-				    $near: {
+				    $geoWithin: {
 				      $geometry: {
-				        type: 'Point',
+				        type: "Polygon",
 				        coordinates
-				      },
-				      $maxDistance: maxDistance
+				      }
 				    }
 				  }
 				});

@@ -184,9 +184,6 @@ module.exports = {
 		res.redirect('/profile');
 	},
 	async postContactUs(req, res, next) {
-		console.log(req.body.mobile)
-		console.log(req.body.name)
-		console.log(req.body.text)
 		const msg = {
 			to: 'infoelapce@gmail.com',
 			from: 'Elapce admin <admin@elapce.com>',

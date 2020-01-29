@@ -3,7 +3,7 @@ const moment = require('moment');
 const { cloudinary } = require('../cloudinary');
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapBoxToken = process.env.MAPBOX_TOKEN;
-const geocodingClient = mbxGeocoding({ accessToken: mapBoxToken });
+const geocodingClient = mbxGeocoding({ accessToken: mapBoxToken});
 
 module.exports = {
 	// Posts Index

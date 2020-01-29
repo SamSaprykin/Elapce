@@ -52,8 +52,7 @@ module.exports = {
         text = req.body.article.body;
         html = converter.makeHtml(text);
         req.body.article.body = html
-        console.log(req.body.article.body)
-        console.log(html)
+       
         let article = new Article(req.body.article);
         await article.save();
         res.redirect(`/articles/${article.id}`);
@@ -106,8 +105,6 @@ module.exports = {
         article.category = req.body.article.category;
         article.conclusions =  req.body.article.conclusions;
         article.introduction =  req.body.article.introduction;
-        console.log(req.body.body)
-        console.log(req.body)
         article.save();
 
         res.redirect(`/articles/${article.id}`);

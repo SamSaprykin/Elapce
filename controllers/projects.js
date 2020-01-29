@@ -2,7 +2,7 @@ const Project =  require('../models/project');
 const User =  require('../models/user');
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapBoxToken = process.env.MAPBOX_TOKEN;
-const geocodingClient = mbxGeocoding({ accessToken: mapBoxToken });
+const geocodingClient = mbxGeocoding({ accessToken: mapBoxToken});
 const { cloudinary } = require('../cloudinary');
 
 module.exports = {
@@ -49,7 +49,9 @@ module.exports = {
         let response = await geocodingClient
             .forwardGeocode({
                 query: req.body.project.location,
-                limit:1
+                limit:1,
+                language: ['ru-Ru']
+						
             })
             .send();
         req.body.project.geometry = response.body.features[0].geometry;
@@ -112,13 +114,15 @@ module.exports = {
             let response = await geocodingClient
                 .forwardGeocode({
                     query: req.body.project.location,
-                    limit:1
+                    limit:1,
+                    language: ['ru-Ru']
                 })
                 .send();
             project.geometry = response.body.features[0].geometry;
             project.location = req.body.project.location;
         }
-
+        
+        
         project.title = req.body.project.title;
         project.description = req.body.project.description;
         project.price = req.body.project.price;
