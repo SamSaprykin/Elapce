@@ -88,6 +88,7 @@ a:hover {
     color: #4B535F;
     opacity: 0.6;
     border-radius: 5px;
+    
 }
 
 @media all and (min-width: 900px) { 
@@ -133,6 +134,7 @@ a:hover {
         line-height: 24px;
         margin-left:0;
         margin-bottom: 27px;
+        margin-top: inherit;
     }
 
 

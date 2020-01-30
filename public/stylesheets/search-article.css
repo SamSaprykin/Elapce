@@ -11,7 +11,10 @@
     align-items: center;
 }
 
-
+fieldset {
+  border: none;
+  margin:0 !important;
+}
 
 .search-input {
     max-width:1536px;

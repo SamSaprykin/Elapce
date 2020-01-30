@@ -24,8 +24,8 @@
                 alt="<%= project.title %>"></a>    
                 
                 <h2 class="project-title-index"><%= project.title %></h2>
-               <h5 class="project-short-info"> Месторасположение:  <%= project.location %></h5>
-                <a class="project-price-index" href="/projects/<%= project.id %>"><div>Price from: <%= project.price %>$</div></a>
+               <h5 class="project-short-info">  <%= project.area %> м2 | <%= project.bedrooms %> спальни</h5>
+                <a class="project-price-index" href="/projects/<%= project.id %>"><div>Цена от: <%= project.price %> $</div></a>
                 
             </div> 
         <% }); %>

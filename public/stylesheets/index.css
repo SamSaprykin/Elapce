@@ -533,7 +533,7 @@ a:hover {
     line-height: 24px;
     /* identical to box height */
     margin-bottom: 27px;
-
+    margin-top: inherit;
 }
   
 

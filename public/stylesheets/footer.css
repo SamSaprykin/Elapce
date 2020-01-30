@@ -209,8 +209,11 @@ body {
     color: #FFFFFF;
 }
 
+
+
 .contact-us:hover {
     color: #FFFFFF;
+    text-decoration: none;
 }
 
 .footer-logo {
