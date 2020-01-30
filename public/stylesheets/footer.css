@@ -209,6 +209,10 @@ body {
     color: #FFFFFF;
 }
 
+.contact-us:hover {
+    color: #FFFFFF;
+}
+
 .footer-logo {
     background-image: url('./../images/elapce-logo.png');
     width:149px;

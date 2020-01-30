@@ -18,21 +18,20 @@
         <li class="item"><a href="/guides">Гид по городам</a></li>
         <li class="item"><a href="#/about-us">О нас</a></li>
         <li class="item"><a href="/contacts">Контакты</a></li>
+        <li class="item mobile"><a href="tel:+380631187452">+38 063 118 74 52</a></li>
         <li class="item icons">
             <a href=""><i class="fab fa-instagram"></i></a>
             <a href=""><i class="fab fa-facebook-f"></i></a>
             <a href=""><i class="fab fa-linkedin-in"></i></a>
         </li>
         <% if(!currentUser) { %>
-        <li class="item button-navbar">
-            <a href="/register">Регистрация</a>
+        <li class="item icon-navbar">
+            <a href="/register"><i class="fas fa-user"></i></a>
         </li>
-        <li class="item button-navbar">
-            <a href="/login">Войти</a>
-        </li>
+        
         <% } else { %>
     
-            <li  class="item profile-link"><a href="/profile">Профиль</a></li></button>
+            <li  class="item icon-navbar"><a href="/profile"><i class="fas fa-id-card"></i></a></li></button>
             <li class="item button-navbar logout">
                 <a href="/logout">Выйти</a>
             </li>

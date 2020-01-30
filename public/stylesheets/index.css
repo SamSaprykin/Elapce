@@ -763,21 +763,13 @@ a:hover {
   background-size:10px;
   position: absolute;
   top: 50%;
-  margin-top:-6px;
+  margin-top:-8.8px;
   left:85%;
 }
 
 
 
-.button-link-body:hover .bg {
-  width:12px;
-  height:20.4px;
-  margin-top:-7.7px;
-  background-size: 100%;
-  -webkit-transform: translate(90%, 0);
-      -ms-transform: translate(90%, 0);
-          transform: translate(90%, 0);
-}
+
 
   .button-link-body a {
     font-weight: bold;

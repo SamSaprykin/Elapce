@@ -1,7 +1,12 @@
 <head>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
+
+
    
     <link rel='stylesheet' href='/stylesheets/footer.css' />
     <link rel="stylesheet" href='/stylesheets/circles.css'>
@@ -48,9 +53,36 @@
             <div class='footer-mobile-wrapper'>
                 <span class="footer-mobile">+38 (066) 321 65 98</span>
             </div>
-            <button type="button" class="contact-us" data-toggle="modal" data-target="#exampleModal">Связаться</button> 
+            
+            <a class="contact-us" href="#modal-full" uk-toggle>Связаться</a> 
     </div>
-    
+    <div id="modal-full" class="uk-modal-full" uk-modal>
+        <div class="uk-modal-dialog">
+            <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+            <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+                <div class="uk-background-cover" style="background-image: url('../images/three.jpeg'); " uk-height-viewport></div>
+                <div class="uk-padding-large">
+                    <h2>Свяжитесь со мной</h2>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Имя и фамилия</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" name="name" id="form-stacked-text" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <label class="uk-form-label" for="form-stacked-text">Телефон</label>
+                        <div class="uk-form-controls">
+                            <input class="uk-input" name="mobile" id="form-stacked-text" type="text" placeholder="">
+                        </div>
+                    </div>
+                    <div class="uk-margin">
+                        <textarea class="uk-textarea" id="form-s-textarea" rows="5" placeholder="Сообщение..." name="text"></textarea>
+                    </div>
+                    <div uk-alert>Гарантируем сохранность личных данных.</div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
           <div class="modal-content">

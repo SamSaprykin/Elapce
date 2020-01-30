@@ -1,32 +1,161 @@
 <% layout('layouts/boilerplate') -%>
 <head>
 	<link rel='stylesheet' href='/stylesheets/login.css' />
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
 </head>
-<div class="col-md-6 login-form-2">
-	<form action="/register" method="POST" enctype="multipart/form-data">
-		<div>
-			<label for="username" class="labelText">Имя пользователя:</label>
-			<input type="text" id="username" name="username" placeholder="Имя пользователя" class="form-control" required>
-		</div>
-		<div>
-			<label for="password" class="labelText">Пароль:</label>
-			<input type="password" id="password" name="password" placeholder="Пароль" class="form-control" required>
-		</div>
-		<div>
-			<label for="email" class="labelText">Электронный адрес:</label>
-			<input type="email" id="email" name="email" placeholder="Электронный адрес" class="form-control" required>
-		</div>
-		<label for="email" class="labelText">Profile photo:</label>
-		<div class="input-group mb3 mt3">
-			
-			<div class="input-group-prepend">
-			  <span class="input-group-text">Загрузить</span>
-			</div>
-			<div class="custom-file">
-			  <input type="file" class="custom-file-input" id="image" name="image">
-			  <label for="image" class="custom-file-label">Выбрать файлы:</label>
-			</div>
-		</div>
-		<input type="submit" class="btnSubmit">
-	</form>
+<div class="uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade" uk-height-viewport>
+    <div class="uk-width-1-1">
+        <div class="uk-container">
+            <div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+                <div class="uk-width-1-1@m">
+                    <form class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large" action="/register" method="POST" enctype="multipart/form-data">
+                        <ul class="uk-tab uk-flex-center" uk-grid uk-switcher="animation: uk-animation-fade">
+                            <li><a href="#">Зарегистрироваться</a></li>
+                            <li><a href="#">Войти</a></li>
+                            <li class="uk-hidden">Забыли пароль?</li>
+                        </ul>
+                        <ul class="uk-switcher uk-margin">
+                            <li>
+                                <h3 class="uk-card-title uk-text-center">Зарегистрируйтесь чтобы получать привелегии</h3>
+                                
+                                    <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon" uk-icon="icon: user"></span>
+                                            <input class="uk-input uk-form-large" name="username" type="text" placeholder="Имя пользователя" required>
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                                            <input class="uk-input uk-form-large" name="email" type="text" placeholder="Электронный адрес"  required>
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                            <input class="uk-input uk-form-large" name="password" type="password" placeholder="Установите пароль"  required> 
+                                        </div>
+									</div>
+									<div class="js-upload uk-placeholder uk-text-center">
+										<span uk-icon="icon: cloud-upload"></span>
+										<span class="uk-text-middle">Загрузите фото профиля</span>
+										<div uk-form-custom>
+											<input type="file" name="image">
+											<span class="uk-link">выберите файл</span>
+										</div>
+										
+									</div>
+									<progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+                                    <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                                        <label><input class="uk-checkbox" type="checkbox"> Я согласен с Условиями использования.</label>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Войти</button>
+                                    </div>
+                                    <div class="uk-text-small uk-text-center">
+                                        Уже есть аккаунт? <a href="#" uk-switcher-item="1">Войти</a>
+                                    </div>
+                                </form>
+                            </li>
+                            <li>
+                                <h3 class="uk-card-title uk-text-center">Добро пожаловать!</h3>
+                                <form action="/login" method="POST">
+                                    <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                                            <input class="uk-input uk-form-large" type="text" name="username" placeholder="Имя пользователя"  required>
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon" uk-icon="icon: lock"></span>
+                                            <input class="uk-input uk-form-large" type="password" name="password" placeholder="Пароль" required>   
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin uk-text-right@s uk-text-center uk-text-small">
+                                        <a href="#" uk-switcher-item="2">Забыли пароль?</a>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Войти</button>
+                                    </div>
+                                    <div class="uk-text-small uk-text-center">
+                                        Еще не зарегистрированы? <a href="#" uk-switcher-item="0">Создать аккаунт</a>
+                                    </div>
+                                </form>
+                            </li>
+                            <li>
+                                <h3 class="uk-card-title uk-text-center">Забыли пароль?</h3>
+                                <p class="uk-text-center uk-width-medium@s uk-margin-auto">Введите адрес электронной почты, и мы вышлем вам ссылку для сброса пароля.</p>
+                                <form action="/forgot-password?_method=PUT" method="POST">
+                                    <div class="uk-margin">
+                                        <div class="uk-inline uk-width-1-1">
+                                            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+                                            <input class="uk-input uk-form-large" type="text" placeholder="Электронный адрес" name="email" required autofocus>
+                                        </div>
+                                    </div>
+                                    <div class="uk-margin">
+                                        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Отправить ссылку</button>
+                                    </div>
+                                    <div class="uk-text-small uk-text-center">
+                                        <a href="#" uk-switcher-item="1">Назад к странице входа</a>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
+
+
+<script>
+var bar = document.getElementById('js-progressbar');
+
+UIkit.upload('.js-upload', {
+
+	url: '',
+	multiple: true,
+
+	
+
+	loadStart: function (e) {
+		
+
+		bar.removeAttribute('hidden');
+		bar.max = e.total;
+		bar.value = e.loaded;
+	},
+
+	progress: function (e) {
+		
+
+		bar.max = e.total;
+		bar.value = e.loaded;
+	},
+
+	loadEnd: function (e) {
+		
+
+		bar.max = e.total;
+		bar.value = e.loaded;
+	},
+
+	completeAll: function () {
+		
+
+		setTimeout(function () {
+			bar.setAttribute('hidden', 'hidden');
+		}, 1000);
+
+		alert('Загрузка завершена');
+	}
+
+});
+</script>
