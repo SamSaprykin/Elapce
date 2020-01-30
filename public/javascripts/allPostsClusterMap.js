@@ -134,6 +134,7 @@ map.on('load', function() {
 
 
  var swiper = new Swiper('.swiper-container', {
+    lazy: true,
     centeredSlides: true,
     slidesPerView: 'auto',
     spaceBetween: 20,
