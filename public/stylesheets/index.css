@@ -1,3 +1,20 @@
+html {
+  /* 1 */
+  
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  /* 3 */
+  background: inherit !important;
+  
+}
+
+
+
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h4, h5, h6 {
+  font-family: "Lato-Regular" !important;
+}
+
 body {
   font-weight:500;
   font-family: "Lato-Regular";

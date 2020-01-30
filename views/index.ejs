@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="/stylesheets/index-second-section.css">
     <link rel="stylesheet" href='/stylesheets/circles.css'>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
+    
 </head>
 
 <div class="main-section">
@@ -199,18 +200,15 @@
 <script>
     mapboxgl.accessToken = "<%= mapBoxToken %>";
     var projects = { features: <%- JSON.stringify(projects) %> };
-  
-</script>
-<script src="/javascripts/allPostsClusterMap.js"></script>
-<script>
+    
     window.addEventListener('load', function() {
 	
         // setTimeout to simulate the delay from a real page load
         setTimeout(lazyLoad, 1000);
-	
+
     });
 
-   
+
 
     function lazyLoad() {
         var card_images = document.querySelectorAll('.card-image');
@@ -234,6 +232,5 @@
         });
         
     }
-
-    
 </script>
+<script src="/javascripts/allPostsClusterMap.js"></script>

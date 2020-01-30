@@ -1,6 +1,6 @@
 .shape-orange {
 	
-	background-image: url('../images/orange-circles-main.svg');
+	background-image: url('../images/orange-circles-main.svg') ;
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 140%;
@@ -36,7 +36,7 @@
 }
 
 .shape-white {
-	background-image: url('../images/white-circles-main.png');;
+	background-image: url('../images/white-circles-main.png') ;
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 180%;
@@ -60,7 +60,7 @@
 }
 
 .shape-white-project {
-	background-image: url('../images/white-circles-project-page.svg');;
+	background-image: url('../images/white-circles-project-page.svg') ;
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 100%;
@@ -77,7 +77,7 @@
 
 
 .shape-white-catalog {
-	background-image: url('../images/white-circles-main.png');;
+	background-image: url('../images/white-circles-main.png') ;
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 100%;
@@ -91,7 +91,7 @@
 
 
 .shape-white-articles {
-	background-image: url('../images/white-circles-articles.svg');;
+	background-image: url('../images/white-circles-articles.svg') ;
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 100%;
@@ -110,7 +110,7 @@
 }
 
 .shape-blue {
-	background-image: url('../images/blue-circles.svg');;
+	background-image: url('../images/blue-circles.svg') ;
 	background-size: cover;
 	width: 100%;
 	height: 100%;
@@ -120,7 +120,7 @@
 
 .shape-orange-about {
 	
-	background-image: url('../images/orange-circles-about.svg');
+	background-image: url('../images/orange-circles-about.svg') ;
 	background-repeat: no-repeat;
 	width: 100%;
 	height: 154%;

@@ -361,12 +361,3 @@ body {
     }
 }
 
-
-/* modal */
-.modal {
-    background-color:rgba(131,166,246, 0.3)  ;
-    z-index: 9999;
-}
-.modal-dialog {
-    max-width:800px;
-}
