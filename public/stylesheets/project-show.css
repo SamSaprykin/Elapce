@@ -102,7 +102,7 @@ a:hover {
 }
 
 .project-title {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'GothamPro';
     font-size: 30px;
     line-height: 130%;
     color: #4B535F;
@@ -390,7 +390,7 @@ a:hover {
 
 
 .project-price-index {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'GothamPro';
     font-size: 24px;
     line-height: 100%;
     /* identical to box height */
@@ -464,7 +464,7 @@ a:hover {
         display:block;
     }
     .project-title {
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'GothamPro';
         font-size: 60px;
         line-height: 114.9%;
         color: #4B535F;

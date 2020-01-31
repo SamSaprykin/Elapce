@@ -68,7 +68,7 @@
   font-size: 16px;
   line-height: 30px;
   /* or 150% */
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'GothamPro';
   font-weight: 400;
   text-decoration-line: underline;
   text-align: left;
@@ -90,8 +90,8 @@
 .header-title {
     font-size: 65.6106px;
     margin:0;
-    
-    font-weight: 700;
+    font-family: 'GothamPro';
+    font-weight: 500;
     line-height: 114.9%;
     color: #4B535F;
     display: none;

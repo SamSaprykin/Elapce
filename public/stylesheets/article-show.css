@@ -9,7 +9,7 @@
 .title-article {
    /* H1 */
 
-    font-family: 'Montserrat';
+    font-family: 'GothamPro';
     font-size: 30px;
     line-height: 130%;
     /* identical to box height, or 75px */
@@ -91,7 +91,7 @@
 .article-category {
     /* h2 */
     margin:71px 16px 44px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'GothamPro';
     font-size: 24px;
     line-height: 27px;
     /* identical to box height */
@@ -131,6 +131,7 @@
         margin-bottom: 26px;
         margin-top: 11px;
         /* dark */
+        padding:0;
     }
     
     .article-text {
@@ -153,6 +154,8 @@
         line-height: 36px;
         
     }
+
+   
     
     .link-all-theme:hover {
        text-decoration: none;
@@ -163,6 +166,7 @@
         flex-direction: row;
         justify-content: space-between;
         align-items: baseline;
+        margin:0;
     }
     
     .icon-artcile {
@@ -189,7 +193,7 @@
     .article-category {
        
         margin:71px auto 44px;
-        font-family: 'Montserrat', sans-serif;
+        font-family: 'GothamPro';
         font-size: 54px;
         line-height: 60px;
         /* identical to box height */

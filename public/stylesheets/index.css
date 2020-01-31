@@ -11,7 +11,7 @@ html {
 
 
 
-.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h1, h2, h4, h5, h6 {
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h2, h4, h5, h6 {
   font-family: "Lato-Regular" !important;
 }
 
@@ -153,8 +153,19 @@ a:hover {
   max-width:480px;
   width: 100%;
   min-height: 360px;
-  height:auto;  
+  height:auto;
+  transition: all .2s ease-in-out;  
 }
+
+
+
+.image-gallery:hover {
+  animation: scale 1s infinite;
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+
 
 
 .project-title-index {
@@ -167,7 +178,7 @@ a:hover {
     /* identical to box height, or 31px */
     color: #4B535F;
     display: inline-block;
-    border-bottom: 2px solid #4B535F;
+    
     padding-bottom: 3px;
     margin:10px 0 5px;
     
@@ -175,10 +186,10 @@ a:hover {
 
 
 .project-price-index {
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'GothamPro';
     font-size: 16px;
     line-height: 30px;
-    color: #4B535F;
+    color: #5570BA;
 }
 
 
@@ -188,14 +199,7 @@ a:hover {
   
 }
 
-.main-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 65.6106px;
-    font-weight: 700;
-    color: #4B535F;
-    margin:84px 0 54px;
-    margin-left:10px;
-}
+
 
 .project-short-info {
     font-family: 'Ubuntu', sans-serif;
@@ -231,9 +235,9 @@ a:hover {
 }
 
 .about-title {  
-  width: 155px;
+  
   height: 52px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'GothamPro';
   font-size: 24px;
   line-height: 27px;
   font-weight: bold;
@@ -405,6 +409,14 @@ a:hover {
   text-align: center;
 }
 
+.goal-image:hover {
+  cursor: pointer; 
+}
+
+.goal-text:hover {
+  cursor: pointer; 
+}
+
 
 .goal-image {
   width:395px;
@@ -413,6 +425,7 @@ a:hover {
   background-size: 100%;
   background-repeat: no-repeat;
   margin-top:16px;
+  
   background-position: center;
 }
 
@@ -488,7 +501,7 @@ a:hover {
 .news-title {  
   font-size: 24px;
   line-height: 27px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'GothamPro';
   
   font-weight: bold;
   color: #4B535F;
@@ -554,7 +567,7 @@ a:hover {
   .news-title {  
     width: 742px;
     height: 52px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'GothamPro';
     font-size: 54px;
     line-height: 52px;
     font-weight: bold;
@@ -569,13 +582,34 @@ a:hover {
     line-height: 40px;
     color: #5570BA;
     text-align: left;
-
+    
+    padding-bottom:2px;
+    
   }
+
+ 
 
   .index-articles-link:hover {
     text-decoration:none;
     color: #5570BA;
   }
+
+  .index-articles-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color:#5570BA;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s;
+ }
+  .index-articles-link:hover:after {
+    transform-origin: bottom left;
+    transform: scaleX(1);
+ }
 
   .goals-images-wrapper {
   
@@ -646,6 +680,9 @@ a:hover {
     z-index:1;  
 }
 
+.about-text {
+  margin:40px auto 0;
+}
 
 .about-info {
   font-size: 18px;
@@ -656,9 +693,9 @@ a:hover {
 }
 
 .about-title {  
-  width: 155px;
+  width: 255px;
   height: 52px;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'GothamPro';
   font-size: 54px;
   line-height: 52px;
   font-weight: bold;
