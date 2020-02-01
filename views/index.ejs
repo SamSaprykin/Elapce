@@ -1,5 +1,7 @@
 <% layout('layouts/boilerplate') -%>
 <head>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
     <link rel='stylesheet' href='/stylesheets/index.css' />
     <link rel="stylesheet" href="/stylesheets/index-first-section.css">
     <link rel="stylesheet" href="/stylesheets/index-second-section.css">
@@ -10,7 +12,8 @@
 
 	<!-- UIkit JS -->
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
+    
 </head>
 
 <div class="main-section">
@@ -257,7 +260,7 @@
 
 
 <script>
-    mapboxgl.accessToken = "<%= mapBoxToken %>";
+    
     var projects = { features: <%- JSON.stringify(projects) %> };
     
     window.addEventListener('load', function() {
@@ -320,5 +323,46 @@
         
     };
 
+    var swiperProjects = new Swiper('.swiper-container', {
+    lazy: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    navigation: {
+        nextEl: '.projects-button-next',
+        prevEl: '.projects-button-prev',
+    },
+    on: {
+        init: function () {
+          console.log(this.activeIndex +1);
+          console.log(document.getElementById("project-slide-number").textContent)
+        }
+    },
+    on: {
+        slideChange: function () {
+          var ActiveSlide = this.activeIndex +1;
+          document.getElementById("project-slide-number").textContent = ActiveSlide
+        }
+    }
+  });
+
+  var swiperArticles = new Swiper('.swiper-container-articles', {
+    lazy: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    spaceBetween: 20,
+    navigation: {
+        nextEl: '.atricles-button-next',
+        prevEl: '.atricles-button-prev',
+    },
+    on: {
+        slideChange: function () {
+          var ActiveSlide = this.activeIndex +1;
+          
+          document.getElementById("article-slide-number").textContent = ActiveSlide
+        }
+    }
+  });
+
 </script>
-<script src="/javascripts/allPostsClusterMap.js"></script>
+

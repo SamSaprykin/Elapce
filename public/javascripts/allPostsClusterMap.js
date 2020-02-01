@@ -133,52 +133,7 @@ map.on('load', function() {
  map.addControl(new mapboxgl.NavigationControl());
 
 
- var swiperProjects = new Swiper('.swiper-container', {
-    lazy: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    navigation: {
-        nextEl: '.projects-button-next',
-        prevEl: '.projects-button-prev',
-    },
-    on: {
-        init: function () {
-          console.log(this.activeIndex +1);
-          console.log(document.getElementById("project-slide-number").textContent)
-        }
-    },
-    on: {
-        slideChange: function () {
-          var ActiveSlide = this.activeIndex +1;
-          document.getElementById("project-slide-number").textContent = ActiveSlide
-        }
-    }
-  });
-
-  var swiperArticles = new Swiper('.swiper-container-articles', {
-    lazy: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    navigation: {
-        nextEl: '.atricles-button-next',
-        prevEl: '.atricles-button-prev',
-    },
-    on: {
-        init: function () {
-          console.log(this.activeIndex +1 );
-          console.log(document.getElementById("article-slide-number").textContent)
-        }
-    },
-    on: {
-        slideChange: function () {
-          var ActiveSlide = this.activeIndex +1;
-          console.log(document.getElementById("article-slide-number").textContent)
-          document.getElementById("article-slide-number").textContent = ActiveSlide
-        }
-    }
-  });
+ 
 
 
 
