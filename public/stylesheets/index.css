@@ -11,7 +11,7 @@ html {
 
 
 
-.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h2, h4, h5, h6 {
+.uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h2, h4, h6 {
   font-family: "Lato-Regular" !important;
 }
 
@@ -105,10 +105,16 @@ a:hover {
 
 
 
-.swiper-container {
+.swiper-container, .swiper-container-articles {
   width: 100%;
   height: 100%;
   padding:0 16px;
+}
+
+.swiper-container-articles {
+  overflow: hidden;
+  padding: 0;
+  z-index: 1;
 }
 
 .swiper-slide {
@@ -135,6 +141,45 @@ a:hover {
 
 }
 
+.nav-gallery-wrapper {
+  width: 321px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-gallery-wrapper i {
+  font-size:20px; 
+}
+
+.gallery-nav-slides {
+  font-family: 'GothamPro';
+  font-size: 72px;
+  
+  color: #4B535F;
+  margin-right:70px;
+}
+
+.nav-slides-small {
+  font-size: 36px;
+}
+
+
+.button-prev, .button-next {
+  width: 68px;
+  height: 68px;
+  background: #FFFFFF;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.button-prev, .button-next i {
+  color:#5570BA;
+}
 
 .swiper-slide:nth-of-type(1) {
   max-width: 410px;
@@ -164,7 +209,6 @@ a:hover {
   cursor: pointer;
   transform: scale(1.05);
 }
-
 
 
 
@@ -513,7 +557,9 @@ a:hover {
   max-width:1531px;
   height: auto;
   margin:50px auto;
-  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
 .about-text {
@@ -541,11 +587,12 @@ a:hover {
   }
 
   .project-short-info {
-    
+    font-family: 'Museo';
+    font-weight: 700;
     font-size: 20px;
     line-height: 24px;
     /* identical to box height */
-    margin-bottom: 27px;
+    margin-bottom: 18px;
     margin-top: inherit;
 }
   
@@ -845,48 +892,11 @@ a:hover {
     text-align: right;
   }
 
+
+
   
+
   
-
-  .input-submit-head {
-    background-image: linear-gradient(315.87deg, #F34B31 -11.35%, #FFA782 106.98%);
-    padding: 27px 41px 27px 40px;
-    margin:12px 11px 12px 20px;
-    color:white;
-    border:none;
-    text-transform: uppercase;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 22px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-
-  .input-text-head {
-    border:none;
-    font-style: normal;
-    font-size: 18px;
-    line-height: 22px;
-    /* identical to box height */
-    width:242px;
-    margin-left:23px;
-    height:52px;
-    color: #2F3B43;
-    background: url('../images/ellipsis.png') no-repeat;
-    
-    background-position:155px 25px ;
-  }
-
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-        color: #2F3B43;
-    }
-
-  .second {
-      background-position:65px 25px ;
-      border-left: 2px solid rgba(158, 193, 225, 0.5) ;
-      padding-left: 12px;
-  }
 
 }
 

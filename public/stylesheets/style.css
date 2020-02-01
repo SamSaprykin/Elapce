@@ -25,3 +25,10 @@ body {
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: "Museo";
+  src: url("../fonts/MuseoSansCyrl-100.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}

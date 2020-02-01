@@ -5,7 +5,12 @@
     <link rel="stylesheet" href="/stylesheets/index-second-section.css">
     <link rel="stylesheet" href='/stylesheets/circles.css'>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu&display=swap" rel="stylesheet">
-    
+    <!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
 </head>
 
 <div class="main-section">
@@ -20,8 +25,47 @@
       </p>
       <form action="/projects" method="GET">
         <div class="input-group"> 
-            <input type="text" class="input-text-head" placeholder="Местоположение" name="search" id="">
-            <input type="number" id="max" name="price[max]" min="0" max="10000000" step="500" placeholder="Цена до" class="input-text-head" >
+            
+            <button class="input-text-head second" id="input-location" type="button">
+					Местоположение
+			</button>
+			<div uk-dropdown="mode: click;animation: uk-animation-slide-top-small;pos: bottom-left" class="location-dropdown">
+				<ul class="uk-nav uk-dropdown-nav">
+					<div class="uk-margin">
+							<input class="search-location"  type="search" placeholder="Искать..." id="location" name="location">
+					</div>
+					<ul class="list-variants">
+						<li data-country="Испания, Аликанте" class="data-location">Испания, Аликанте</li>
+						<li data-country="Польша, Варшава" class="data-location">Польша, Варшава</li>
+						<li data-country="Таиланд, Пхукет" class="data-location">Таиланд, Пхукет</li>
+						<li data-country="Турция, Аланья" class="data-location">Турция, Аланья</li>
+						<li data-country="Эстония, Таллин" class="data-location">Эстония, Таллин</li>
+						<li data-country="Венгрия,Будапешт" class="data-location">Венгрия,Будапешт</li>
+					</ul>
+				</ul>
+				
+			</div>
+            <button class="input-text-head second" id="input-price" type="button">
+					Цена
+			</button>
+			<div uk-dropdown="mode: click;animation: uk-animation-slide-top-small;pos: bottom-left" class="price-dropdown">
+				<ul class="uk-nav uk-dropdown-nav">
+					<div class="uk-margin">
+						<div class="wrapper-price-inputs">
+							<input type="number" id="price-min" class="input-price" name="price[min]" min="0" max="1000000" step="1000" placeholder="от">
+							<input type="number" id="price-max" class="input-price" name="price[max]" min="0" max="10000000" step="1000" placeholder="до">
+							<button class="price-button"></button>
+						</div>	
+					</div>
+					<ul class="list-variants">
+						<li data-priceMin="0" data-priceMax="50000" class="data-price">до 50 000</li>
+						<li data-priceMin="50000" data-priceMax="100000" class="data-price">50 000 - 100 000</li>
+						<li data-priceMin="100000" data-priceMax="150000" class="data-price">100 000 - 150 000</li>
+						<li data-priceMin="150000" data-priceMax="250000" class="data-price">150 000 - 250 000</li>
+						<li data-priceMin="250000" data-priceMax="5000000" class="data-price">более 250 000</li></ul>
+				</ul>
+				
+			</div>
             <input type="submit" value="искать" class="input-submit-head">
         </div>
       </form>
@@ -93,8 +137,15 @@
             
     </div>
     <div class="new-objects-catalog">
+        <div class="nav-gallery-wrapper">
+            <span class="gallery-nav-slides"><span id="project-slide-number">1</span><span class="nav-slides-small">/<%= projectSwiper.length %></span></span>
+            <div class="button-prev projects-button-prev"><i class="fas fa-chevron-left"></i></div> 
+            <div class="button-next projects-button-next"><i class="fas fa-chevron-right"></i></div>
+        </div>
+        
         <span  class="button-link-body"><a href="/projects">Каталог </a> <span class="bg"></span> </span>
-          
+        
+        
     </div>        
 </div>
 <div class="about-section">
@@ -171,7 +222,7 @@
     </div>
     
 </div>
-<div class="swiper-container" style="margin-bottom: 1rem;">
+<div class="swiper-container-articles" style="margin-bottom: 1rem;">
     <h3 class="news-title">Новости и статьи </h3>
     <div class="swiper-wrapper"> 
             <% articlesMain.forEach(function(article){ %>
@@ -192,6 +243,11 @@
             
     </div>
     <div class="new-objects-catalog">
+        <div class="nav-gallery-wrapper">
+            <span class="gallery-nav-slides"><span id="article-slide-number">1</span><span class="nav-slides-small">/<%= articlesMain.length %></span></span>
+            <div class="button-prev atricles-button-prev"><i class="fas fa-chevron-left"></i></div> 
+            <div class="button-next atricles-button-next"><i class="fas fa-chevron-right"></i></div>
+        </div>
         <span  class="button-link-body"><a href="/articles">Все новости</a> <span class="bg"></span> </span>  
     </div>        
 </div>
@@ -211,6 +267,34 @@
 
     });
 
+    $('.data-location').on('click', function(e) {
+			e.preventDefault();
+			document.getElementById('location').value = $(this)[0].dataset.country;
+			if(document.getElementById('location').value.length) {
+				document.getElementById('input-location').textContent = document.getElementById('location').value;
+			}
+			
+			
+    });
+
+    $('.price-button').on('click', function(e){
+			e.preventDefault();
+			UIkit.dropdown($('.uk-dropdown')[1]).hide();
+			var inputsPrice = $('.input-price')
+			var priceButton = document.getElementById('input-price')
+			
+			var valueOne = inputsPrice[0].value.toString()
+			var valueTwo = inputsPrice[1].value.toString()
+			
+			priceButton.textContent = "".concat(valueOne, " - ").concat(valueTwo);
+    })
+
+    $('.data-price').on('click', function(e) {
+			e.preventDefault();
+			document.getElementById('price-max').value = $(this)[0].dataset.pricemax;
+			document.getElementById('price-min').value = $(this)[0].dataset.pricemin;
+			
+    });
 
 
     function lazyLoad() {
@@ -234,6 +318,7 @@
             
         });
         
-    }
+    };
+
 </script>
 <script src="/javascripts/allPostsClusterMap.js"></script>

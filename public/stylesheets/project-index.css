@@ -51,10 +51,7 @@ a:hover {
     /* identical to box height, or 31px */
     color: #4B535F;
     display: inline-block;
-    border-bottom: 2px solid #4B535F;
-    padding-bottom: 3px;
     margin-top:10px;
-    
 }
 
 
@@ -80,7 +77,8 @@ a:hover {
 }
 
 .project-short-info {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'Museo';
+    font-weight:700;
     font-size: 14px;
     line-height: 17px;
     /* identical to box height */
@@ -104,13 +102,20 @@ a:hover {
     .title-image {
         height:352px;
         max-width:485px;
-        padding:0;   
+        padding:0;
+        transition: all .2s ease-in-out;    
     }
+    .title-image:hover {
+        animation: scale 1s infinite;
+        cursor: pointer;
+        transform: scale(1.05);
+      }
     
     .project-title-index {
         font-size: 24px;
         margin-left:0;
         margin-top:28px;
+        margin-bottom: 9px;
     }
     
     
@@ -133,7 +138,7 @@ a:hover {
         font-size: 20px;
         line-height: 24px;
         margin-left:0;
-        margin-bottom: 27px;
+        margin-bottom: 18px;
         margin-top: inherit;
     }
 
