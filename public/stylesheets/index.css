@@ -21,6 +21,11 @@ body {
 
 }
 
+.input-submit-head:focus {     
+  outline: none !important;
+  border: none;
+}
+
 a:hover {
   text-decoration: none !important;
 }

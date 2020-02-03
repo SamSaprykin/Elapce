@@ -65,6 +65,10 @@ a:hover {
     
 }
 
+.project-price-index div:hover {
+    color: #5570BA;
+}
+
 
 
 .main-title {

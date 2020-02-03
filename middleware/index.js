@@ -145,7 +145,6 @@ const middleware = {
 					
 					var poly = bboxPolygon.default(bbox);
 					coordinates = poly.geometry.coordinates;
-					console.log(coordinates)
 				} 
 				// geocode the location to extract geo-coordinates (lat, lng)
 				

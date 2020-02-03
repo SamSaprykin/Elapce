@@ -18,18 +18,7 @@
     
 }
 
-.map-position-title {
-    font-family: "Lato-Regular";
 
-    
-    font-size: 28px;
-    line-height: 42px;
-    /* or 150% */
-
-    margin-bottom: 33px;
-    margin-top:0;
-    color: #4B535F;
-} 
 
 .city-link {
     display: inline-block;

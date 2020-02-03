@@ -42,10 +42,7 @@ ul {
     color: #4B535F;
 }
 
-.button-navbar a:hover {
-    text-decoration: none;
-    color:white;
-}
+
 
 
 
@@ -62,15 +59,6 @@ ul {
 }
 
 
-.button-navbar {
-    order: 2;
-    margin:0 10px;
-    background: #4B535F;
-    border-radius: 5px;
-    
-    border: none;
-    
-}
 
 .item.mobile {
     margin-left:0;
@@ -78,18 +66,6 @@ ul {
 }
 
 
-
-.button-navbar a {
-    font-family: "Lato-Regular";
-    color: #FFFFFF;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-    text-decoration: none;
-    text-transform: uppercase;
-    display: block;
-    font-weight: 500;
-}
 
 .item.button-navbar {
     padding:14px 23px;
@@ -115,15 +91,8 @@ ul {
 .toggle {
     order: 1;
 }
-.item.button-navbar {
-    order: 4;
-    
-}
 
-.button-navbar.list-item-navbar {
-    order: 2;
-    
-}
+
 .item {
     width: 100%;
     text-align: center;
@@ -140,10 +109,7 @@ ul {
     display: block;
 }
 
-.button-navbar.item {
-    min-width:80px;
-    margin:10px 30px;
-}
+
 
 .toggle a {
     color:#4B535F;
@@ -175,22 +141,13 @@ ul {
         display: block;
         
     }
-    
-    .button.secondary {
-        border: 0;
-    }
+  
     .button a {
         padding: 7.5px 15px;
         
     }
     .item {
         margin:5px 0;
-    }
-    
-    .button-navbar.item {
-        margin:10px 200px;
-        
-        min-width:200px;
     }
     
 
@@ -213,13 +170,11 @@ ul {
         padding:0;
     }
     
-    .button-navbar {
-        order: 2;
-    }
-
-    .profile-link {
+  
+    .logout {
         order:3;
     }
+
     
     .icon-navbar {
         order:3;
@@ -248,9 +203,7 @@ ul {
         margin:0 5vw;
     }
 
-    .button-navbar.item {
-        margin:10px 20px;     
-    }
+
 }
 
 
@@ -262,11 +215,6 @@ ul {
 
 @media (max-width: 1500px) {
   
-
-    .item.button-navbar {
-        padding:20px 17px;
-        
-    }
 
     li.item {
         margin:0;
@@ -296,9 +244,6 @@ ul {
 }
 
 @media (max-width:1000px) {
-    .item.button-navbar {
-        margin:10px;
-    }
 
     .item.mobile {
         margin-left:0;

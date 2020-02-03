@@ -115,10 +115,7 @@ fieldset {
 }
 
 
-.checkbox:checked {
-  background-position: 0 0;
-  background-color: #ddd;
-}
+
 
 .category-filter {
     max-width:1300px;

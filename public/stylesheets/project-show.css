@@ -215,10 +215,6 @@ a:hover {
     margin-top:30px;
 }
 
-.column-info {
-    display: flex;
-    flex-direction: column;
-}
 
 
 .input-submit-head {
@@ -578,10 +574,7 @@ a:hover {
         
     }
 
-    .review-wrapper {
-        margin:0 16px;
-    }
-
+    
     .review-body, .create-review  {
         margin-left:0;
         margin-bottom: 30px;

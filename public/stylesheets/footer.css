@@ -344,14 +344,7 @@ body {
 
     .footer-mobile {
         color:white !important;
-    }
-
-    button.contact-us {
-        padding:16px 99px;
-        font-size: 14px;
-    }
-
-    
+    }    
 }
 
 @media (max-width: 1280px) {
@@ -360,4 +353,3 @@ body {
         display: none;
     }
 }
-

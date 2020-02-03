@@ -10,6 +10,13 @@ body {
   font:12px/20px 'Helvetica Neue', 'Arial', sans-serif
 }
 
+
+input[type=submit] {
+  cursor: pointer;
+}
+
+
+
 @font-face {
   font-family: "Lato-Regular";  
   src: url("../fonts/Lato-Regular.woff2") format("woff2"); /* Modern Browsers */
