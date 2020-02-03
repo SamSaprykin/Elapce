@@ -13,7 +13,7 @@
 	<!-- UIkit JS -->
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cloudinary-core/2.8.0/cloudinary-core-shrinkwrap.min.js"></script>
 </head>
 
 <div class="main-section">
@@ -127,7 +127,10 @@
                         <div class="swiper-slide" style="background-color: transparent;">
                             <a href="/projects/<%= project.id %>"><img class="title-image image-gallery swiper-lazy"
                                 src="<%= project.images[0].url %>"
-                                alt="<%= project.title %>"></a>       
+                                alt="<%= project.title %>"
+                                class="cld-responsive"
+                                style="width:485px"
+                            ></a>       
                             <h2 class="project-title-index"><%= project.title %></h2>
                             <h5 class="project-short-info">  <%= project.area %> м2 | <%= project.bedrooms %> спальни</h5>
                             <a class="project-price-index" href="/projects/<%= project.id %>"><div><%= project.price %>$</div></a>      
@@ -333,12 +336,7 @@
         nextEl: '.projects-button-next',
         prevEl: '.projects-button-prev',
     },
-    on: {
-        init: function () {
-          console.log(this.activeIndex +1);
-          console.log(document.getElementById("project-slide-number").textContent)
-        }
-    },
+    
     on: {
         slideChange: function () {
           var ActiveSlide = this.activeIndex +1;
@@ -365,6 +363,10 @@
         }
     }
   });
+
+  var cl = cloudinary.Cloudinary.new({cloud_name: "demo"}); 
+    // replace 'demo' with your cloud name in the line above 
+    cl.responsive();
 
 </script>
 

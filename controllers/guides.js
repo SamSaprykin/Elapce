@@ -133,7 +133,7 @@ module.exports = {
             await cloudinary.v2.uploader.destroy(image.public_id); 
         }
         await guide.remove();
-        req.session.success = 'Гид была успешно удалена'
+        req.session.success = 'Гид была успешно удален'
         res.redirect('/guides');
     }
 	
