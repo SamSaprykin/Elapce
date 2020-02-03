@@ -41,7 +41,7 @@ module.exports = {
             limit:1
         })
         .send();
-        console.log(response.body.features[0].geometry)
+        
         req.body.geometry = response.body.features[0].geometry;
         req.body.author =  req.user._id;
         req.body.creationDate =  moment().format("YYYY-MM-DD").toString();
@@ -126,6 +126,15 @@ module.exports = {
         res.redirect(`/guides/${guide.id}`);
     },  
     
-    
+    async guideDestroy(req, res, next) {
+
+        const { guide } = res.locals;
+        for(const image of guide.images) {
+            await cloudinary.v2.uploader.destroy(image.public_id); 
+        }
+        await guide.remove();
+        req.session.success = 'Гид была успешно удалена'
+        res.redirect('/guides');
+    }
 	
 }
