@@ -251,7 +251,7 @@ a:hover {
 
 
 .project-short-info {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'GothamPro';
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
@@ -518,7 +518,7 @@ a:hover {
 
 
 .centered-text {
-  font-family: 'Ubuntu', sans-serif;
+  font-family: 'GothamPro';
   font-weight:bold;
   
   font-size: 16px;
