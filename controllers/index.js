@@ -15,7 +15,7 @@ module.exports = {
 		const projectSwiper = await Project.find({}).limit( 9 );
 		const articlesMain = await Article.find({}).limit(7);
 		
-		res.render('index', { projects,projectSwiper,articlesMain, mapBoxToken , title: 'Elapce главная страница' })
+		res.render('index', { projects,projectSwiper,articlesMain, mapBoxToken , title: 'Elapce главная страница',image: cloudinary.image, image_url: cloudinary.url })
 		
     },
     // get register

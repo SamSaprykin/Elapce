@@ -8,6 +8,7 @@ cloudinary.config({
 });
 
 
+
 const cloudinaryStorage = require('multer-storage-cloudinary');
 const storage = cloudinaryStorage({
     cloudinary,
@@ -20,8 +21,9 @@ const storage = cloudinaryStorage({
         uniqFileName += buf;
       cb(undefined, uniqFileName );
     }
-    
   });
+
+  
   
   module.exports = {
       cloudinary,

@@ -53,6 +53,7 @@
 
 .link-all-theme:hover {
    text-decoration: none;
+   color: #5570BA;
 }
 
 .wrapper-link-icons {
@@ -117,6 +118,60 @@
     opacity: 0.7;
 }
 
+.article-author-wrapper {
+    display:flex;
+    max-width:800px;
+    flex-direction: row;
+    margin:0 auto;
+    padding: 2.5rem 0;
+    align-items: center;
+    justify-content: space-around;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    
+}
+
+.author-content {
+    width:66%;    
+}
+
+
+.author-icon {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.article-author-title {
+    font-family: 'Museo';
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 18px;
+    margin-bottom:0;
+    text-transform: uppercase;
+}
+
+.article-author-name {
+    font-family: 'Lato-Regular';
+    font-size: 18px;
+    margin-left: 0;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+.link-all-author {
+    font-family: "Lato-Regular";    
+    margin-bottom:17px;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 16px;
+    color: #5570BA;
+}
+
+.link-all-author:hover {
+   text-decoration: none;
+   color: #5570BA;
+}
 
 
 @media all and (min-width: 900px) {
@@ -217,6 +272,43 @@
         color: #000000;
     
         opacity: 0.7;
+    }
+
+    .article-author-wrapper {
+        
+        justify-content: space-between;
+       
+    
+    }
+
+    .author-content {
+        width:80%;    
+    }
+
+    .author-icon {
+        width: 120px;
+        height: 120px;
+    
+    }
+
+    .article-author-title {
+
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        
+    }
+    
+    .article-author-name {
+        font-size: 28px;
+        margin-top: 12px;
+        margin-bottom: 9px;
+    }
+    
+    .link-all-author {   
+        margin-bottom:17px;
+        font-size: 18px;
+        line-height: 20px;
     }
     
 }

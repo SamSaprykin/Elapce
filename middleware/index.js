@@ -292,7 +292,7 @@ const middleware = {
 			
 			const dbQueries = [];
 			
-			let { search, category } = req.query;
+			let { search, category, author } = req.query;
 
 
 			if (search) { 
@@ -306,16 +306,24 @@ const middleware = {
 			if (category) {
 				dbQueries.push({ category: { $in: category } });
 			}
+
+			if (author) {
+				dbQueries.push({ author: { $in: author }})
+			}
 			
 			res.locals.dbQuery = dbQueries.length ? { $and: dbQueries } : {};
 
-			const defaultKeys = ['search', 'category'];		
+			const defaultKeys = ['search', 'category', 'author'];		
 				defaultKeys.forEach(key => {
 					if (!queryKeys.includes(key)) {
 						
 						if (key === 'category') { 
 							req.query[key] = [];
-						} 
+						}
+						
+						if (key === 'author') {
+							req.query[author] = [];
+						}
 					}
 				});
 				

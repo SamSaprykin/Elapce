@@ -37,13 +37,15 @@ module.exports = {
     // Project Create
     async projectCreate(req, res, next) {
         // use req.body to create new project
-        req.body.project.images = []; 
+        req.body.project.images = [];
+    
         for(const file of req.files) {
-			
+			console.log(file)
 			req.body.project.images.push({
-				url: file.secure_url,
-				public_id: file.public_id
-			});
+                url: file.secure_url,
+                public_id: file.public_id
+            });
+            
         }
         
         let response = await geocodingClient
@@ -61,6 +63,7 @@ module.exports = {
 		await project.save();
         req.session.success = 'Проект успешно создан'
 		res.redirect(`/projects/${project.id}`);
+        
         
     },
     async projectShow(req, res, next) {
@@ -102,7 +105,6 @@ module.exports = {
 
         if(req.files) {
             for(const file of req.files) {
-                
                 project.images.push({
                     url: file.secure_url,
                     public_id: file.public_id

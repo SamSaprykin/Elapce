@@ -16,7 +16,8 @@ const ProjectSchema = new Schema ({
     }],
     images: [{
         url:String,
-        public_id:String
+        public_id:String,
+        eager_url:String
     }],
     location: String,
     geometry: {

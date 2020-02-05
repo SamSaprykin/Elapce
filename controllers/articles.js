@@ -1,4 +1,5 @@
 const Article = require('../models/article');
+const User = require('../models/user')
 const moment = require('moment');
 const { cloudinary } = require('../cloudinary');
 const showdown  = require('showdown');
@@ -60,8 +61,9 @@ module.exports = {
     },
     async articleShow(req, res, next) {
         let article = await Article.findById(req.params.id);
-        
-        res.render('articles/show', {article})
+        const user_author = article.author;
+        const user = await User.findOne({ _id:user_author });
+        res.render('articles/show', {article, user})
     },
     async articleEdit(req, res, next) {
         let article = await Article.findById(req.params.id);

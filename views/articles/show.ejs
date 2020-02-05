@@ -38,6 +38,18 @@
         </form>
         </div>
     <% } %>
+
+    <div class="article-author-wrapper">
+        <img src="<%= user.image.secure_url %>" alt="<%= user.username %>" class="author-icon">
+        <div class="author-content">
+            <p class="article-author-title">автор статьи</p>
+            <h5 class="article-author-name"><%= user.username %></h5>
+            <a href="http://localhost:3000/articles?search=&author=<%= user._id %>" class="link-all-author">посмотреть все статьи автора</a>
+            <span></span>
+        </div>
+        
+    </div>
+
 </div>
 
 

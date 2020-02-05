@@ -21,8 +21,13 @@ nav {
     font-size:0;
 }
 
+.hide-link {
+    font-size: 0 !important;
+}
+
 ul {
     list-style-type: none;
+    
 }
 
 .item a {
@@ -87,6 +92,7 @@ ul {
     align-items: center;
     padding-top: 17px;
     margin-bottom: 30px;
+    padding-left:8px;
 }
 .toggle {
     order: 1;
