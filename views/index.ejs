@@ -13,7 +13,7 @@
 	<!-- UIkit JS -->
 	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
-    <script src="//widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    
 </head>
 
 <div class="main-section">
@@ -126,10 +126,11 @@
                 
                         <div class="swiper-slide" style="background-color: transparent;">
                             <a href="/projects/<%= project.id %>"><img class="title-image image-gallery swiper-lazy"
-                                src="<%= image_url(project.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
+                                data-src="<%= image_url(project.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
                                 alt="<%= project.title %>"
                                 
-                            ></a>
+                            >
+                            </a>
                             <h2 class="project-title-index"><%= project.title %></h2>
                             <h5 class="project-short-info">  <%= project.area %> м2 | <%= project.bedrooms %> спальни</h5>
                             <a class="project-price-index" href="/projects/<%= project.id %>"><div><%= project.price %>$</div></a>      
@@ -236,7 +237,7 @@
                     
                         <div class="swiper-slide" style="background-color: transparent;">
                             <a href="/articles/<%= article.id %>"><img class="title-image image-gallery swiper-lazy"
-                                src="<%= image_url(article.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
+                                data-src="<%= image_url(article.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
                                 
                                 alt="<%= article.title %>"></a>       
                             <a class="project-price-index" href="/articles/<%= article.id %>"><div class="index-articles-link"><%= article.title %></div></a>      
@@ -263,6 +264,48 @@
 
 
 <script>
+    var swiperProjects = new Swiper('.swiper-container', {
+        lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 3
+        },
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.projects-button-next',
+            prevEl: '.projects-button-prev',
+        },
+        
+        on: {
+            slideChange: function () {
+            var ActiveSlide = this.activeIndex +1;
+            document.getElementById("project-slide-number").textContent = ActiveSlide
+            }
+        }
+    });
+
+    var swiperArticles = new Swiper('.swiper-container-articles', {
+        lazy: {
+            loadPrevNext: true,
+            loadPrevNextAmount: 3
+        }, 
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.atricles-button-next',
+            prevEl: '.atricles-button-prev',
+        },
+        on: {
+            slideChange: function () {
+            var ActiveSlide = this.activeIndex +1;
+            
+            document.getElementById("article-slide-number").textContent = ActiveSlide
+            }
+        }
+    });
+
     
     var projects = { features: <%- JSON.stringify(projects) %> };
     
@@ -327,44 +370,7 @@
         
     };
 
-    var swiperProjects = new Swiper('.swiper-container', {
-    preloadImages: false,
-    lazy: true,
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    navigation: {
-        nextEl: '.projects-button-next',
-        prevEl: '.projects-button-prev',
-    },
     
-    on: {
-        slideChange: function () {
-          var ActiveSlide = this.activeIndex +1;
-          document.getElementById("project-slide-number").textContent = ActiveSlide
-        }
-    }
-  });
-
-  var swiperArticles = new Swiper('.swiper-container-articles', {
-    preloadImages: false,
-    lazy: true,   
-    centeredSlides: true,
-    slidesPerView: 'auto',
-    spaceBetween: 20,
-    navigation: {
-        nextEl: '.atricles-button-next',
-        prevEl: '.atricles-button-prev',
-    },
-    on: {
-        slideChange: function () {
-          var ActiveSlide = this.activeIndex +1;
-          
-          document.getElementById("article-slide-number").textContent = ActiveSlide
-        }
-    }
-  });
-
  
     
 
