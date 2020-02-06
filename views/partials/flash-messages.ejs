@@ -1,25 +1,27 @@
+<head>
+    <link rel="stylesheet" href="/stylesheets/alerts.css">
+</head>
+
 <% if(success && success.length) { %>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <h3 class="alert alert-success" role="alert">
-                    <%= success %>
-                </h3>
-            </div>
-        </div>
+    <div class="alert success-alert">
+        <h3 class="alert-header"><%= success %></h3>
+        <a class="close">&times;</a>
     </div>
+    
 <% } %>
 
 <% if(error && error.length) { %>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm">
-                <h3 class="alert alert-warning" role="alert">
-                    <%= error %>
-                </h3>
-            </div>
-        </div>
-    </div>
+    <div class="alert warning-alert">
+        <h3 class="alert-header"><%= error %></h3>
+        <a class="close">&times;</a>
+      </div>
 <% } %>
 
 
+<script>
+    $(".close").click(function() {
+        $(this)
+            .parent(".alert")
+            .fadeOut();
+    });
+</script>

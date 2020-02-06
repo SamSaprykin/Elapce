@@ -78,7 +78,7 @@ module.exports = {
         res.render('contacts', {title: 'Контакты'})
     },
     async getProfile(req,res,next) {
-        res.render('profile', {title: 'Profile page'})
+        res.render('profile', {title: 'Страница профиля'})
     },
     async updateProfile(req, res, next) {
 		const {

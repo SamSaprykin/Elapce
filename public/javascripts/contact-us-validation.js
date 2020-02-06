@@ -13,11 +13,11 @@ userName.addEventListener('input', e => {
 	e.preventDefault();
 	console.log('input')
 	if (userName.value.length < 3 ) {
-        validateInputs('Введите корректное имя', 'alert-warning', 'green');
+        validateInputs('Введите корректное имя', 'alert', 'green');
         submitBtn.setAttribute('disabled', true)
         userMobile.setAttribute('disabled', true)
 	} else {
-		validateInputs('','green', 'alert-warning');
+		validateInputs('','green', 'alert');
         submitBtn.removeAttribute('disabled')
         userMobile.removeAttribute('disabled')
 	}
@@ -29,14 +29,14 @@ userMobile.addEventListener('input', e => {
     
     if(userMobile.value.match(/^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$/))
     {
-        validateInputs('','green', 'alert-warning');
+        validateInputs('','green', 'alert');
         
         submitBtn.removeAttribute('disabled')
         userName.removeAttribute('disabled')
     }
     else
     {
-        validateInputs('Введите корректный номер телефона!!!', 'alert-warning', 'green');
+        validateInputs('Введите корректный номер телефона', 'alert', 'green');
         submitBtn.setAttribute('disabled', true)
         userName.setAttribute('disabled', true)   
     }

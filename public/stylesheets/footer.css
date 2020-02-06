@@ -4,7 +4,9 @@ body {
 }
 
 
-
+#validation-message {
+    box-shadow: none !important;
+}
 
 .footer-wrapper-form {
     width: 100%;

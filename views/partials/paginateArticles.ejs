@@ -4,46 +4,40 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
 
+
+
 <div class="pagination-wrapper">
-    <div class="pagination">
-        <ul class="pagination text-center">
-            <% if(articles.page - 1) { %>
-                <li class="page-item"><a class="page-link" href="/articles?page=<%= articles.page - 1 %>">Prev</a></li>
-            <% } %>
-            <% if(articles.page > 9) { %>
-                <li class="page-item"><a class="page-link" href="/articles?page=1">1</a></li>
-            <% } %>   
-            <% var i = ((articles.page) > 2 ? articles.page - 2 : 1) %>
-            <% if (i !== 1) { %>
-                <li class="page-item"><a class="page-link">...</a></li>
-            <% } %>
-            <% if(articles.pages> 1 && articles.docs.length) { %>
-                <% for (; i <= (articles.page + 2) && i <= articles.pages; i++) { %>
-                    <% if (i == articles.page) { %>
-                        <li class="page-item"><a class="page-link"><%= i %></a></li>
-                    <% } else { %>
-                        <li class="page-item"><a class="page-link" href="/articles?page=<%= i %>"
-                            <%= i === articles.page ? 'style=color:#000;' : '' %>
-                            
-                        ><%= i %></a></li>
-                    <% } %>
-                    <% if (i == articles.page + 2 && i < articles.pages) { %>
-                        <li class="page-item"><a class="page-link">...</a></li>
-                    <% } %>
+    <ul class="uk-pagination" uk-margin>
+        <% if(articles.page - 1) { %>
+            <li class="list-wrapper "><a class="arrow-prevnext" href="/articles?page=<%= articles.page - 1 %>"><span uk-pagination-previous></span></a></li>
+        <% } %>
+        <% if(articles.page > 9) { %>
+            <li class="list-wrapper"><a  href="/articles?page=1">1</a></li>
+        <% } %>   
+        <% var i = ((articles.page) > 2 ? articles.page - 2 : 1) %>
+        <% if (i !== 1) { %>
+            <li class="list-wrapper"><a >...</a></li>
+        <% } %>
+        <% if(articles.pages> 1 && articles.docs.length) { %>
+            <% for (; i <= (articles.page + 2) && i <= articles.pages; i++) { %>
+                <% if (i == articles.page) { %>
+                    <li class="list-wrapper"><a ><%= i %></a></li>
+                <% } else { %>
+                    <li class="list-wrapper"><a  href="/articles?page=<%= i %>"
+                        <%= i === articles.page ? 'style=color:#000;' : '' %>
+                        
+                    ><%= i %></a></li>
+                <% } %>
+                <% if (i == articles.page + 2 && i < articles.pages) { %>
+                    <li class="list-wrapper"><a >...</a></li>
                 <% } %>
             <% } %>
-            <% if((articles.page + 1) <= articles.pages) { %>
-                <li class="page-item"><a class="page-link" href="/articles?page=<%= articles.page + 1 %>">Next</a></li>
-            <% } %>
-    
             
-        </ul>
+        <% } %>
+        <% if((articles.page + 1) <= articles.pages) { %>
+            <li class="list-wrapper"><a class="arrow-prevnext"  href="/articles?page=<%= articles.page + 1 %>"><span uk-pagination-next></span></a></li>
+        <% } %>
 
         
-    </div>
-
-    <div class="alert alert-light" role="alert">
-        <%= articles.length %>
-        Страница <%= articles.page %> из <%= articles.pages %>.
-    </div>
+    </ul>
 </div>

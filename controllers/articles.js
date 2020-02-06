@@ -15,7 +15,7 @@ module.exports = {
         delete res.locals.dbQuery 
         let articles = await Article.paginate(dbQuery, {
             page: req.query.page || 1,
-            limit:16,
+            limit:12,
             sort: {'_id': -1}
         });
         
