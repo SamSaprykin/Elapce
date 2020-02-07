@@ -259,3 +259,9 @@ ul {
         display: none;
     }
 }
+
+@media (max-width:1460px) and (min-width:700px) {
+    .menu {
+        justify-content: space-evenly;
+    }
+}

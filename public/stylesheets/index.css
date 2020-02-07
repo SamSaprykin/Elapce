@@ -118,7 +118,7 @@ a:hover {
 
 .swiper-container-articles {
   overflow: hidden;
-  padding: 0;
+  padding: 0 16px;
   z-index: 1;
 }
 
@@ -147,11 +147,7 @@ a:hover {
 }
 
 .nav-gallery-wrapper {
-  width: 321px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+  display: none;
 }
 
 .nav-gallery-wrapper i {
@@ -238,7 +234,8 @@ a:hover {
     font-family: 'GothamPro';
     font-size: 16px;
     line-height: 30px;
-    color: #5570BA;
+    
+    color: #4B535F;
 }
 
 
@@ -257,7 +254,7 @@ a:hover {
     line-height: 17px;
     /* identical to box height */
     margin-bottom: 7.5px;
-
+    margin-top: 0;
     color: #4B535F;
     text-align: left;
     opacity: 0.6;
@@ -561,10 +558,13 @@ a:hover {
 .new-objects-catalog {
   max-width:1531px;
   height: auto;
-  margin:50px auto;
+  margin:40px auto 71px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  
+
 }
 
 .about-text {
@@ -573,6 +573,13 @@ a:hover {
 
 @media all and (min-width: 900px) { 
     
+  .nav-gallery-wrapper {
+    width: 321px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
 
   .image-gallery {  
     object-fit: cover;
@@ -581,6 +588,7 @@ a:hover {
   }
 
     .project-price-index {
+      color: #5570BA;
       font-size: 28px;
       line-height: 27px;
       /* identical to box height */
@@ -898,7 +906,11 @@ a:hover {
   }
 
 
-
+  .swiper-container-articles {
+    
+    padding: 0 ;
+    
+  }
   
 
   
@@ -913,11 +925,13 @@ a:hover {
   
   .button-link-body {
     padding:0;
+    width: 100%;
   }
   
   .button-link-body a {
+    
     font-size: 14px;
-    padding:16px 70px;
+    padding:16px 101px;
     display: inline-block;
   }
 
@@ -933,7 +947,7 @@ a:hover {
     margin-left:130px;
   }
   .about-section {
-    margin-bottom:60px;
+    margin-bottom:220px;
   }
   .keys-about {
     max-width: 121px;
@@ -971,18 +985,17 @@ a:hover {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   
-  
+  .button-link-body {
+    
+    width: 400px;
+  }
   h3.title-second-mobile, h3.news-title, h3.about-title {
     margin:48px auto ;
     text-align: center;
     font-size:32px;
   }
 
-  h3.title-mobile {
-    margin-top:16px;
-    font-size:36px;
-    font-weight: 700;
-  }
+  
   .about-section {
     margin-bottom:58px;
   }

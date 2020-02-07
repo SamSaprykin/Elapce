@@ -127,14 +127,15 @@ body {
     align-items: center;
     height: 140px;
     max-width:235px;
-    margin:28px 0 33px;
+    margin:28px 0 28px;
+    padding-left: 0 !important;
 }
 
 
 .links-footer ul li {
     margin: 9px 0;
     display: block;
-    width:150px;
+    width:130px;
 }
 
 
