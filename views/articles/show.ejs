@@ -40,7 +40,8 @@
     <% } %>
 
     <div class="article-author-wrapper">
-        <img src="<%= user.image.secure_url %>" alt="<%= user.username %>" class="author-icon">
+        <img src="<%= image_url(user.image.public_id, {width: 160, height: 160,  crop: "fit"}) %>" alt="<%= user.username %>" class="author-icon">
+        
         <div class="author-content">
             <p class="article-author-title">автор статьи</p>
             <h5 class="article-author-name"><%= user.username %></h5>
