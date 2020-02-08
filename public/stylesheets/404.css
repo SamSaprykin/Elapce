@@ -1,6 +1,6 @@
 body {
     font-weight:500;
-    font-family: "Lato-Regular";
+    font-family: "Lato-Regular", sans-serif;
     
 }
 
@@ -28,7 +28,7 @@ a:hover {
 
 
 .not-found-title {
-    font-family: 'GothamPro';
+    font-family: 'GothamPro', sans-serif;
     font-weight: bold;
     max-width: 600px;
     margin: 0 auto 40px;

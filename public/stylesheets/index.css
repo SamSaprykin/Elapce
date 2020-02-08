@@ -12,12 +12,12 @@ html {
 
 
 .uk-h1, .uk-h2, .uk-h3, .uk-h4, .uk-h5, .uk-h6, .uk-heading-2xlarge, .uk-heading-large, .uk-heading-medium, .uk-heading-small, .uk-heading-xlarge, h2, h4, h6 {
-  font-family: "Lato-Regular" !important;
+  font-family: "Lato-Regular",sans-serif !important;
 }
 
 body {
   font-weight:500;
-  font-family: "Lato-Regular";
+  font-family: "Lato-Regular", sans-serif;
 
 }
 
@@ -155,7 +155,7 @@ a:hover {
 }
 
 .gallery-nav-slides {
-  font-family: 'GothamPro';
+  font-family: 'GothamPro', sans-serif;
   font-size: 72px;
   
   color: #4B535F;
@@ -231,10 +231,10 @@ a:hover {
 
 
 .project-price-index {
-    font-family: 'GothamPro';
+    font-family: 'GothamPro', sans-serif;
     font-size: 16px;
     line-height: 30px;
-    
+    margin-top:16px;
     color: #4B535F;
 }
 
@@ -248,7 +248,7 @@ a:hover {
 
 
 .project-short-info {
-    font-family: 'GothamPro';
+    font-family: 'GothamPro', sans-serif;
     font-weight: 500;
     font-size: 14px;
     line-height: 17px;
@@ -283,7 +283,7 @@ a:hover {
 .about-title {  
   
   height: 52px;
-  font-family: 'GothamPro';
+  font-family: 'GothamPro', sans-serif;
   font-size: 24px;
   line-height: 27px;
   font-weight: bold;
@@ -515,7 +515,7 @@ a:hover {
 
 
 .centered-text {
-  font-family: 'GothamPro';
+  font-family: 'GothamPro', sans-serif;
   font-weight:bold;
   
   font-size: 16px;
@@ -547,7 +547,7 @@ a:hover {
 .news-title {  
   font-size: 24px;
   line-height: 27px;
-  font-family: 'GothamPro';
+  font-family: 'GothamPro', sans-serif;
   
   font-weight: bold;
   color: #4B535F;
@@ -600,7 +600,7 @@ a:hover {
   }
 
   .project-short-info {
-    font-family: 'Museo';
+    font-family: 'Museo', sans-serif;
     font-weight: 700;
     font-size: 20px;
     line-height: 24px;
@@ -627,7 +627,7 @@ a:hover {
   .news-title {  
     width: 742px;
     height: 52px;
-    font-family: 'GothamPro';
+    font-family: 'GothamPro', sans-serif;
     font-size: 54px;
     line-height: 52px;
     font-weight: bold;
@@ -755,7 +755,7 @@ a:hover {
 .about-title {  
   width: 255px;
   height: 52px;
-  font-family: 'GothamPro';
+  font-family: 'GothamPro', sans-serif;
   font-size: 54px;
   line-height: 52px;
   font-weight: bold;
@@ -998,6 +998,7 @@ a:hover {
   
   .about-section {
     margin-bottom:58px;
+    justify-content: center;
   }
 
   .swiper-wrapper {

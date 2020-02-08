@@ -11,7 +11,7 @@ html {
   
 
 body {
-    font-family: "Lato-Regular";
+    font-family: "Lato-Regular",sans-serif;
 }
 
 .pagination-wrapper {

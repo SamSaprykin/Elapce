@@ -9,7 +9,7 @@
 .title-article {
    /* H1 */
 
-    font-family: 'GothamPro';
+    font-family: 'GothamPro',  sans-serif;
     font-size: 30px;
     line-height: 130%;
     /* identical to box height, or 75px */
@@ -24,7 +24,7 @@
     max-width: 766px;
     width:100%;
     display:block;
-    font-family: "Lato-Regular";
+    font-family: "Lato-Regular",  sans-serif;
     margin:0 auto;
     font-size: 14px;
     line-height: 170%;
@@ -41,7 +41,7 @@
 }
 
 .link-all-theme {
-    font-family: "Lato-Regular";    
+    font-family: "Lato-Regular",  sans-serif;    
     margin-bottom:37px;
     display: inline-block;
     font-size: 16px;
@@ -77,7 +77,7 @@
 
 
 .article-intro {
-    font-family: "Lato-Regular";
+    font-family: "Lato-Regular",  sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
@@ -92,7 +92,7 @@
 .article-category {
     /* h2 */
     margin:71px 16px 44px;
-    font-family: 'GothamPro';
+    font-family: 'GothamPro',  sans-serif;
     font-size: 24px;
     line-height: 27px;
     /* identical to box height */
@@ -107,7 +107,7 @@
     /* p_big */
     max-width: 766px;
     width:100%;
-    font-family: "Lato-Regular";
+    font-family: "Lato-Regular",  sans-serif;
     font-size: 14px;
     line-height: 170%;
     /* or 38px */
@@ -143,7 +143,7 @@
 }
 
 .article-author-title {
-    font-family: 'Museo';
+    font-family: 'Museo',  sans-serif;
     font-weight: 700;
     font-size: 16px;
     line-height: 18px;
@@ -152,7 +152,7 @@
 }
 
 .article-author-name {
-    font-family: 'Lato-Regular';
+    font-family: 'Lato-Regular',  sans-serif;
     font-size: 18px;
     margin-left: 0;
     margin-top: 8px;
@@ -160,7 +160,7 @@
 }
 
 .link-all-author {
-    font-family: "Lato-Regular";    
+    font-family: "Lato-Regular",  sans-serif;    
     margin-bottom:17px;
     display: inline-block;
     font-size: 12px;
@@ -248,7 +248,7 @@
     .article-category {
        
         margin:71px auto 44px;
-        font-family: 'GothamPro';
+        font-family: 'GothamPro',  sans-serif;
         font-size: 54px;
         line-height: 60px;
         /* identical to box height */
@@ -263,7 +263,7 @@
         /* p_big */
         max-width: 766px;
         width:100%;
-        font-family: "Lato-Regular";
+        font-family: "Lato-Regular",  sans-serif;
         font-size: 18px;
         line-height: 210%;
         /* or 38px */

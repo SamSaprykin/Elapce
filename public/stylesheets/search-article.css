@@ -23,7 +23,7 @@ fieldset {
     height:80px;
     margin:0;
     padding: 0 45px;
-    font-family: "Lato-Regular";
+    font-family: "Lato-Regular",sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -57,7 +57,7 @@ fieldset {
     color:white;
     border:none;
     text-transform: uppercase;
-    font-family: "Lato-Regular";
+    font-family: "Lato-Regular",sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -133,7 +133,7 @@ fieldset {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: "Lato-Regular";
+    font-family: "Lato-Regular",sans-serif;
     font-style: normal;
     font-weight: 600;
     text-transform: uppercase;

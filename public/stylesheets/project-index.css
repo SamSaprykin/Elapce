@@ -43,7 +43,7 @@ a:hover {
 }
 
 .project-title-index {
-    font-family: "Lato-Regular";
+    font-family: "Lato-Regular",sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 16px; 
@@ -56,7 +56,7 @@ a:hover {
 
 
 .project-price-index {
-    font-family: 'GothamPro';
+    font-family: 'GothamPro',sans-serif;
     /* identical to box height */
     color: #5570BA;
     border-radius: 12px;
@@ -72,7 +72,7 @@ a:hover {
 
 
 .main-title {
-    font-family: 'GothamPro';
+    font-family: 'GothamPro', sans-serif;
     font-size: 30px;
     line-height: 130%;
     color: #4B535F;
@@ -81,7 +81,7 @@ a:hover {
 }
 
 .project-short-info {
-    font-family: 'Museo';
+    font-family: 'Museo',sans-serif;
     font-weight:700;
     font-size: 14px;
     line-height: 17px;

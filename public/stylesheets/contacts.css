@@ -25,7 +25,7 @@
 
 
 .contact-main-info {
-    font-family: 'GothamPro';
+    font-family: 'GothamPro',  sans-serif;
     
     /* or 75px */
     font-size: 30px;
@@ -43,7 +43,7 @@
 }
 
 .contacts-title {
-    font-family: 'Ubuntu', sans-serif;
+    font-family: 'GothamPro',  sans-serif;
     font-style: normal;
     font-weight: normal;
     
@@ -56,7 +56,7 @@
 }
 
 .contacts-data {
-    font-family: "Lato-Regular";
+    font-family: "Lato-Regular", sans-serif;
     font-style: normal;
     font-weight: 600;
     /* identical to box height, or 150% */
