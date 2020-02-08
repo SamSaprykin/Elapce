@@ -354,10 +354,7 @@ input[type="search"]::-webkit-search-cancel-button  {
       cursor: pointer;
     }
     
-    
-    .uk-dropdown {
-      left:57px !important;
-    }
+   
 
   
     .input-submit-head {
