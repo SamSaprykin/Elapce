@@ -24,7 +24,7 @@ module.exports = {
             res.locals.error = "Не найдены результаты по Вашему запросу."
         }
         
-        res.render('projects/index', { projects, title: 'Список объектов', mapBoxToken })
+        res.render('projects/index', { projects, title: 'Список объектов', mapBoxToken, image: cloudinary.image, image_url: cloudinary.url })
     },
     // New Project
     projectNew(req, res, next) {
