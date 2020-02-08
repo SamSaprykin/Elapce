@@ -1,0 +1,43 @@
+
+<head>
+    <link rel='stylesheet' href='/stylesheets/pagination.css' />
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+
+
+<div class="pagination-wrapper">
+    <ul class="uk-pagination" uk-margin>
+        <% if(guides.page - 1) { %>
+            <li class="list-wrapper "><a class="arrow-prevnext" href="/guides?page=<%= guides.page - 1 %>"><span uk-pagination-previous></span></a></li>
+        <% } %>
+        <% if(guides.page > 9) { %>
+            <li class="list-wrapper"><a  href="/guides?page=1">1</a></li>
+        <% } %>   
+        <% var i = ((guides.page) > 2 ? guides.page - 2 : 1) %>
+        <% if (i !== 1) { %>
+            <li class="list-wrapper"><a >...</a></li>
+        <% } %>
+        <% if(guides.pages> 1 && guides.docs.length) { %>
+            <% for (; i <= (guides.page + 2) && i <= guides.pages; i++) { %>
+                <% if (i == guides.page) { %>
+                    <li class="list-wrapper"><a ><%= i %></a></li>
+                <% } else { %>
+                    <li class="list-wrapper"><a  href="/guides?page=<%= i %>"
+                        <%= i === guides.page ? 'style=color:#000;' : '' %>
+                        
+                    ><%= i %></a></li>
+                <% } %>
+                <% if (i == guides.page + 2 && i < guides.pages) { %>
+                    <li class="list-wrapper"><a >...</a></li>
+                <% } %>
+            <% } %>
+            
+        <% } %>
+        <% if((guides.page + 1) <= guides.pages) { %>
+            <li class="list-wrapper"><a class="arrow-prevnext"  href="/guides?page=<%= articles.page + 1 %>"><span uk-pagination-next></span></a></li>
+        <% } %>
+
+        
+    </ul>
+</div>
