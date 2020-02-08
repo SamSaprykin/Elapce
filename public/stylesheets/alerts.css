@@ -3,7 +3,7 @@
     margin-bottom: 0 !important;
 }
 .alert {
-    width: 50%;
+    width: 90%;
     margin: 20px auto;
     padding: 30px;
     position: relative;
@@ -42,4 +42,12 @@
 .warning-alert .close {
     border-color: #8a5700;
     color: #8a5700;
+}
+
+
+@media all and (min-width: 900px) { 
+    .alert {
+        width: 50%;
+        
+    }
 }
