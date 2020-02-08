@@ -11,6 +11,8 @@ a:hover {
     max-width:1535px;
     margin:0 auto;
     padding: 0 15px;
+    display: flex;
+    flex-direction: column;
 }
 
 #map {
@@ -52,6 +54,7 @@ a:hover {
     color: #4B535F;
     display: inline-block;
     margin-top:10px;
+    margin-bottom: 9px;
 }
 
 
@@ -90,7 +93,7 @@ a:hover {
     color: #4B535F;
     opacity: 0.6;
     border-radius: 5px;
-    
+    margin-top:0 !important;
 }
 
 @media all and (min-width: 900px) { 
