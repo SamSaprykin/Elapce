@@ -438,8 +438,12 @@ input[type="search"]::-webkit-search-cancel-button  {
     max-width:320px;
     margin:16px 0;
   }
+
+  .uk-dropdown {
+    left:0 !important;
+  }
   .location-dropdown {
-    width: 342px !important;
+    width: 320px !important;
     text-align: left;
     padding:0 !important;
     border-radius: 3px;
@@ -473,7 +477,7 @@ input[type="search"]::-webkit-search-cancel-button  {
   }
 
   .price-dropdown, .area-dropdown {
-    width: 355px !important;
+    width: 320px !important;
     padding:0 !important;
   }
 
