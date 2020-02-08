@@ -22,7 +22,7 @@ input[type=submit] {
   src: url("../fonts/Lato-Regular.woff2") format("woff2"); /* Modern Browsers */
   font-weight: normal;
   font-style: normal;
-       
+  font-display: swap;     
 }
 
 
@@ -31,6 +31,7 @@ input[type=submit] {
   src: url("../fonts/GothamPro-Medium.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -38,4 +39,5 @@ input[type=submit] {
   src: url("../fonts/MuseoSansCyrl-100.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
