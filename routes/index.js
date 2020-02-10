@@ -5,7 +5,6 @@ const { postRegister,
         getLogout, 
         landingPage, 
         getRegister, 
-        getLogin,
         getContacts,
         getProfile,
         updateProfile,
@@ -38,8 +37,6 @@ router.get('/register', getRegister);
 
 
 
-/* GET login */
-router.get('/login', getLogin);
 
 /* POST login */
 router.post('/login', asyncErrorHandler(postLogin));

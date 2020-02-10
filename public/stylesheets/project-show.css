@@ -390,12 +390,12 @@ a:hover {
     font-size: 24px;
     line-height: 100%;
     /* identical to box height */
-    color: #5570BA;
+    color: #4B535F;
     border-radius: 12px;
 }
 
 .project-price-index:hover {
-    color: #5570BA;
+    color: #4B535F;
 }
 
 .project-short-info {
@@ -403,10 +403,10 @@ a:hover {
     font-size: 16px;
     line-height: 100%;
     /* identical to box height */
-    margin-bottom: 27px;
+    margin-bottom: 7.5px;
 
     color: #4B535F;
-
+    margin-top:0 !important;
     opacity: 0.6;
     border-radius: 5px;
 }
@@ -429,7 +429,7 @@ a:hover {
 }
 
 .more-title {
-    margin:100px 0;
+    margin:0 16px 42px !important;
     
     max-width: 1535px;
     margin-left:0;
@@ -627,11 +627,11 @@ a:hover {
         line-height: 24px;
         /* identical to box height */
         margin-bottom: 27px;
-
+        
     }
 
     .more-title {
-        margin-left:196px; 
+        margin-left:196px !important; 
     }
 
     .swiper-container-mobile {

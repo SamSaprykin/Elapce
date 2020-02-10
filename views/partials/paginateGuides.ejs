@@ -21,7 +21,9 @@
         <% if(guides.pages> 1 && guides.docs.length) { %>
             <% for (; i <= (guides.page + 2) && i <= guides.pages; i++) { %>
                 <% if (i == guides.page) { %>
-                    <li class="list-wrapper"><a ><%= i %></a></li>
+                    <li class="list-wrapper" <%= i === guides.page ? 'style=background-color:#98B8FF;' : '' %>
+                        
+                        s><a <%= i === guides.page ? 'style=color:white;' : '' %>><%= i %></a></li>
                 <% } else { %>
                     <li class="list-wrapper"><a  href="/guides?page=<%= i %>"
                         <%= i === guides.page ? 'style=color:#000;' : '' %>
@@ -35,7 +37,7 @@
             
         <% } %>
         <% if((guides.page + 1) <= guides.pages) { %>
-            <li class="list-wrapper"><a class="arrow-prevnext"  href="/guides?page=<%= articles.page + 1 %>"><span uk-pagination-next></span></a></li>
+            <li class="list-wrapper"><a class="arrow-prevnext"  href="/guides?page=<%= guides.page + 1 %>"><span uk-pagination-next></span></a></li>
         <% } %>
 
         

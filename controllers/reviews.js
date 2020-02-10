@@ -13,7 +13,7 @@ module.exports = {
         }).length;
 
         if(haveReviwed) {
-            req.session.error = 'Sorry you can only create one review per project'
+            req.session.error = 'Вы можете создать только один отзыва для объекта'
             return res.redirect(`/projects/${project.id}`)
         }
 		// create the review
@@ -24,13 +24,13 @@ module.exports = {
 		// save the project
 		project.save();
 		// redirect to the project
-		req.session.success = 'Review created successfully!';
+		req.session.success = 'Отзыв успешно создан';
 		res.redirect(`/projects/${project.id}`);
     },
     // Review Update
     async reviewUpdate(req, res, next) {
         await Review.findByIdAndUpdate(req.params.review_id, req.body.review);
-        req.session.success = 'Review updated succesfully!';
+        req.session.success = 'Отзыв обновлен';
         res.redirect(`/projects/${req.params.id}`);        
     },
     // Review Delete
@@ -40,7 +40,7 @@ module.exports = {
         });
 
         await Review.findByIdAndRemove(req.params.review_id);
-        req.session.success = 'Review delted succesfully!';
+        req.session.success = 'Отзыв успешно удален';
         res.redirect(`/projects/${req.params.id}`);
 
     }

@@ -21,7 +21,9 @@
         <% if(articles.pages> 1 && articles.docs.length) { %>
             <% for (; i <= (articles.page + 2) && i <= articles.pages; i++) { %>
                 <% if (i == articles.page) { %>
-                    <li class="list-wrapper"><a ><%= i %></a></li>
+                    <li class="list-wrapper" <%= i === articles.page ? 'style=background-color:#98B8FF;' : '' %>
+                        
+                        s><a <%= i === articles.page ? 'style=color:white;' : '' %>><%= i %></a></li>
                 <% } else { %>
                     <li class="list-wrapper"><a  href="/articles?page=<%= i %>"
                         <%= i === articles.page ? 'style=color:#000;' : '' %>

@@ -59,7 +59,13 @@ module.exports = {
 		
 		const {user, error} = await User.authenticate()(username, password);
 		
+		if(!user && error.message === "Password or username is incorrect") {
+			error.message = "Неверный пароль или имя пользователя"
+			return next(error)
+		}
 		if(!user && error) return next(error);
+		
+		
 		
         req.login(user, function(err) {
             if(err) return next(err);

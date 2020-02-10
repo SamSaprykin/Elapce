@@ -31,7 +31,7 @@ const middleware = {
 		if (req.isAuthenticated()) return next();
 		req.session.error = 'Вы должны зарегистрироваться чтобы выполнить это действие!';
 		req.session.redirectTo = req.originalUrl;
-		res.redirect('/login');
+		res.redirect('/register');
 	},
 	isAdmin: async(req,res,next) => {
 		const project = await Project.findById(req.params.id);

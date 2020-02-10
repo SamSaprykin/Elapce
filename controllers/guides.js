@@ -4,6 +4,9 @@ const { cloudinary } = require('../cloudinary');
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapBoxToken});
+const showdown  = require('showdown');
+
+converter = new showdown.Converter();
 
 module.exports = {
 	// Posts Index
@@ -11,11 +14,11 @@ module.exports = {
         
         
         let guides = await Guide.paginate({}, {
-            page: 1,
-            limit:16,
+            page: req.query.page || 1,
+            limit:10,
             sort: {'_id': -1}
         });
-        
+        guides.page = Number(guides.page);
 		res.render('guides/index', {guides});
 	},
 	guideNew(req, res, next) {
@@ -44,6 +47,10 @@ module.exports = {
         
         req.body.geometry = response.body.features[0].geometry;
         req.body.author =  req.user._id;
+        
+        text = req.body.body;
+        html = converter.makeHtml(text);
+        req.body.body = html
         req.body.creationDate =  moment().format("YYYY-MM-DD").toString();
         let guide = new Guide(req.body);
         await guide.save();
@@ -115,7 +122,9 @@ module.exports = {
         req.body.geometry = response.body.features[0].geometry;
         guide.geometry = req.body.geometry
         guide.title = req.body.title;
-        guide.body = req.body.body;
+        text = req.body.body;
+        html = converter.makeHtml(text);
+        guide.body = html;
         guide.location = req.body.location;
         guide.conclusions =  req.body.conclusions;
         guide.introduction =  req.body.introduction;

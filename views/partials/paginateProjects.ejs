@@ -20,12 +20,16 @@
         <% if(projects.pages> 1 && projects.docs.length) { %>
             <% for (; i <= (projects.page + 2) && i <= projects.pages; i++) { %>
                 <% if (i == projects.page) { %>
-                    <li class="list-wrapper"><a ><%= i %></a></li>
+                    <li class="list-wrapper" <%= i === projects.page ? 'style=background-color:#98B8FF;' : '' %>
+                        
+                    s><a <%= i === projects.page ? 'style=color:white;' : '' %>><%= i %></a></li>
+                    
                 <% } else { %>
                     <li class="list-wrapper"><a  href="/projects?page=<%= i %>"
                         <%= i === projects.page ? 'style=color:#000;' : '' %>
                         
                     ><%= i %></a></li>
+                    
                 <% } %>
                 <% if (i == projects.page + 2 && i < projects.pages) { %>
                     <li class="list-wrapper"><a >...</a></li>
@@ -36,7 +40,7 @@
         <% if((projects.page + 1) <= projects.pages) { %>
             <li class="list-wrapper"><a class="arrow-prevnext"  href="/projects?page=<%= projects.page + 1 %>"><span uk-pagination-next></span></a></li>
         <% } %>
-
+        
         
     </ul>
 </div>
