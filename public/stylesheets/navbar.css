@@ -11,6 +11,15 @@ nav {
     z-index: 99999;
 }
 
+.profile-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+
+    object-fit: cover;
+    object-position: center right;
+}
+
 
 .navbar-logo {
     background-image: url('./../images/elapce-logo.png');

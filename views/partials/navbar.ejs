@@ -25,8 +25,8 @@
         </li>
         
         <% } else { %>
-    
-            <li  class="item icon-navbar"><a href="/profile"><i class="fas fa-id-card"></i></a></li></button>
+            <li  class="item icon-navbar"><a href="/profile">            <img src="<%= currentUser.image.secure_url %>" alt="<%= currentUser.username %>'s profile image" width="30" height="30" class="profile-image"> 
+            </i></a></li></button>
             <li class="item button-navbar logout">
                 <a href="/logout">Выйти</a>
             </li>
