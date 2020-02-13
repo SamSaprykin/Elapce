@@ -1,76 +1,84 @@
 <% layout('layouts/boilerplate') -%>
 
+<head>
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/css/uikit.min.css" />
 
-<form action="/articles" method="POST" enctype="multipart/form-data" class="ml-3">
-	<h1>Добавить новую</h1>
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<p>Название статьи:</p>
-			<input type="text" name="article[title]" placeholder="Название" class="form-control">
-		</div>	
-	</div>
-	
-	
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<p>Текст статьи:</p>
-			<textarea name="article[body]" placeholder="Текст статьи"  class="form-control col-md-12" rows="20"></textarea>
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
+   	
+</head>
+
+<div class="uk-container uk-container-expand">
+	<form action="/articles" method="POST" enctype="multipart/form-data" class="ml-3">
+		<h1>Добавить новую</h1>
+		<div>
+			<div>
+				<p class="uk-text-bolder uk-margin-top">Название статьи:</p>
+				<input class="uk-input uk-width-1-3" type="text" name="article[title]" placeholder="Название">
+			</div>	
 		</div>
 		
-	</div>
-	<div class="form-row "></div>
-		<div class="custom-file col-md-6 mb-3">
+		
+		<div>
+			<div>
+				<p class="uk-text-bolder uk-margin-top">Текст статьи:</p>
+				<textarea class="uk-textarea uk-width-1-3" name="article[body]" placeholder="Текст статьи"  rows="20"></textarea>
+			</div>
 			
-			<label class="custom-file-label" for="inputGroupFile01">Фотографии к статье:</label>
-			<input type="file" accept="images/*" name="images" id="inputGroupFile01" class="custom-file-input" multiple  />	
-		</div>	
-		<!-- <input name="file1" type="file" accept="application/pdf"> */ -->
-		
-    </div>
-    
-    <div class="form-row">
-		<div class="form-group col-md-6">
-			<p>Автор статьи:</p>
-			<input type="text" name="article[author]" placeholder="Название" class="form-control">
-		</div>	
-    </div>
-    
-    
-    <div class="form-row">
-		<div class="form-group col-md-6 border border-dark">
-			<p>Категория:</p>
-				<input type="radio" id="residence" name="article[category]" value="ВНЖ" >
-				<label for="residence">ВНЖ</label>
-				<input type="radio" id="invest" name="article[category]" value="Инвестиции">
-				<label for="invest">Инвестиции</label>
-				<input type="radio" id="taxes" name="article[category]" value="Налоги">
-				<label for="taxes">Налоги</label>
-				<input type="radio" id="buying" name="article[category]" value="Покупка и оформление">
-				<label for="buying">Покупка и оформление</label>
-				<input type="radio" id="markets" name="article[category]" value="Рынки и цены">
-				<label for="markets">Рынки и цены</label>
-		</div>	
-	</div>
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<p>Вступление - первые две строки:</p>
-			<input type="text" name="article[introduction]" class="form-control">
-		</div>	
-	</div>
-
-
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<p>Заключение, после второго фото:</p>
-			<input type="text" name="article[conclusions]" class="form-control" >
-		</div>	
-	</div>
-
-	
-	
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<input type="submit">
 		</div>
-	</div>
-</form>
+		<div>
+			<div>
+				
+				<p class="uk-text-bolder uk-margin-top" for="inputGroupFile01">Фотографии к статье:</p>
+				<div class="uk-margin">
+					<div uk-form-custom>
+						<input type="file" accept="images/*" name="images" id="inputGroupFile01" multiple>
+						<button class="uk-button uk-button-default" type="button" tabindex="-1">Загрузить</button>
+					</div>
+				</div>	
+			</div>	
+			<!-- <input name="file1" type="file" accept="application/pdf"> */ -->
+			
+		</div>
+		
+		<div>
+			<div>
+				<p>Автор статьи:</p>
+				<input class="uk-input uk-width-1-3" type="text" name="article[author]" placeholder="Название">
+			</div>	
+		</div>
+		
+		<div>
+			<div>
+				<p class="uk-text-bolder uk-margin-top">Категория:</p>
+					<input type="radio" class="uk-radio" id="residence" name="article[category]" value="ВНЖ" >
+					<label for="residence">ВНЖ</label>
+					<input type="radio" class="uk-radio" id="invest" name="article[category]" value="Инвестиции">
+					<label for="invest">Инвестиции</label>
+					<input type="radio" class="uk-radio" id="taxes" name="article[category]" value="Налоги">
+					<label for="taxes">Налоги</label>
+					<input type="radio" class="uk-radio" id="buying" name="article[category]" value="Покупка и оформление">
+					<label for="buying">Покупка и оформление</label>
+					<input type="radio" class="uk-radio" id="markets" name="article[category]" value="Рынки и цены">
+					<label for="markets">Рынки и цены</label>
+			</div>	
+		</div>
+		<div>
+			<div>
+				<p class="uk-text-bolder uk-margin-top">Вступление - первые две строки:</p>
+				<input class="uk-input uk-width-1-3" type="text" name="article[introduction]">
+			</div>	
+		</div>
+	
+		<div>
+			<div>
+				<p class="uk-text-bolder uk-margin-top">Заключение, после второго фото:</p>
+				<input class="uk-input uk-width-1-3" type="text" name="article[conclusions]" >
+			</div>
+			<input type="submit" class="uk-button uk-button-secondary uk-margin">	
+		</div>
+	
+	</form>
+</div>

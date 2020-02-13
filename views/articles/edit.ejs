@@ -1,97 +1,109 @@
 <% layout('layouts/boilerplate') -%>
 
+<head>
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/css/uikit.min.css" />
 
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
+   	
+</head>
 
-<form action="/articles/<%= article.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="ml-3">
-	<h1>Обновить статью:</h1>
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<p>Название статьи:</p>
-			<input type="text" name="title" class="form-control" value="<%= article.title %>">
-		</div>	
-	</div>
-	
-	
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<p>Текст статьи:</p>
-			<textarea name="body" class="form-control col-md-12" rows="20" ><%= article.body %></textarea>
-		</div>
-		
-	</div>
-	<div class="form-row "></div>
-		<div class="custom-file col-md-6 mb-3">
-			
-			<label class="custom-file-label" for="inputGroupFile01">Фотографии к статье:</label>
-			<input type="file" accept="images/*" name="images" id="inputGroupFile01" class="custom-file-input" multiple  />	
-		</div>	
-		<!-- <input name="file1" type="file" accept="application/pdf"> */ -->
-		
-    </div>
-    
-    
-    
-    
-	
-
-	<div class="d-flex flex-row flex-wrap mb-3 justify-content-center">
-		
-		<% article.images.forEach(function(image, i) { %>
-			<div class="card m-1" style="width: 18rem;">
-				<img class="card-img-top" src="<%= image.url %>"/>
-				<div class="card-body">
-					<label for="image<%= i %>">Delete?</label>
-					<input type="checkbox" class="imageDeleteCheckbox" name="deleteImages[]" id="image<%= i %>" value="<%= image.public_id %>">
-				</div>
+<div class="uk-container uk-container-expand">
+	<form action="/articles/<%= article.id %>?_method=PUT" method="POST" enctype="multipart/form-data" class="ml-3">
+		<h1>Обновить статью:</h1>
+		<div class="form-row">
+			<div>
+				<p class="uk-text-bolder uk-margin-top">Название статьи:</p>
+				<input type="text" name="title" class="uk-input uk-width-1-3" value="<%= article.title %>">
 			</div>	
-		<% }) %>
-
-	</div>
-
-	<div class="form-row">
-		<div class="form-group col-md-6 border border-dark">
-			<p>Категория:</p>
-				<input type="radio" id="residence" name="article[category]" value="ВНЖ" <%= article.category === 'ВНЖ' ? 'checked' : '' %> >
-				<label for="residence">ВНЖ</label>
-				<input type="radio" id="invest" name="article[category]" value="Инвестиции" <%= article.category === 'Инвестиции' ? 'checked' : '' %>>
-				<label for="invest">Инвестиции</label>
-				<input type="radio" id="taxes" name="article[category]" value="Налоги" <%= article.category === 'Налоги' ? 'checked' : '' %>>
-				<label for="taxes">Налоги</label>
-				<input type="radio" id="buying" name="article[category]" value="Покупка и оформление" <%= article.category === 'Покупка и оформление' ? 'checked' : '' %>>
-				<label for="buying">Покупка и оформление</label>
-				<input type="radio" id="markets" name="article[category]" value="Рынки и цены" <%= article.category === 'Рынки и цены' ? 'checked' : '' %>>
-				<label for="markets">Рынки и цены</label>
-
-				
-		</div>	
-	</div>
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<p>Вступление - первые две строки:</p>
-			<input type="text" name="article[introduction]" class="form-control" value="<%= article.introduction %>">
-		</div>	
-	</div>
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<p>Автор:</p>
-			<input type="text" name="article[author]" class="form-control" value="<%= article.author %>">
-		</div>	
-	</div>
-
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<p>Заключение, после второго фото:</p>
-			<input type="text" name="article[conclusions]" class="form-control" value="<%= article.conclusions %>">
-		</div>	
-	</div>
-    
-	
-	<div class="form-row">
-		<div class="form-group col-md-6">
-			<input class="btn btn-light mt-2" type="submit">
 		</div>
-	</div>
-</form>
+		
+		
+		<div class="form-row">
+			<div>
+				<p class="uk-text-bolder uk-margin-top">Текст статьи:</p>
+				<textarea name="body" class="uk-textarea uk-width-1-3" rows="20" ><%= article.body %></textarea>
+			</div>
+			
+		</div>
+		<div class="form-row ">
+			<div>	
+				<p class="uk-text-bolder uk-margin-top" for="inputGroupFile01">Фотографии к статье:</p>
+				<div class="uk-margin">
+					<div uk-form-custom>
+						<input type="file" accept="images/*" name="images" id="inputGroupFile01" multiple>
+						<button class="uk-button uk-button-default" type="button" tabindex="-1">Загрузить</button>
+					</div>
+				</div>	
+			</div>
+			<!-- <input name="file1" type="file" accept="application/pdf"> */ -->
+			
+		</div>
+		
+		
+		
+		
+		
+	
+		<div class="d-flex flex-row flex-wrap mb-3 justify-content-center">
+			
+			<% article.images.forEach(function(image, i) { %>
+				<div class="card m-1" style="width: 18rem;">
+					<img class="card-img-top" src="<%= image.url %>"/>
+					<div class="card-body">
+						<p class="uk-text-bolder uk-margin-top" for="image<%= i %>">Delete?</label>
+						<input type="checkbox" class="uk-checkbox" name="deleteImages[]" id="image<%= i %>" value="<%= image.public_id %>">
+					</div>
+				</div>	
+			<% }) %>
+	
+		</div>
+	
+		<div class="form-row">
+			<div class="form-group col-md-6 border border-dark">
+				<p class="uk-text-bolder uk-margin-top">Категория:</p>
+					<input type="radio" class="uk-radio" id="residence" name="article[category]" value="ВНЖ" <%= article.category === 'ВНЖ' ? 'checked' : '' %> >
+					<label for="residence">ВНЖ</label>
+					<input type="radio" class="uk-radio" id="invest" name="article[category]" value="Инвестиции" <%= article.category === 'Инвестиции' ? 'checked' : '' %>>
+					<label for="invest">Инвестиции</label>
+					<input type="radio" class="uk-radio" id="taxes" name="article[category]" value="Налоги" <%= article.category === 'Налоги' ? 'checked' : '' %>>
+					<label for="taxes">Налоги</label>
+					<input type="radio" class="uk-radio" id="buying" name="article[category]" value="Покупка и оформление" <%= article.category === 'Покупка и оформление' ? 'checked' : '' %>>
+					<label for="buying">Покупка и оформление</label>
+					<input type="radio" class="uk-radio" id="markets" name="article[category]" value="Рынки и цены" <%= article.category === 'Рынки и цены' ? 'checked' : '' %>>
+					<label for="markets">Рынки и цены</label>
+	
+					
+			</div>	
+		</div>
+		<div class="form-row">
+			<div>
+				<p class="uk-text-bolder uk-margin-top">Вступление - первые две строки:</p>
+				<input type="text" name="article[introduction]" class="uk-input uk-width-1-3" value="<%= article.introduction %>">
+			</div>	
+		</div>
+		<div class="form-row">
+			<div>
+				<p class="uk-text-bolder uk-margin-top">Автор:</p>
+				<input type="text" name="article[author]" class="uk-input uk-width-1-3" value="<%= article.author %>">
+			</div>	
+		</div>
+	
+		<div class="form-row">
+			<div>
+				<p class="uk-text-bolder uk-margin-top">Заключение, после второго фото:</p>
+				<input type="text" name="article[conclusions]" class="uk-input uk-width-1-3" value="<%= article.conclusions %>">
+			</div>
+			<input type="submit" class="uk-button uk-button-secondary uk-margin">	
+		</div>
+		
+		
+		
+	</form>
+</div>
+
 
 <script>
     
