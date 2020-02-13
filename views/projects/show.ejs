@@ -14,7 +14,11 @@
     <div class="swiper-container-mobile" style="margin-bottom: 1rem;">
         <div class="swiper-wrapper"> 
             <% project.images.forEach(function(image,i) { %>
-                <img class="swiper-slide" src="<%= image.url %>" >
+                <img 
+                    class="swiper-slide" 
+                    src="<%= image.url %>" 
+                    src="<%= image_url(image.public_id, {width: 485, height: 360,  crop: "fit"}) %>"
+                >
                 
             <% }) %> 
                 
@@ -74,7 +78,7 @@
             
             
             <% project.images.forEach(function(image,i) { %>
-                <img src="<%= image.url %>" class="gallery-item" onclick="openLightbox(<%= i %>);">
+                <img src="<%= image_url(image.public_id, {width: 485, height: 360,  crop: "fit"}) %>" class="gallery-item" onclick="openLightbox(<%= i %>);">
                 
             <% }) %> 
             

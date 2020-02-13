@@ -78,7 +78,7 @@ module.exports = {
         const floorRating = project.calculateAverageRating();
         const projectsMore = await Project.aggregate([{ $sample: { size: 3 } }]);
         
-        res.render('projects/show', {project,mapBoxToken,floorRating, projectsMore})
+        res.render('projects/show', {project,mapBoxToken,floorRating, projectsMore,  image: cloudinary.image, image_url: cloudinary.url})
     },
     projectEdit(req, res, next) {
         
