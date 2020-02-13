@@ -234,7 +234,7 @@ a:hover {
     font-family: 'GothamPro', sans-serif;
     font-size: 16px;
     line-height: 30px;
-    margin-top:16px;
+    margin-top:0;
     color: #4B535F;
 }
 
@@ -591,6 +591,7 @@ a:hover {
       color: #5570BA;
       font-size: 28px;
       line-height: 27px;
+      margin-top: 0;
       /* identical to box height */
   }
 
