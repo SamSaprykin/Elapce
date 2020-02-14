@@ -173,6 +173,57 @@
    color: #5570BA;
 }
 
+.more-objects {
+    
+    width:100%;
+    padding:100px 0 114px; 
+    height:auto
+    
+}
+
+.more-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width:1535px;
+    margin:0 auto;
+}
+
+.project-card {
+    max-width:485px;
+    width:100%;
+    height:auto;
+}
+
+.title-image {
+    object-fit: cover;
+    max-width:485px;
+    width:100%;
+    
+}
+
+.project-title-index {
+    font-family: "Lato-Regular", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 100%;
+    /* identical to box height, or 31px */
+    color: #4B535F;
+    display: inline-block;
+    border-bottom: 2px solid #4B535F;
+    padding-bottom: 3px;
+    margin:28px 0 9px;
+}
+
+.more-title {
+    margin:0 16px 42px !important;
+    
+    max-width: 1535px;
+    margin-left:0;
+    
+}
+
 
 @media all and (min-width: 900px) {
     
@@ -309,6 +360,92 @@
         margin-bottom:17px;
         font-size: 18px;
         line-height: 20px;
+    }
+
+    .more-objects {
+        padding:42px 0 51px; 
+    }
+
+    .more-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width:1535px;
+        margin:0 auto;
+    }
+
+    .project-card {
+        max-width:485px;
+        width:100%;
+        
+        margin:0 25px;
+    }
+    
+    .title-image {
+        object-fit: cover;
+        max-width:485px;
+        width:100%;
+         
+    }
+
+    .project-title-index {
+        
+        font-size: 24px;
+        line-height: 130%;
+        /* identical to box height, or 31px */
+        
+    }
+
+   
+
+}
+
+
+@media (max-width:1320px) {
+    
+
+    .more-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin:0 auto;
+        max-width: 1545px;
+        width:100%;
+    }
+    .project-card {
+        
+        padding:0 16px;
+        margin:25px auto;
+    }
+    
+}
+
+
+
+@media (min-width: 320px) and (max-width: 480px) {
+    .rating {
+        width:100%;
+        max-width: 250px;
+        margin-top:16px;
+    }
+
+   .project-title {
+       font-size: 24px;
+       margin:16px 16px ;
+   }
+
+   #map {
+        height: 293px;
+    }
+
+    .wrapper-icons {
+        margin-top:26px;
+    }
+    .more-objects {
+        padding:42px 0 51px; 
+    }
+    .project-card {
+        margin:0;
     }
     
 }

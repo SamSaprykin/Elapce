@@ -194,7 +194,7 @@
     </div>
 </div>
 <div class="goals-section">
-    <h1 class="title-proposition">Предложения для каждого</h1>
+    <h5 class="title-proposition">Предложения для каждого</h5>
     <h3 class="title-second-mobile proposition">Предложения для каждого</h3>
     <div class="goals-images-wrapper">
         <div class="image-goal-wrapper">
@@ -254,10 +254,36 @@
             <div class="button-prev atricles-button-prev"><i class="fas fa-chevron-left"></i></div> 
             <div class="button-next atricles-button-next"><i class="fas fa-chevron-right"></i></div>
         </div>
-        <span  class="button-link-body"><a href="/articles">Все новости</a> <span class="bg"></span> </span>  
+        <span  class="button-link-body"><a href="/articles">Все статьи</a> <span class="bg"></span> </span>  
     </div>        
 </div>
-<div id="map"></div>
+<div class="about-section about-guides">
+    <h3 class="guide-title">Гид по городам</h3>
+    <div class="wrapper-guides">
+        
+        
+            <% guidesMain.forEach(function(guide){ %>
+            
+                <figure class="card-wrapper">
+                    <a href="/guides/<%= guide.id %>" class=""><img class="card-image-guide" 
+                        
+                        src="<%= image_url(guide.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
+                        alt="<%= guide.title %>"></a>    
+                        
+                        <a href="/guides/<%= guide.id %>" >
+                            <h3 class="guide-text"><%= guide.title %></h3>
+                        </a>
+                </figure>
+            <% }); %>
+        </div>
+        <div class="button-guides-wrapper">
+            <span  class="button-link-body"><a href="/guides">Все гиды</a> <span class="bg"></span> </span> 
+        </div>
+        
+    </div>
+</div>
+<div id="map">  
+</div>
 
 
 

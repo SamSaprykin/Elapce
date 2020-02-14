@@ -91,4 +91,8 @@ figure {
     .card-wrapper {
         margin:16px 0;
     }
+
+    .card-image-guide {
+        max-width: 640px;
+    }
 }

@@ -63,7 +63,8 @@ module.exports = {
         let article = await Article.findById(req.params.id);
         const user_author = article.author;
         const user = await User.findOne({ _id:user_author });
-        res.render('articles/show', {article, user, image: cloudinary.image, image_url: cloudinary.url})
+        const articlesMore = await Article.aggregate([{ $sample: { size: 3 } }]);
+        res.render('articles/show', {article,articlesMore, user, image: cloudinary.image, image_url: cloudinary.url})
     },
     async articleEdit(req, res, next) {
         let article = await Article.findById(req.params.id);

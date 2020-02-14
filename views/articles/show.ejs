@@ -50,6 +50,22 @@
         </div>
         
     </div>
+    <div class="more-objects">
+    <h2 class="project-title gallery-title more-title" >Больше статей</h2>
+    <div class="more-wrapper">
+        
+        <% articlesMore.forEach(function(article){ %>
+            <div class="project-card">
+                
+                <a href="/articles/<%= article._id %>"><img class="title-image"
+                src="<%= article.images[0].url %>"
+                alt="<%= article.title %>"></a>    
+                <h2 class="project-title-index"><%= article.title %></h2>    
+            </div> 
+        <% }); %>
+    </div>
+    
+</div>
 
 </div>
 

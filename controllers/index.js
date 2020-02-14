@@ -1,6 +1,7 @@
 const User =  require('../models/user');
 const Project = require('../models/project');
-const Article = require('../models/article')
+const Article = require('../models/article');
+const Guide =  require('../models/guide');
 const mapBoxToken = process.env.MAPBOX_TOKEN;
 const util = require('util');
 const { cloudinary } = require('../cloudinary');
@@ -14,13 +15,22 @@ module.exports = {
 		const projects = await Project.find({})
 		const projectSwiper = await Project.find({}).limit( 9 );
 		const articlesMain = await Article.find({}).limit(7);
-		
-		res.render('index', { projects,projectSwiper,articlesMain, mapBoxToken , title: 'Elapce главная страница',image: cloudinary.image, image_url: cloudinary.url })
+		const guidesMain = await Guide.find({}).limit(5);
+		res.render('index', { 
+							  title: 'Elapce главная страница',
+							  projects,
+							  projectSwiper,
+							  articlesMain,
+							  guidesMain, 
+							  mapBoxToken,
+							  image: cloudinary.image,
+							  image_url: cloudinary.url 
+							})
 		
     },
     // get register
     getRegister(req, res, next) {
-		res.render('register', {title: 'Register'})
+		res.render('register', {title: 'Страница регистрации'})
 		
     },
     async postRegister(req, res, next) {
@@ -43,7 +53,7 @@ module.exports = {
 				error = 'Пользователь с данным электронным адресом уже зарегистрирован!';
             }
             
-			res.render('register', { title: 'Register', username, email, error });
+			res.render('register', { title: 'Страница регистрации', username, email, error });
 		}
 	},
     
@@ -106,7 +116,7 @@ module.exports = {
 		res.redirect('/profile');
     },
     getForgotPw(req, res, next) {
-		res.render('users/forgot')
+		res.render('users/forgot', {title:"Восстановление пароля"})
 	},
 	
 	async putForgotPw(req, res, next) {
