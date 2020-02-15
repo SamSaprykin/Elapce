@@ -38,10 +38,18 @@ module.exports = {
     async projectCreate(req, res, next) {
         // use req.body to create new project
         req.body.project.images = [];
-    
-        for(const file of req.files) {
-			console.log(file)
+        req.body.project.priceList = [];
+        
+        
+        for(const file of req.files.images) {
 			req.body.project.images.push({
+                url: file.secure_url,
+                public_id: file.public_id
+            });
+            
+        }
+        for(const file of req.files.priceList) {
+			req.body.project.priceList.push({
                 url: file.secure_url,
                 public_id: file.public_id
             });
@@ -58,6 +66,7 @@ module.exports = {
             .send();
         req.body.project.geometry = response.body.features[0].geometry;
         req.body.project.author =  req.user._id;
+        console.log(req.body.project)
         let project = new Project(req.body.project)
         project.properties.description = `<strong><a href="/projects/${project._id}">${project.title}</a></strong><p>${project.location}</p><p>${project.description.substring(0, 20)}...</p>`;
 		await project.save();
@@ -103,9 +112,32 @@ module.exports = {
             }
         }
 
-        if(req.files) {
-            for(const file of req.files) {
+        if(req.files.images) {
+            for(const file of req.files.images) {
                 project.images.push({
+                    url: file.secure_url,
+                    public_id: file.public_id
+                });
+            }
+        }
+        if(req.body.deletePriceList && req.body.deletePriceList.length ) {
+            let deletePriceList = req.body.deletePriceList;
+
+            for(const public_id of deletePriceList) {
+                // delete images from cloudinary
+                await cloudinary.v2.uploader.destroy(public_id);    
+                for(const priceList of project.priceList) {
+                    if (priceList.public_id === public_id) {
+                        let index = project.priceList.indexOf(priceList);
+                        project.priceList.splice(index,1);
+                    }
+                }            
+            }
+        }
+
+        if(req.files.priceList) {
+            for(const file of req.files.priceList) {
+                project.priceList.push({
                     url: file.secure_url,
                     public_id: file.public_id
                 });
@@ -143,6 +175,9 @@ module.exports = {
         const { project } = res.locals;
         for(const image of project.images) {
             await cloudinary.v2.uploader.destroy(image.public_id); 
+        }
+        for(const priceList of project.priceList) {
+            await cloudinary.v2.uploader.destroy(priceList.public_id); 
         }
         await project.remove();
         req.session.success = 'Проект успешно удален'

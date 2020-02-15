@@ -34,6 +34,19 @@
 		</div>
 	
 		<div>
+			
+			<% project.images.forEach(function(image, i) { %>
+				<div class="card m-1" style="width: 18rem;">
+					<img class="card-img-top" src="<%= image.url %>"/>
+					<div class="card-body">
+						<label for="image<%= i %>">Удалить?</label>
+						<input type="checkbox" class="uk-checkbox" name="deleteImages[]" id="image<%= i %>" value="<%= image.public_id %>">
+					</div>
+				</div>	
+			<% }) %>
+	
+		</div>
+		<div>
 			<p  for="inputGroupFile01" class="uk-text-bolder uk-margin-top">Фотографии:</p>
 				
 				<div class="uk-margin">
@@ -46,23 +59,34 @@
 	
 		
 		
-		<div>
-			
-				<% project.images.forEach(function(image, i) { %>
-					<div class="card m-1" style="width: 18rem;">
-						<img class="card-img-top" src="<%= image.url %>"/>
-						<div class="card-body">
-							<label for="image<%= i %>">Удалить?</label>
-							<input type="checkbox" class="uk-checkbox" name="deleteImages[]" id="image<%= i %>" value="<%= image.public_id %>">
-						</div>
-					</div>	
-				<% }) %>
-		
-		</div>
 	
 		
-		
-		
+		<div>
+
+				<label  for="inputGroupFile02" class="uk-text-bolder uk-margin-top">Прайс:</label>
+				
+				<div class="uk-margin">
+					<div uk-form-custom>
+						<input type="file" accept="application/pdf" name="priceList" id="inputGroupFile02">
+						<button class="uk-button uk-button-default" type="button" tabindex="-1">Загрузить</button>
+					</div>
+				</div>	
+		</div>
+		<% if (project.priceList && project.priceList.length) { %>
+		<div>
+			<p><%= project.priceList[0].url %></p> 
+			<% project.priceList.forEach(function(priceList, i) { %>
+				<div class="card m-1" style="width: 18rem;">
+					<p><%= priceList %></p>
+					<div class="card-body">
+						<label for="priceList<%= i %>">Удалить?</label>
+						<input type="checkbox" class="uk-checkbox" name="deletePriceList[]" id="priceList<%= i %>" value="<%= priceList.public_id %>">
+					</div>
+				</div>	
+			<% }) %>
+	
+		</div>
+		<% } %>
 		
 		<div>
 			<div>

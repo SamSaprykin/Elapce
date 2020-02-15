@@ -26,6 +26,10 @@
     cursor: pointer;
 }
 
+.close:hover {
+    text-decoration: none !important;
+}
+
 .success-alert {
     background-color: #ebebeb;
     border-left: 10px solid #178344;

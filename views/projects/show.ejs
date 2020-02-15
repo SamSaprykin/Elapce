@@ -40,7 +40,10 @@
             <div class="wrapper-icons">
                 <i class="fas fa-phone contact-icon"></i>
                 <i class="fab fa-whatsapp contact-icon margin-icon"></i> 
-                <input type="submit" value="Узнать детали" class="input-submit-head margin-show" name="" id="">
+                <% if (project.priceList && project.priceList.length) { %>
+                <a href="<%= project.priceList[0].url %>" target="_blank" value="Узнать детали" class="input-submit-head margin-show" >Скачать прайс</a>
+                
+                <% } %>
             </div>
             <form action="/projects/<%= project.id %>/addTofavourite" method="POST">
                 <input class="add-favourite" type="submit" value="Добавить в избранное">

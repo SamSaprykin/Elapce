@@ -16,8 +16,11 @@ const ProjectSchema = new Schema ({
     }],
     images: [{
         url:String,
-        public_id:String,
-        eager_url:String
+        public_id:String
+    }],
+    priceList: [{
+        url:String,
+        public_id:String
     }],
     location: String,
     geometry: {

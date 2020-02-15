@@ -24,7 +24,7 @@ router.get('/new', isLoggedIn, projectNew);
 
 
 /* Get projects CREATE /projects/:id */  
-router.post('/',isLoggedIn, upload.array('images', 16), asyncErrorHandler(projectCreate));
+router.post('/',isLoggedIn,upload.fields([{name:'images', maxCount:16},{name:'priceList', maxCount:1}]), asyncErrorHandler(projectCreate));
 
 /* Get projects show /projects/:id */  
 router.get('/:id', asyncErrorHandler(projectShow));
@@ -33,7 +33,7 @@ router.get('/:id', asyncErrorHandler(projectShow));
 router.get('/:id/edit',isLoggedIn, asyncErrorHandler(isAdmin), projectEdit);
 
 /* PUT projects update /projects/:id */  
-router.put('/:id',isLoggedIn, upload.array('images', 16),asyncErrorHandler(isAdmin), asyncErrorHandler(projectUpdate));
+router.put('/:id',isLoggedIn, upload.fields([{name:'images', maxCount:16},{name:'priceList', maxCount:1}]),asyncErrorHandler(isAdmin), asyncErrorHandler(projectUpdate));
 
 /* DELETE projects destroy /projects/:id */  
 router.delete('/:id',isLoggedIn, asyncErrorHandler(isAdmin),  asyncErrorHandler(projectDestroy));

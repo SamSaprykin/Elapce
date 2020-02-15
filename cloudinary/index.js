@@ -13,11 +13,11 @@ const cloudinaryStorage = require('multer-storage-cloudinary');
 const storage = cloudinaryStorage({
     cloudinary,
     folder: 'elapce-projects',
-    allowedFormats: ['jpeg', 'jpg', 'png'],
+    allowedFormats: ['jpeg', 'jpg', 'png', 'pdf'],
     filename: function (req, file, cb) {
         let buf = crypto.randomBytes(16);
         buf = buf.toString('hex');
-        let uniqFileName = file.originalname.replace(/\.jpeg|\.jpg|\.png/ig, '');
+        let uniqFileName = file.originalname.replace(/\.jpeg|\.jpg|\.pdf|\.png/ig, '');
         uniqFileName += buf;
       cb(undefined, uniqFileName );
     }
