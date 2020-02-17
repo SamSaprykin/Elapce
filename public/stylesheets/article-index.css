@@ -27,7 +27,14 @@
     max-width:485px;
     padding:0 16px;
     margin:0;
+    transition: all .2s ease-in-out; 
 }
+
+.project-card:hover {  
+    animation: scale 1s infinite;
+    cursor: pointer;
+    transform: scale(1.05);
+  }
 
 .article-image {
     object-fit: cover;
@@ -45,12 +52,13 @@
     font-size: 16px;
     line-height: 30px;
     /* identical to box height, or 31px */
-    color: #5570BA;
+    color: #4B535F;
     display: inline-block;
-    border-bottom: 2px solid #5570BA;;
+    
     padding-bottom: 3px;
     margin:28px 0 9px;
 }
+
 
 .createdDate {
     font-size: 12px;
@@ -59,7 +67,7 @@
     font-style: normal;
     font-weight: bold;
     color:#757575;
-    margin-bottom: 0;
+    margin:0;
 }
 
 
