@@ -19,7 +19,7 @@ module.exports = {
             sort: {'_id': -1}
         });
         guides.page = Number(guides.page);
-		res.render('guides/index', {guides});
+		res.render('guides/index', {guides, image: cloudinary.image, image_url: cloudinary.url});
 	},
 	guideNew(req, res, next) {
 		res.render('guides/new');

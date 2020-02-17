@@ -5,43 +5,41 @@
 </head>
 
 
+
 <div class="pagination-wrapper">
     <ul class="uk-pagination" uk-margin>
         <% if(projects.page - 1) { %>
-            <li class="list-wrapper "><a class="arrow-prevnext"  href="/projects?page=<%= projects.page - 1 %>"><span uk-pagination-previous></span></a></li>
+            <a class="arrow-prevnext" href="/projects?page=<%= projects.page - 1 %>"><li class="list-wrapper"><span uk-pagination-previous></span></li></a>
         <% } %>
-        <% if(projects.page > 9) { %>
-            <li class="list-wrapper"><a  href="/projects?page=1">1</a></li>
-        <% } %>   
+         
         <% var i = ((projects.page) > 2 ? projects.page - 2 : 1) %>
         <% if (i !== 1) { %>
-            <li class="list-wrapper"><a >...</a></li>
+            <a ><li class="list-wrapper">...</li></a>
         <% } %>
         <% if(projects.pages> 1 && projects.docs.length) { %>
-            <% for (; i <= (projects.page + 2) && i <= projects.pages; i++) { %>
+            <% for (; i <= (projects.page +1) && i <= projects.pages; i++) { %>
                 <% if (i == projects.page) { %>
-                    <li class="list-wrapper" <%= i === projects.page ? 'style=background-color:#98B8FF;' : '' %>
-                        
-                    s><a <%= i === projects.page ? 'style=color:white;' : '' %>><%= i %></a></li>
-                    
+                    <a>
+                        <li class="list-wrapper" <%= i === projects.page ? 'style=background-color:#98B8FF;color:white' : '' %> >
+                                <%= i %>
+                        </li>
+                    </a>
                 <% } else { %>
-                    <li class="list-wrapper"><a  href="/projects?page=<%= i %>"
-                        <%= i === projects.page ? 'style=color:#000;' : '' %>
-                        
-                    ><%= i %></a></li>
+                    <a href="/projects?page=<%= i %>">
+                        <li class="list-wrapper"  <%= i === projects.page ? 'style=color:#000;' : '' %> >
+                                <%= i %>
+                        </li>
+                    </a>
                     
                 <% } %>
-                <% if (i == projects.page + 2 && i < projects.pages) { %>
-                    <li class="list-wrapper"><a >...</a></li>
+                <% if (i == projects.page + 4 && i < projects.pages) { %>
+                    <a ><li class="list-wrapper">...</li></a>
                 <% } %>
             <% } %>
             
         <% } %>
         <% if((projects.page + 1) <= projects.pages) { %>
-            <li class="list-wrapper"><a class="arrow-prevnext"  href="/projects?page=<%= projects.page + 1 %>"><span uk-pagination-next></span></a></li>
-        <% } %>
-        
-        
+            <a class="arrow-prevnext" href="/projects?page=<%= projects.page + 1 %>"><li class="list-wrapper"><span uk-pagination-next></span></li></a>
+        <% } %>        
     </ul>
 </div>
-

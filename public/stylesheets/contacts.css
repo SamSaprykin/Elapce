@@ -9,7 +9,6 @@
     background-size: cover;
     width: 72px;
     height:100px;
-    
     cursor: pointer;
   }
 
@@ -26,13 +25,8 @@
 
 .contact-main-info {
     font-family: 'GothamPro',  sans-serif;
-    
-    /* or 75px */
     font-size: 30px;
     line-height: 130%;
-
-    /* dark */
-
     color: #4B535F;
 }
 
@@ -43,23 +37,16 @@
 }
 
 .contacts-title {
-    font-family: 'GothamPro',  sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    
+    font-family: "Lato-Regular",  sans-serif;
     font-size: 16px;
     line-height: 100%;
-    /* identical to box height, or 150% */
     margin:45px 0 16px;
-
     color: #4B535F;
 }
 
 .contacts-data {
     font-family: "Lato-Regular", sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    /* identical to box height, or 150% */
+    font-weight: 900;
     font-size: 16px;
     line-height: 100%;
     color: #4B535F;
@@ -96,6 +83,7 @@
         font-size: 28px;
         line-height: 42px;
         margin-bottom:9px;
+        font-weight: 400;
     }
     .contacts-data {
         font-size: 28px;

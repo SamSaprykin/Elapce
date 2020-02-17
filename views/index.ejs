@@ -1,18 +1,17 @@
 <% layout('layouts/boilerplate') -%>
 <head>
     <link rel="stylesheet" href="/stylesheets/index-first-section.css">
-    <link rel="preload" href='/stylesheets/index.css' as="style" onload="this.onload=null;this.rel='stylesheet'">    
     <link rel="stylesheet" href="/stylesheets/index-second-section.css">
     <link rel="stylesheet" href='/stylesheets/circles.css'>
+    <link href='/stylesheets/index.css' rel='stylesheet'> 
     <!-- UIkit CSS -->
     <!-- UIkit JS -->
     <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
     <link rel="stylesheet" href='https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/css/uikit.min.css'>
     <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
-    <script defer src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
     <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 </head>
-
 <div class="main-section">
     <div class="shape-orange"></div>
     <div class="left-section"> 
@@ -26,7 +25,7 @@
       <form action="/projects" method="GET">
         <div class="input-group"> 
             
-            <button class="input-text-head second" id="input-location" type="button">
+            <button class="input-text-head" id="input-location" type="button">
 					Местоположение
 			</button>
 			<div uk-dropdown="mode: click;animation: uk-animation-slide-top-small;pos: bottom-left" class="location-dropdown">
@@ -93,12 +92,8 @@
     <div class="map-points-wrapper">
                 <div class="shape-white"></div>
                 <div class="card-image map-points" style="background-image: url('../images/map-points-middle.png');" data-image-full="../images/map-points.png">
-                
                     <img src="../images/map-points-middle.png" alt="Map-points" />    
-                </div>  
-            
-              
-        
+                </div>    
     </div>
     <div class="proposition-section">
         <div class="content-wrapper">

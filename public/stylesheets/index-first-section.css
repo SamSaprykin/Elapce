@@ -1,24 +1,11 @@
-/* Start Copter Animation*/
-
-
-
-/* End Copter Animation*/
-
-
-
-/* Mobile styles start */
 .main-section {
     height: auto;
     width:100%;
     margin-top:-30px;
     display: flex;
-    
     flex-direction: column-reverse;
-    justify-content: space-evenly;
-    position: relative;
-    
+    justify-content: space-evenly; 
 }
-
 .right-section {
   max-width:910px;
   width:100%;
@@ -26,7 +13,6 @@
   margin-top:0;
   position: relative;
 }
-
 .left-section {
     max-width:719px;
     width:100%;
@@ -34,7 +20,6 @@
     
     margin-top: 15px;
 }
-
 .copter {
     background-image: url('../images/copter.png');
     max-width:100px;
@@ -47,10 +32,6 @@
     animation: none;
     transform: rotate(45deg);
 }
-
-
-
-
 .title-mobile {
     font-family: 'GothamPro', sans-serif;
     font-size: 30px;
@@ -61,8 +42,6 @@
     margin:25px 16px 0;
     font-size: 30px;
 }
-
-
 .header-title {
     font-size: 65.6106px;
     margin:0;
@@ -72,13 +51,10 @@
     color: #4B535F;
     display: none;
 }
-
-
 .text-index-title {
-    
     display: none;
-  }
-  .main-section .input-group {
+}
+.main-section .input-group {
     background: #FFFFFF;
     border-radius: 7px;
     max-width:500px;
@@ -88,53 +64,38 @@
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    
-  }
-  
-  
-  
-  .building-main {
-    min-height: auto;
-  }
-  
-  .input-text-head {
-    border:none;
-    font-style: normal;
-    font-size: 16px;
-    line-height: 19px;
-    /* identical to box height */
-    width:90%;
-    margin:0 auto;
-    display: block;
-    height:52px;
-    color: #2F3B43;
-    background: url('../images/ellipsis.png') no-repeat;
-    border-bottom: 1px solid #9EC1E1;
-    background-position: center right;
-    text-align: left;
-    cursor: pointer;
-  }
-
-
-  
-
-  .input-text-head:focus {
-    outline: none;
-    background:none;
-    
-  }
-  
-  .input-text-head:focus::-webkit-input-placeholder {
-    color: transparent;   
-  }
-
-  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #2F3B43;
 }
-
-/* Filter main styles mobile */
-
-
+.building-main {
+  min-height: auto;
+}
+  
+.input-text-head {
+  border:none;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 19px;
+  /* identical to box height */
+  width:90%;
+  margin:0 auto;
+  display: block;
+  height:52px;
+  color: #2F3B43;
+  background: url('../images/ellipsis.png') no-repeat;
+  border-bottom: 1px solid #9EC1E1;
+  background-position: center right;
+  text-align: left;
+  cursor: pointer;
+}
+.input-text-head:focus {
+  outline: none;
+  background:none;  
+}
+.input-text-head:focus::-webkit-input-placeholder {
+  color: transparent;   
+}
+::placeholder { 
+  color: #2F3B43;
+}
 .input-submit-head {
   background-image: linear-gradient(315.87deg, #F34B31 -11.35%, #FFA782 106.98%);
   padding: 14px 106px;
@@ -148,8 +109,23 @@
   border-radius: 5px;
   cursor: pointer;
   margin:8px auto;
+  moz-transition: all .8s ease-in-out;
+  -o-transition: all .8s ease-in-out;
+  -webkit-transition: all .8s ease-in-out;
+  transition: all .8s ease-in-out;
 }
-
+.input-submit-head:hover {
+  background-position: 100% 0;
+  box-shadow: 0 4px 15px 0 rgba(252, 104, 110, 0.75);
+  moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+.second {
+  border-left: none;
+  padding-left: 0;
+}
 .location-dropdown {
   width: 320px !important;
   text-align: left;
@@ -157,7 +133,6 @@
   border-radius: 3px;
   
 }
-
 .search-location {
   width: 266px;
   background: #FFFFFF;
@@ -292,26 +267,21 @@ input[type="search"]::-webkit-search-cancel-button  {
     .right-section {
         margin-top:240px;
     }
-    .header-title {
-        
-        display: block;
-    }
     .copter {
       background-image: url('../images/copter.png');
       max-width:230px;
       height:205px;
-      margin: 0;
+      margin:0;
       background-repeat: no-repeat;
-      background-position:25% 50%;
       margin-bottom:-110px;
-      transform: rotate(-6deg);
-     
+      transform: rotate(-6deg);  
   }
-
+      .header-title {
+        display: block;
+    }
     .title-mobile {
         display: none;
     }
-
     .main-section .input-group {
         max-width:730px;
         margin-top:73px;
@@ -340,12 +310,10 @@ input[type="search"]::-webkit-search-cancel-button  {
   
     .input-text-head {
       border:none;
-      font-style: normal;
       text-align: left;
       font-weight: 500;
       font-size: 18px;
       line-height: 22px;
-      /* identical to box height */
       width:221px;
       height:52px;
       color: #2F3B43;
@@ -353,24 +321,9 @@ input[type="search"]::-webkit-search-cancel-button  {
       background-position:  center right ;
       cursor: pointer;
     }
-    
-   
 
-  
-    .input-submit-head {
-      background-image: linear-gradient(315.87deg, #F34B31 -11.35%, #FFA782 106.98%);
-      padding: 27px 41px 27px 40px;
-      margin:12px 11px 12px 20px;
-      color:white;
-      border:none;
-      text-transform: uppercase;
-      font-style: normal;
-      font-size: 18px;
-      line-height: 22px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-  
+    
+
     .location-dropdown {
       width: 542px !important;
       text-align: left;
@@ -386,7 +339,6 @@ input[type="search"]::-webkit-search-cancel-button  {
       line-height: 22px;
       color: #2F3B43;
       border: 1px solid RGBA(74,82,94,0.3);
-      
       box-sizing: border-box;
       border-radius: 5px;
       height: 51px;
@@ -507,143 +459,106 @@ input[type="search"]::-webkit-search-cancel-button  {
 
 
     .text-index-title {
+        font-size: 18px;
+        line-height: 180%;
         display: block;
         margin-top:52px;
     }
 
     .input-text-head {
-    border:none;
+    
     font-style: normal;
     font-size: 18px;
     line-height: 22px;
     /* identical to box height */
     max-width:242px;
-    
     height:100%;
     min-height:52px;
     color: #2F3B43;
     background: url('../images/ellipsis.png') no-repeat;
-    
     background-position:center right ;
     }
 
     .second {
-        border-left: none;
-        padding-left: 0;
+      border-left: 2px solid rgba(158, 193, 225, 0.5) ;
+      padding-left: 12px;
     }
     
     .left-section {
-        
-        
         margin-top: 206px;
     }
 }
 
 @media (max-width:1460px) and (min-width:700px) {
-    .main-section { 
-        
-        box-sizing: border-box;
-    }
-    
-    
-    .left-section {
-      margin:inherit auto;
-    }
-    .main-section .input-group {
-        margin-top:6vw;
-        flex-direction: column;
-        max-width:400px;
-        width:100%;
-      }
-    .input-text-head {
-        margin:5px auto;
-        width:100%;
-        max-width:90%;
-        border-bottom: 1px solid #9EC1E1;
-        font-weight: 500;
-        font-size: 18px;
-        line-height: 20px;
-        background-position:  center right ;
-    }
-    .input-submit-head {
-        background-image: linear-gradient(315.87deg, #F34B31 -11.35%, #FFA782 106.98%);
-        padding: 18px 109px;
-        margin:10px auto;
-        color:white;
-        border:none;
-        text-transform: uppercase;
-        font-style: normal;
-        font-size: 16px;
-        line-height: 19px;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-
-      
-    
-    .header-title {
-      font-size: 48px;
-      margin:0 32px ;
-      font-weight: normal;
-    }
-    .text-index-title {
-        max-width: 400px;
-        font-family: "Lato-Regular", sans-serif;
-        font-size: 14px;
-        line-height: 180%;
-        /* or 32px */
-        
-        letter-spacing: -0.03em;
-        
-        color: #000000;
-        margin-top:52px;
-        opacity: 0.7;
-        display: none;
-    }
-    .copter {
-      background-image: url('../images/copter.png');
-      max-width:120px;
-      height:175px;
-      margin-top:-30px;
-      
-      
+  .main-section {  
+      box-sizing: border-box;
   }
-  
-}
-
-@media (min-width: 320px) and (max-width: 480px) {
-  
+  .second {
+    border-left: none;
+    padding-left: 0;
+  }
+  .left-section {
+    margin:inherit auto;
+  }
   .main-section .input-group {
-    
+    margin-top:6vw;
+    flex-direction: column;
+    max-width:400px;
+    width:100%;
+  }
+  .input-text-head {
+    margin:5px auto;
+    width:100%;
+    max-width:90%;
+    border-bottom: 1px solid #9EC1E1;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    background-position:  center right ;
+  }
+  .input-submit-head {
+    padding: 18px 109px;
+    margin:10px auto;
+  }
+  .header-title {
+    font-size: 48px;
+    margin:0 32px ;
+    font-weight: normal;
+  }
+  .copter {
+    background-image: url('../images/copter.png');
+    max-width:120px;
+    height:175px;
+    margin-top:-30px;    
+  } 
+}
+@media (min-width: 320px) and (max-width: 480px) {
+  .main-section .input-group {
     max-width:288px;
     width:100%;
-
   }
-
   .input-submit-head {
     padding: 14px 104px;
   }
-
   .uk-dropdown {
     left:0 !important;
-  }
-  
+  } 
 }
-
 @media (max-width:1280px) and (min-width:900px) {
-    .main-section .input-group {
-      
-      max-width:320px;
-      width:100%;
-
-    } 
-    .header-title {
-        font-size: 40px;
-        
-    }
-    .right-section {
-      margin-top:200px;
-    }   
+  .main-section .input-group {
+    max-width:320px;
+    width:100%;
+  } 
+  .header-title {
+      font-size: 40px;
+  }
+  .right-section {
+    margin-top:200px;
+  }
+  .second {
+    border-left: none;
+    padding-left: 0;
+  }   
 }​
 
 

@@ -9,10 +9,10 @@
 <div class="pagination-wrapper">
     <ul class="uk-pagination" uk-margin>
         <% if(articles.page - 1) { %>
-            <li class="list-wrapper "><a class="arrow-prevnext" href="/articles?page=<%= articles.page - 1 %>"><span uk-pagination-previous></span></a></li>
+            <a class="arrow-prevnext" href="/articles?page=<%= articles.page - 1 %>"><li class="list-wrapper"><span uk-pagination-previous></span></li></a>
         <% } %>
         <% if(articles.page > 9) { %>
-            <li class="list-wrapper"><a  href="/articles?page=1">1</a></li>
+            <a  href="/articles?page=1"><li class="list-wrapper">1</li></a>
         <% } %>   
         <% var i = ((articles.page) > 2 ? articles.page - 2 : 1) %>
         <% if (i !== 1) { %>
@@ -21,14 +21,18 @@
         <% if(articles.pages> 1 && articles.docs.length) { %>
             <% for (; i <= (articles.page + 2) && i <= articles.pages; i++) { %>
                 <% if (i == articles.page) { %>
-                    <li class="list-wrapper" <%= i === articles.page ? 'style=background-color:#98B8FF;' : '' %>
-                        
-                        s><a <%= i === articles.page ? 'style=color:white;' : '' %>><%= i %></a></li>
+                    <a>
+                        <li class="list-wrapper" <%= i === articles.page ? 'style=background-color:#98B8FF;color:white' : '' %> >
+                                <%= i %>
+                        </li>
+                    </a>
                 <% } else { %>
-                    <li class="list-wrapper"><a  href="/articles?page=<%= i %>"
-                        <%= i === articles.page ? 'style=color:#000;' : '' %>
-                        
-                    ><%= i %></a></li>
+                    <a href="/articles?page=<%= i %>">
+                        <li class="list-wrapper"  <%= i === articles.page ? 'style=color:#000;' : '' %> >
+                                <%= i %>
+                        </li>
+                    </a>
+                    
                 <% } %>
                 <% if (i == articles.page + 2 && i < articles.pages) { %>
                     <li class="list-wrapper"><a >...</a></li>
@@ -37,7 +41,7 @@
             
         <% } %>
         <% if((articles.page + 1) <= articles.pages) { %>
-            <li class="list-wrapper"><a class="arrow-prevnext"  href="/articles?page=<%= articles.page + 1 %>"><span uk-pagination-next></span></a></li>
+            <a class="arrow-prevnext" href="/articles?page=<%= articles.page + 1 %>"><li class="list-wrapper"><span uk-pagination-next></span></li></a>
         <% } %>
 
         

@@ -1,14 +1,12 @@
 html {
-    /* 1 */
-    
-    /* 2 */
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    /* 3 */
     background: inherit !important;
-    
-  }
-  
+}
+
+a:hover {
+    text-decoration: none !important;   
+} 
 
 body {
     font-family: "Lato-Regular",sans-serif;
@@ -16,8 +14,8 @@ body {
 
 .pagination-wrapper {
     margin:82px auto 130px;
-    max-width:500px;
-    
+    width: max-content;
+    max-width:1000px;
 }
 
 .uk-pagination {
@@ -26,23 +24,19 @@ body {
     justify-content: space-around;
 }
 
-.arrow-prevnext {
-    
-}
-
-
-
 .list-wrapper {
     width:90px;
     height:72px;
     background: #FFFFFF;
-    display: flex;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     border-radius: 4.26045px;
     padding-left: 0 !important;
+    font-size: 30px;
+    line-height: 36px;
+    font-weight: bold;
 }
-
 
 .list-wrapper a {
     
