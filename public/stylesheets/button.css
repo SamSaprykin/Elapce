@@ -1,0 +1,87 @@
+.button-link-body {
+    display: block;
+    text-align: center;
+    height: auto;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding:16px 102px;
+    color: #5570BA;
+    text-decoration: none;
+    margin:0 auto;
+    max-width:500px;
+    
+  }
+
+  
+
+
+.button-link-body a {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    
+    text-align: right;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #5570BA;
+  }
+  
+  .button-link-body a:hover {
+    text-decoration: none;
+    color: #5570BA;
+  }
+
+
+  @media all and (min-width: 900px) { 
+
+    .button-link-body {
+    width: 359px;
+    height: 68px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding:20px 60px 19px;
+    color: #5570BA;
+    text-decoration: none;
+    margin:0;
+    display: inline-block;
+    position: relative;
+  }
+
+
+  .button-link-body a {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+    text-align: right;
+    text-transform: uppercase;
+    color: #5570BA;
+  }
+  }
+    
+
+
+
+  @media (min-width: 320px) and (max-width: 480px) {
+   
+    
+    .button-link-body {
+      padding:0;
+      width: 100%;
+    }
+    .button-link-body a {
+    
+        font-size: 14px;
+        padding:16px 80px;
+        display: inline-block;
+      }
+  }
+
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+  
+    .button-link-body {
+      width: 400px;
+    }
+  }

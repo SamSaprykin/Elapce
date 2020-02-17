@@ -20,7 +20,7 @@
       <h1 class="header-title">недвижимости</h1>
       
       <p class='text-index-title'>
-          Oferujemy dwie strategie: prostą działalność wynajmu z wydajnością 5% rocznie i bardziej złożony scenariusz - projekty o wartości dodanej z wydajnością 15% rocznie.
+          Предлагаем две стратегии инвестирования: простая аренда с доходностью до 7% годовых и проекты добавленной стоимости с доходностью до 15% годовых. 
       </p>
       <form action="/projects" method="GET">
         <div class="input-group"> 
@@ -99,6 +99,8 @@
         <div class="content-wrapper">
             <h3 class="title-proposition">Лучшие предложения</h3>
             <p class="text-proposition">
+                Нашей приоритетной целью является предоставление полной и прозрачной информации
+                нашим клиентам. 
                 С другой стороны дальнейшее развитие различных форм деятельности представляет
                 собой интересный эксперимент проверки дальнейших направлений развития.
                 Равным образом дальнейшее развитие различных
@@ -138,9 +140,7 @@
             <div class="button-prev projects-button-prev"><i class="fas fa-chevron-left"></i></div> 
             <div class="button-next projects-button-next"><i class="fas fa-chevron-right"></i></div>
         </div>
-        <span  class="button-link-body"><a href="/projects">Каталог </a> <span class="bg"></span> </span>   
-       
-        
+        <a href="/projects" class="button-link-main">Каталог<span class="bg"></span></a>  
         
     </div>
             
@@ -155,7 +155,7 @@
             Значимость этих проблем настолько очевидна, что сложившаяся структура организации 
             обеспечивает широкому кругу (специалистов) участие в формировании дальнейших направлений развития.
         </p>
-        <span  class="button-link-body"><a href="/about-us">Больше о нас</a> <span class="bg"></span> </span> 
+        <a href="/about-us" class="button-link-main">Больше о нас<span class="bg"></span></a>   
     </div>
     <div class="about-blocks">
         
@@ -246,7 +246,7 @@
             <div class="button-prev atricles-button-prev"><i class="fas fa-chevron-left"></i></div> 
             <div class="button-next atricles-button-next"><i class="fas fa-chevron-right"></i></div>
         </div>
-        <span  class="button-link-body"><a href="/articles">Все статьи</a> <span class="bg"></span> </span>  
+        <a href="/articles" class="button-link-main">Все статьи<span class="bg"></span></a>  
     </div>        
 </div>
 <div class="about-section about-guides">
@@ -268,7 +268,7 @@
             <% }); %>
         </div>
         <div class="button-guides-wrapper">
-            <span  class="button-link-body"><a href="/guides">Все гиды</a> <span class="bg"></span> </span> 
+            <a href="/guides" class="button-link-main">Все гиды<span class="bg"></span></a>
         </div>
         
     </div>
@@ -280,10 +280,11 @@
 
 
 <script>
+    
     var swiperProjects = new Swiper('.swiper-container', {
         lazy: {
             loadPrevNext: true,
-            loadPrevNextAmount: 3
+            loadPrevNextAmount: 4
         },
         centeredSlides: true,
         slidesPerView: 'auto',
@@ -295,8 +296,9 @@
         
         on: {
             slideChange: function () {
-            var ActiveSlide = this.activeIndex +1;
-            document.getElementById("project-slide-number").textContent = ActiveSlide
+                console.log('change')
+                var ActiveSlide = this.activeIndex +1;
+                document.getElementById("project-slide-number").textContent = ActiveSlide
             }
         }
     });
@@ -304,7 +306,7 @@
     var swiperArticles = new Swiper('.swiper-container-articles', {
         lazy: {
             loadPrevNext: true,
-            loadPrevNextAmount: 3
+            loadPrevNextAmount: 4
         }, 
         centeredSlides: true,
         slidesPerView: 'auto',

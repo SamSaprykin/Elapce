@@ -51,63 +51,6 @@ a:hover {
 	transition: filter 1s;
 }
 
-/* End Lazy Load Styles*/
-
-
-
-
-/* Mobile Styles */  
-
-/* Section About */ 
-
-.button-link-body {
-  display: block;
-  text-align: center;
-  height: auto;
-  background: #FFFFFF;
-  border-radius: 5px;
-  padding:16px 102px;
-  color: #5570BA;
-  text-decoration: none;
-  margin:0 auto;
-  max-width:500px;
-  
-}
-
-.button-link-body a {
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 29px;
-  /* identical to box height */
-  
-  text-align: right;
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #5570BA;
-}
-
-.button-link-body a:hover {
-  
-  text-decoration: none;
-  color: #5570BA;
-}
-
-
-
-.about-info {
-    max-width: 540px;
-    
-    font-size: 14px;
-    line-height: 170%;
-    /* or 32px */
-    margin-bottom:20px;
-    letter-spacing: -0.03em;
-    
-    color: #000000;
-    
-    opacity: 0.7;
-  }
-
 
 
 .swiper-container, .swiper-container-articles {
@@ -183,8 +126,8 @@ a:hover {
 }
 
 .swiper-slide:nth-of-type(1) {
-  max-width: 410px;
-  
+  max-width: 280px;
+  margin-left:-25px;
 }
 
 .swiper-wrapper {
@@ -205,7 +148,7 @@ a:hover {
 
 
 
-.image-gallery:hover {
+.image-gallery:hover {  
   animation: scale 1s infinite;
   cursor: pointer;
   transform: scale(1.05);
@@ -241,7 +184,7 @@ a:hover {
 
 
 .project-price-index div:hover {
-  color: #5570BA;  
+  color: #4B535F;
   
 }
 
@@ -263,7 +206,40 @@ a:hover {
 
 
 
+.button-link-main {
+    display: block;
+    text-align: center;
+    height: auto;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding:16px 102px;
+    color: #5570BA;
+    text-decoration: none;
+    margin:0 auto;
+    max-width:500px;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;   
+    text-transform: uppercase;
+    text-decoration: none;
+    position: relative;
+    moz-transition: all .8s ease-in-out;
+    -o-transition: all .8s ease-in-out;
+    -webkit-transition: all .8s ease-in-out;
+    transition: all .8s ease-in-out;
+}
 
+.button-link-main:hover {
+  box-shadow: 0 4px 15px 0 #5570BA;
+  moz-transition: all .5s ease-in-out;
+  -o-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.button-link-main:hover {
+  color: #5570BA;
+}
 
 /* About Us Section */
 
@@ -282,6 +258,16 @@ a:hover {
 
 .about-guides {
   margin-bottom:160px;
+  text-align: center;
+}
+
+.about-info {
+  max-width: 540px;
+  font-size: 14px;
+  line-height: 170%;
+  margin-bottom: 20px;
+  letter-spacing: -0.03em;
+  opacity: 0.7;
 }
 
 .about-title {  
@@ -467,9 +453,7 @@ a:hover {
   text-align: center;
 }
 
-.goal-image:hover {
-  cursor: pointer; 
-}
+
 
 .goal-text:hover {
   cursor: pointer; 
@@ -483,14 +467,17 @@ a:hover {
   background-size: 100%;
   background-repeat: no-repeat;
   margin-top:16px;
-  
   background-position: center;
 }
 
+.goal-image:hover {
+    box-shadow: 0px 4px 8px rgba(38, 38, 38, 0.2);
+}
+
+
+
 .goal-image > img {
-  
   max-height: 320px;
-  
 }
 
 
@@ -634,6 +621,13 @@ figure {
   object-fit: cover;
   width: 100%;
   height: 100%;
+  transition: all .2s ease-in-out; 
+}
+
+.card-image-guide:hover {
+  animation: scale 1s infinite;
+  cursor: pointer;
+  transform: scale(1.05);
 }
 
 
@@ -670,6 +664,7 @@ figure {
   .wrapper-guides {
       display: flex;
       flex-direction: column;
+      margin: 0 auto;
   }
   .card-wrapper {
       margin:16px;
@@ -693,7 +688,7 @@ figure {
   }
 
     .project-price-index {
-      color: #5570BA;
+      color: #4B535F;
       font-size: 28px;
       line-height: 27px;
       margin-top: 0;
@@ -728,7 +723,9 @@ figure {
 
   .swiper-slide:nth-of-type(1) {
     max-width: 480px;
+    margin-left:40px;
   }
+  
 
   .news-title {  
     width: 742px;
@@ -746,7 +743,7 @@ figure {
     margin-top:35px;
     font-size: 32px;
     line-height: 40px;
-    color: #5570BA;
+    color: #4B535F;
     text-align: left;
     
     padding-bottom:2px;
@@ -757,7 +754,7 @@ figure {
 
   .index-articles-link:hover {
     text-decoration:none;
-    color: #5570BA;
+    color: #4B535F;
   }
 
   .index-articles-link:after {
@@ -767,7 +764,7 @@ figure {
     height: 3px;
     bottom: 0;
     left: 0;
-    background-color:#5570BA;
+    background-color: #4B535F;;
     transform: scaleX(0);
     transform-origin: bottom right;
     transition: transform 0.3s;
@@ -797,10 +794,23 @@ figure {
     max-height: 587px;
     background-size: 100%;
     background-repeat: no-repeat;
-    margin-top:113px;  
+    margin-top:113px;
+    
   }
 
-  
+
+  .button-link-main {
+    width: 359px;
+    height: 68px;
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding:20px 60px 19px;
+    color: #5570BA;
+    text-decoration: none;
+    margin:0;
+    display: inline-block;
+    position: relative;
+}
   
   .goal-text {
     
@@ -834,6 +844,7 @@ figure {
 
   .about-section {
     padding:0;
+    margin-top:80px;
   }
 
   .about-item-block {
@@ -877,6 +888,7 @@ figure {
   font-weight: bold;
   color: #4B535F;
   margin-bottom:95px;
+  margin-top: 60px;
 }
 
   .about-item-block:before{
@@ -967,51 +979,6 @@ figure {
     margin:0 auto 205px;
   }
 
-  
-
-  
-.button-link-body {
-  width: 359px;
-  height: 68px;
-  background: #FFFFFF;
-  border-radius: 5px;
-  padding:20px 60px 19px;
-  color: #5570BA;
-  text-decoration: none;
-  margin:0;
-  display: inline-block;
-  position: relative;
-}
-
-.bg {
-  width:10px;
-  display: inline-block;
-  height:17px;
-  background-image:url('../images/arrow-button.svg');
-  
-  background-repeat: no-repeat;
-  background-size:10px;
-  position: absolute;
-  top: 50%;
-  margin-top:-8.8px;
-  left:85%;
-}
-
-
-
-
-
-  .button-link-body a {
-    font-weight: bold;
-    font-size: 24px;
-    line-height: 29px;
-    /* identical to box height */
-
-    text-align: right;
-    text-transform: uppercase;
-
-    color: #5570BA;
-  }
 
 
   .new-objects-catalog {
@@ -1045,17 +1012,11 @@ figure {
   .swiper-slide .image-gallery {
     min-height: 240px;
   }
-  
-  .button-link-body {
-    padding:0;
-    width: 100%;
-  }
-  
-  .button-link-body a {
-    
-    font-size: 14px;
+  .button-link-main {
     padding:16px 80px;
-    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
   }
 
   .about-item-block {
@@ -1111,8 +1072,7 @@ figure {
 
 @media (min-width: 768px) and (max-width: 1024px) {
   
-  .button-link-body {
-    
+  .button-link-main {
     width: 400px;
   }
   h3.title-second-mobile, h3.news-title, h3.about-title, h3.guide-title, .title-proposition {
@@ -1120,13 +1080,10 @@ figure {
     text-align: center;
     font-size:32px !important;
   }
-
-  
   .about-section {
     margin-bottom:58px;
     justify-content: center;
   }
-
   .swiper-wrapper {
     margin-left:-60px;
   }

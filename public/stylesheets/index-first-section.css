@@ -99,6 +99,7 @@
 .input-submit-head {
   background-image: linear-gradient(315.87deg, #F34B31 -11.35%, #FFA782 106.98%);
   padding: 14px 106px;
+  background-size: 300%;
   margin:12px 11px 12px 20px;
   color:white;
   border:none;
