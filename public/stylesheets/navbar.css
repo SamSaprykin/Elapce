@@ -274,3 +274,22 @@ ul {
         justify-content: space-evenly;
     }
 }
+
+
+/* font awesome */
+
+.icon-facebook:before {
+    content: "\ea90";
+  }
+
+.icon-user:before {
+content: "\e971";
+}
+
+.icon-instagram:before {
+content: "\ea92";
+}
+
+.icon-linkedin2:before {
+    content: "\eaca";
+}
