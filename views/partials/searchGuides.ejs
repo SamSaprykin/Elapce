@@ -1,0 +1,50 @@
+<head>
+    <link rel='stylesheet' href='/stylesheets/search-article.css' />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
+</head>
+<div class="search-filter">
+    <h1 class="title-text">Гид по городам</h1>
+    <form action="/articles" method="GET" class="desctop-filter">
+        
+        <div class="input-group">
+            <div class="category-filter">
+                <div class="checkbox-container">
+                    <a href="http://localhost:3000/guides" class="checklabel">Все страны</a>
+                </div>
+                <div class="checkbox-container">
+                    <a href="http://localhost:3000/guides?country=Украина" class="checklabel">Украина</a>
+                </div>
+                <div class="checkbox-container">
+                    <a href="http://localhost:3000/guides?country=Испания" class="checklabel">Испания</a>
+                </div>
+            </div>
+        </div>
+    </form>
+    <div class="swiper-container mobile-filter">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="http://localhost:3000/guides" class="checklabel">Все страны</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="http://localhost:3000/guides?country=Украина" class="checklabel">Украина</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="http://localhost:3000/guides?country=Испания" class="checklabel">Испания</a>
+            </div> 
+        </div>
+    </div>
+</div>
+	
+
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    });
+
+    currentLinks = document.querySelectorAll('a[href="'+decodeURIComponent(document.URL) +'"]');
+    currentLinks[0].classList.add("current-link");
+    currentLinks[1].classList.add("current-link");
+</script>
+

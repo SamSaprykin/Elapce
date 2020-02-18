@@ -1,60 +1,75 @@
 <head>
-	<link rel='stylesheet' href='/stylesheets/search-article.css' />
+    <link rel='stylesheet' href='/stylesheets/search-article.css' />
+    <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
+    <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
 </head>
 <div class="search-filter">
     <h1 class="title-text">Статьи</h1>
-    <form action="/articles" method="GET">
-        <input type="search" class="search-input" placeholder="Искать" name="search" id="seach" value="<%= query.search %>">
-        <div class="input-group">
-            
-            
-            <fieldset>
-                    
-                
-                <div class="category-filter">
-                    <div class="checkbox-container">
-                        <input type="radio" name="category" class="checkbox" id="all"  value="" <%= query.category === '' ? 'checked' : '' %>>
-                        <label for="all" class="checklabel">Все статьи</label>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="radio" name="category" class="checkbox" id="residence"  value="ВНЖ" <%= query.category === 'ВНЖ' ? 'checked' : '' %>>
-                        <label for="residence" class="checklabel">ВНЖ</label>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="radio" name="category" class="checkbox" id="invest" value="Инвестиции" <%= query.category === 'Инвестиции' ? 'checked' : '' %>>
-                        <label for="invest" class="checklabel">Инвестиции</label>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="radio" name="category" class="checkbox" id="taxes" value="Налоги" <%= query.category === 'Налоги' ? 'checked' : '' %>>
-                        <label for="taxes" class="checklabel" >Налоги</label>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="radio" name="category" class="checkbox height" id="purchase" value="Покупка и оформление" <%= query.category === 'Покупка и оформление' ? 'checked' : '' %>>
-                        <label for="purchase" class="checklabel ">Покупка и оформление</label>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="radio" name="category" class="checkbox" id="markets" value="Рынки и цены" <%= query.category === 'Рынки и цены' ? 'checked' : '' %>>
-                        <label for="markets" class="checklabel" >Рынки и цены</label>
-                    </div>
-                    <div class="checkbox-container">
-                        <input type="radio" name="category" class="checkbox" id="news" value="Новости" <%= query.category === 'Новости' ? 'checked' : '' %>>
-                        <label for="news" class="checklabel" >Новости</label>
-                    </div>
-                    
-                </div>
-             
-            </fieldset>
-                
-            <input type="submit" value="искать" class="input-submit-head">
-              
-    
-            
+    <form action="/articles" method="GET" class="desctop-filter">
+        
+    <div class="input-group">
+        <div class="category-filter">
+            <div class="checkbox-container">
+                <a href="http://localhost:3000/articles?search=&category=" class="checklabel">Все статьи</a>
+            </div>
+            <div class="checkbox-container">
+                <a href="http://localhost:3000/articles?search=&category=ВНЖ" class="checklabel">ВНЖ</a>
+            </div>
+            <div class="checkbox-container">
+                <a href="http://localhost:3000/articles?search=&category=Инвестиции" class="checklabel">Инвестиции</a>
+            </div>
+            <div class="checkbox-container">
+                <a href="http://localhost:3000/articles?search=&category=Налоги" class="checklabel">Налоги</a>
+            </div>
+            <div class="checkbox-container">
+                <a href="http://localhost:3000/articles?search=&category=Покупка+и+оформление" class="checklabel">Покупка и оформление</a>
+            </div>
+            <div class="checkbox-container">
+                <a href="http://localhost:3000/articles?search=&category=Рынки+и+цены" class="checklabel">Рынки и цены</a>
+            </div>
+            <div class="checkbox-container">
+                <a href="http://localhost:3000/articles?search=&category=Новости" class="checklabel">Новости</a>
+            </div>
         </div>
+    </div>
     </form>
-    
+    <div class="swiper-container mobile-filter">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <a href="http://localhost:3000/articles?search=&category=" class="checklabel">Все статьи</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="http://localhost:3000/articles?search=&category=ВНЖ" class="checklabel">ВНЖ</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="http://localhost:3000/articles?search=&category=Инвестиции" class="checklabel">Инвестиции</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="http://localhost:3000/articles?search=&category=Налоги" class="checklabel">Налоги</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="http://localhost:3000/articles?search=&category=Покупка+и+оформление" class="checklabel">Покупка и оформление</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="http://localhost:3000/articles?search=&category=Рынки+и+цены" class="checklabel">Рынки и цены</a>
+            </div>
+            <div class="swiper-slide">
+                <a href="http://localhost:3000/articles?search=&category=Новости" class="checklabel">Новости</a>
+            </div>
+         
+        </div>
+      </div>
 </div>
 	
 
+<script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 3,
+      spaceBetween: 30,
+    });
 
-	
+    currentLinks = document.querySelectorAll('a[href="'+decodeURIComponent(document.URL) +'"]');
+    currentLinks[0].classList.add("current-link");
+    currentLinks[1].classList.add("current-link");
+</script>
 

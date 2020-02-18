@@ -9,23 +9,21 @@
         <% if(guides.page - 1) { %>
             <a class="arrow-prevnext" href="/guides?page=<%= guides.page - 1 %>"><li class="list-wrapper"><span uk-pagination-previous></span></li></a>
         <% } %>
-        <% if(guides.page > 9) { %>
-            <a  href="/guides?page=1"><li class="list-wrapper">1</li></a>
-        <% } %>   
+ 
         <% var i = ((guides.page) > 2 ? guides.page - 2 : 1) %>
         <% if (i !== 1) { %>
-            <li class="list-wrapper"><a >...</a></li>
+            <a class="desctop-pagination"><li class="list-wrapper">...</li></a>
         <% } %>
         <% if(guides.pages> 1 && guides.docs.length) { %>
             <% for (; i <= (guides.page + 2) && i <= guides.pages; i++) { %>
                 <% if (i == guides.page) { %>
-                    <a>
+                    <a class="desctop-pagination">
                         <li class="list-wrapper" <%= i === guides.page ? 'style=background-color:#98B8FF;color:white' : '' %> >
                                 <%= i %>
                         </li>
                     </a>
                 <% } else { %>
-                    <a href="/guides?page=<%= i %>">
+                    <a class="desctop-pagination" href="/guides?page=<%= i %>">
                         <li class="list-wrapper"  <%= i === guides.page ? 'style=color:#000;' : '' %> >
                                 <%= i %>
                         </li>
@@ -33,11 +31,12 @@
                     
                 <% } %>
                 <% if (i == guides.page + 2 && i < guides.pages) { %>
-                    <li class="list-wrapper"><a >...</a></li>
+                    <a class="desctop-pagination"><li class="list-wrapper">...</li></a>
                 <% } %>
             <% } %>
             
         <% } %>
+        <p class="mobile-pagination"><%= guides.page %> из <%= guides.pages %></p>
         <% if((guides.page + 1) <= guides.pages) { %>
             <a class="arrow-prevnext" href="/guides?page=<%= guides.page + 1 %>"><li class="list-wrapper"><span uk-pagination-next></span></li></a>
         <% } %>

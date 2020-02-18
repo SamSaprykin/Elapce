@@ -11,23 +11,21 @@
         <% if(articles.page - 1) { %>
             <a class="arrow-prevnext" href="/articles?page=<%= articles.page - 1 %>"><li class="list-wrapper"><span uk-pagination-previous></span></li></a>
         <% } %>
-        <% if(articles.page > 9) { %>
-            <a  href="/articles?page=1"><li class="list-wrapper">1</li></a>
-        <% } %>   
+         
         <% var i = ((articles.page) > 2 ? articles.page - 2 : 1) %>
         <% if (i !== 1) { %>
-            <li class="list-wrapper"><a >...</a></li>
+            <a class="desctop-pagination"><li class="list-wrapper">...</li></a>
         <% } %>
         <% if(articles.pages> 1 && articles.docs.length) { %>
             <% for (; i <= (articles.page + 2) && i <= articles.pages; i++) { %>
                 <% if (i == articles.page) { %>
-                    <a>
+                    <a class="desctop-pagination">
                         <li class="list-wrapper" <%= i === articles.page ? 'style=background-color:#98B8FF;color:white' : '' %> >
                                 <%= i %>
                         </li>
                     </a>
                 <% } else { %>
-                    <a href="/articles?page=<%= i %>">
+                    <a href="/articles?page=<%= i %>" class="desctop-pagination">
                         <li class="list-wrapper"  <%= i === articles.page ? 'style=color:#000;' : '' %> >
                                 <%= i %>
                         </li>
@@ -35,11 +33,12 @@
                     
                 <% } %>
                 <% if (i == articles.page + 2 && i < articles.pages) { %>
-                    <li class="list-wrapper"><a >...</a></li>
+                    <a class="desctop-pagination"><li class="list-wrapper">...</li></a>
                 <% } %>
             <% } %>
             
         <% } %>
+        <p class="mobile-pagination"><%= articles.page %> из <%= articles.pages %></p>
         <% if((articles.page + 1) <= articles.pages) { %>
             <a class="arrow-prevnext" href="/articles?page=<%= articles.page + 1 %>"><li class="list-wrapper"><span uk-pagination-next></span></li></a>
         <% } %>

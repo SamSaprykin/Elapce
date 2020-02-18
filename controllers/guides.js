@@ -11,14 +11,18 @@ converter = new showdown.Converter();
 module.exports = {
 	// Posts Index
 	async gudiesIndex(req, res, next) {
+        const { dbQuery } = res.locals;
+        delete res.locals.dbQuery 
         
-        
-        let guides = await Guide.paginate({}, {
+        let guides = await Guide.paginate(dbQuery, {
             page: req.query.page || 1,
             limit:10,
             sort: {'_id': -1}
         });
         guides.page = Number(guides.page);
+        if (!guides.docs.length && res.locals.query) {
+            res.locals.error = "Не найдены результаты по Вашему запросу."
+        }
 		res.render('guides/index', {guides, image: cloudinary.image, image_url: cloudinary.url});
 	},
 	guideNew(req, res, next) {

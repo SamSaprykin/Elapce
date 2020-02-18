@@ -3,7 +3,7 @@ const router = express.Router();
 const multer = require('multer');
 const { storage } = require('../cloudinary');
 const upload = multer({ storage });
-const { asyncErrorHandler, isLoggedIn, isAdmin  } = require('../middleware/index');
+const { asyncErrorHandler, isLoggedIn, isAdmin,searchAndFilterGuides  } = require('../middleware/index');
 const { gudiesIndex, 
         guideNew,
         guideCreate, 
@@ -16,7 +16,7 @@ const { gudiesIndex,
 
 /* Get guides index /guides */
 
-router.get('/', asyncErrorHandler(gudiesIndex));
+router.get('/',asyncErrorHandler(searchAndFilterGuides), asyncErrorHandler(gudiesIndex));
 
 /* Get guides new /guide */  
 router.get('/new', isLoggedIn,asyncErrorHandler(isAdmin), guideNew);

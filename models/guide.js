@@ -7,6 +7,7 @@ const CityGuideSchema = new Schema ({
     conclusions: String,
     introduction: String,
     location: String,
+    country: String,
     geometry: {
         type: {
             type: String,

@@ -199,7 +199,6 @@
 
 			
 		</div>
-		<input type="search" class="search-input" placeholder="Искать" name="search" id="seach" value="<%= query.search %>"> 
 	</div>
 	
 </form>
@@ -227,7 +226,9 @@
 
 		$('.price-button').on('click', function(e){
 			e.preventDefault();
-			UIkit.dropdown($('.uk-dropdown')[2]).hide();
+			setTimeout(function(){
+					UIkit.dropdown($('.uk-dropdown')[2]).hide()
+			}, 500);
 			var inputsPrice = $('.input-price')
 			var priceButton = document.getElementById('input-price')
 			
@@ -243,6 +244,9 @@
 			document.getElementById('location').value = $(this)[0].dataset.country;
 			if(document.getElementById('location').value.length) {
 				document.getElementById('input-location').textContent = document.getElementById('location').value;
+				setTimeout(function(){
+					UIkit.dropdown($('.uk-dropdown')[1]).hide()
+				}, 500);
 			}
 			
 			
@@ -276,7 +280,7 @@
 				$.each($('.uk-dropdown-close-bedrooms:checked'), function(){
                 	bedroomsValue.push($(this).val());
 				});
-				console.log(bedroomsValue)
+				
 			}
 			
 		})
@@ -287,7 +291,16 @@
 		})
 		$('.area-button').on('click',function(e){
 			e.preventDefault();
-			UIkit.dropdown($('.uk-dropdown')[4]).hide();
+			setTimeout(function(){
+					UIkit.dropdown($('.uk-dropdown')[4]).hide()
+			}, 500);
+			var inputsArea = $('.input-area')
+			var areaButton = document.getElementById('input-area')
+			
+			var valueOne = inputsArea[0].value.toString()
+			var valueTwo = inputsArea[1].value.toString()
+
+			areaButton.textContent = "".concat(valueOne, " - ").concat(valueTwo);
 		})
 		$('.additional-filter').on('click', function(e) {
 			e.preventDefault();

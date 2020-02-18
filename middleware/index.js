@@ -340,6 +340,46 @@ const middleware = {
 		next();
 		
 
+	},
+	async searchAndFilterGuides (req, res, next) {
+		
+		
+		const queryKeys = Object.keys(req.query);
+
+		if (queryKeys.length) {
+			
+			const dbQueries = [];
+			
+			let { country } = req.query;
+
+			if (country) {
+				dbQueries.push({ country: { $in: country } });
+			}
+
+			res.locals.dbQuery = dbQueries.length ? { $and: dbQueries } : {};
+
+			const defaultKeys = ['country'];		
+				defaultKeys.forEach(key => {
+					if (!queryKeys.includes(key)) {
+						
+						if (key === 'country') { 
+							req.query[key] = [];
+						}
+					}
+				});
+				
+	
+		}
+		res.locals.query = req.query;
+
+		queryKeys.splice(queryKeys.indexOf('page'), 1);
+
+		const delimiter = queryKeys.length ? '&' : '?';
+
+		res.locals.paginateUrl = req.originalUrl.replace(/(\?|\&)page=\d+/g, '') + `${delimiter}page=`;
+
+		next();	
+
 	}
 
 };

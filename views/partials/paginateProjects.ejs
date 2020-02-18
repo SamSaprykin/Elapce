@@ -14,18 +14,19 @@
          
         <% var i = ((projects.page) > 2 ? projects.page - 2 : 1) %>
         <% if (i !== 1) { %>
-            <a ><li class="list-wrapper">...</li></a>
+            <a class="desctop-pagination"><li  class="list-wrapper">...</li></a>
         <% } %>
+        
         <% if(projects.pages> 1 && projects.docs.length) { %>
             <% for (; i <= (projects.page +1) && i <= projects.pages; i++) { %>
                 <% if (i == projects.page) { %>
-                    <a>
+                    <a class="desctop-pagination">
                         <li class="list-wrapper" <%= i === projects.page ? 'style=background-color:#98B8FF;color:white' : '' %> >
                                 <%= i %>
                         </li>
                     </a>
                 <% } else { %>
-                    <a href="/projects?page=<%= i %>">
+                    <a href="/projects?page=<%= i %>" class="desctop-pagination">
                         <li class="list-wrapper"  <%= i === projects.page ? 'style=color:#000;' : '' %> >
                                 <%= i %>
                         </li>
@@ -33,11 +34,13 @@
                     
                 <% } %>
                 <% if (i == projects.page + 4 && i < projects.pages) { %>
-                    <a ><li class="list-wrapper">...</li></a>
+                    <a class="desctop-pagination"><li class="list-wrapper">...</li></a>
                 <% } %>
             <% } %>
             
         <% } %>
+        <p class="mobile-pagination"><%= projects.page %> из <%= projects.pages %></p>
+        
         <% if((projects.page + 1) <= projects.pages) { %>
             <a class="arrow-prevnext" href="/projects?page=<%= projects.page + 1 %>"><li class="list-wrapper"><span uk-pagination-next></span></li></a>
         <% } %>        

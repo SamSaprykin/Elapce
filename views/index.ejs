@@ -209,7 +209,7 @@
                 <img src="../images/invest-middle.png" alt="Invest" />
                 <div class="top-text goal-text">Хотите инвестировать?</div>
                 <div class="centered-text goal-text">Доходность 17 - 30%</div>
-                <a class="bottom-text goal-text" >Инвестиции</a>    
+                <div class="bottom-text goal-text" >Инвестиции</div>    
             </a>
             
         </div>
@@ -340,6 +340,7 @@
 			document.getElementById('location').value = $(this)[0].dataset.country;
 			if(document.getElementById('location').value.length) {
 				document.getElementById('input-location').textContent = document.getElementById('location').value;
+                UIkit.dropdown($('.uk-dropdown')[0]).hide();
 			}
 			
 			
