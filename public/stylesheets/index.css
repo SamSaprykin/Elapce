@@ -1009,6 +1009,9 @@ figure {
 
 
 @media (min-width: 320px) and (max-width: 480px) {
+  .swiper-container {
+    width: 94%;
+  }
   .swiper-slide .image-gallery {
     min-height: 240px;
   }
@@ -1086,6 +1089,11 @@ figure {
   }
   .swiper-wrapper {
     margin-left:-60px;
+  }
+
+  .swiper-slide:nth-of-type(1) {
+    max-width: 480px;
+    margin-left: -80px;
   }
 }
 
