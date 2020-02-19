@@ -338,7 +338,14 @@ body {
     
 }
 
-
+@media (min-width: 320px) and (max-width: 800px) {
+    .uk-first-column {
+        height: 100vh;
+    }
+    .uk-background-cover {
+        display: none !important;
+    }  
+}
 
 @media (min-width: 320px) and (max-width: 480px) {
     div.footer-contacts {
@@ -347,7 +354,8 @@ body {
 
     .footer-mobile {
         color:white !important;
-    }    
+    }
+    
 }
 
 @media (max-width: 1280px) {

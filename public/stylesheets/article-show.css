@@ -193,6 +193,7 @@
     max-width:485px;
     width:100%;
     height:auto;
+    
 }
 
 .title-image {
@@ -434,6 +435,12 @@
        margin:16px 16px ;
    }
 
+   .project-title-index {
+       margin-top:16px;
+   }
+
+
+
    #map {
         height: 293px;
     }
@@ -445,7 +452,7 @@
         padding:42px 0 51px; 
     }
     .project-card {
-        margin:0;
+        margin:0 0 32px;
     }
     
 }

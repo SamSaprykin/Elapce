@@ -24,6 +24,7 @@ a:hover {
 .wrapper-project-index {
     display: flex;
     justify-content: space-evenly;
+    
     flex-wrap: wrap;
     position: relative;
     z-index: 1000;
@@ -109,6 +110,7 @@ a:hover {
     .title-image {
         height:352px;
         max-width:485px;
+        object-fit: cover;
         padding:0;
         transition: all .2s ease-in-out;    
     }
@@ -151,3 +153,11 @@ a:hover {
 
 
 }   
+@media all and (max-width: 1080px) {
+    .wrapper-project-index {
+        display: flex;
+        justify-content: center;
+        
+        
+    }   
+}

@@ -102,6 +102,8 @@ ul {
     padding-top: 17px;
     margin-bottom: 30px;
     padding-left:8px;
+    position: relative;
+    z-index: 9999;
 }
 .toggle {
     order: 1;

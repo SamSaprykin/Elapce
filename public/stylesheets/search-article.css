@@ -32,7 +32,7 @@ h1 {
 
   .checklabel {
     display:block;
-    width:185px;
+    width:125px;
     cursor: pointer;
     color:#5570BA;
     text-decoration: underline;
@@ -61,7 +61,7 @@ h1 {
 }
 
 .mobile-filter {
-  left: -22px;
+  left: 5px;
 }
 
 .checkbox-container {
@@ -110,6 +110,7 @@ h1 {
 
   .checklabel {
     font-size:1.2rem;
+    width:185px;
   }
   
   .title-text {

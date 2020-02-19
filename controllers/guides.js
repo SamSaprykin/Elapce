@@ -126,6 +126,7 @@ module.exports = {
         req.body.geometry = response.body.features[0].geometry;
         guide.geometry = req.body.geometry
         guide.title = req.body.title;
+        guide.country = req.body.country;
         text = req.body.body;
         html = converter.makeHtml(text);
         guide.body = html;
