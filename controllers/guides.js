@@ -64,7 +64,7 @@ module.exports = {
     async guideShow(req, res, next) {
         let guide = await Guide.findById(req.params.id);
         
-        res.render('guides/show', {guide})
+        res.render('guides/show', {guide, image:cloudinary.image, image_url: cloudinary.url})
     },
     async guideEdit(req, res, next) {
         let guide = await Guide.findById(req.params.id);
