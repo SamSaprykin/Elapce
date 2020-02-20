@@ -8,7 +8,7 @@
 <div class="article-wrapper">
     <h1 class="title-article"><%= article.title %></h1>
     <div class="wrapper-link-icons">
-        <a class="link-all-theme" href="http://localhost:3000/articles?search=&category=<%= article.category %>">Все по теме <span style="text-transform: lowercase;"><%= article.category %></span></a>
+        <a class="link-all-theme" href="/articles?search=&category=<%= article.category %>">Все по теме <span style="text-transform: lowercase;"><%= article.category %></span></a>
         <div class="icons-group">
             <a href=""><i class="fab fa-twitter icon-artcile"></i></a>
             <a href=""><i class="fab fa-facebook-f icon-artcile"></i></a>
@@ -16,14 +16,14 @@
         
     </div>
     
-    <img class="article-image" src="<%= article.images[0].url %>" alt="<%= article.title %>">
+    <img class="article-image" src="<%= image_url(article.images[0].public_id, {width: 1000, height: 650,  crop: "fit"}) %>" alt="<%= article.title %>">
     
     <p class="article-intro"><%= article.introduction %></p>
     <h5 class="article-category"><%= article.category %></h5>
     <div class="article-text" id="root"></div>
 
-    <img class="article-image" src="<%= article.images[1].url %>" alt="<%= article.title %>">
-
+    <img class="article-image" src="<%= image_url(article.images[1].public_id, {width: 1000, height: 650,  crop: "fit"}) %>" alt="<%= article.title %>">
+    
     <p class="article-conclusion" ><%= article.conclusions %></p>
 
     <% if (currentUser && currentUser.username === 'admin') { %>
@@ -58,7 +58,8 @@
             <div class="project-card">
                 
                 <a href="/articles/<%= article._id %>"><img class="title-image"
-                src="<%= article.images[0].url %>"
+                src="<%= image_url(article.images[0].public_id, {width: 300, height: 240,  crop: "fit"}) %>"
+                
                 alt="<%= article.title %>"></a>    
                 <h2 class="project-title-index"><%= article.title %></h2>    
             </div> 

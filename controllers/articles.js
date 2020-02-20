@@ -24,7 +24,7 @@ module.exports = {
             res.locals.error = "Не найдены результаты по Вашему запросу."
         }
         
-		res.render('articles/index', { articles, title: 'Статьи' });
+		res.render('articles/index', { articles, title: 'Статьи', image: cloudinary.image, image_url: cloudinary.url });
 	},
 	// Posts New
 	articleNew(req, res, next) {

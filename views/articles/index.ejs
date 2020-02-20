@@ -16,7 +16,8 @@
             <div class="project-card">
             
                 <a href="/articles/<%= article.id %>"><img class="article-image"
-                src="<%= article.images[0].url %>"
+                src="<%= image_url(article.images[0].public_id, {width: 460, height: 360,  crop: "fit"}) %>"
+                
                 alt="<%= article.title %>"></a>    
                 
                 <a href="/articles/<%= article.id %>">
