@@ -89,6 +89,7 @@ a:hover {
 .image-gallery {
     vertical-align: top;
     max-width:90vh;
+    width: 800px;
 }
 
 
@@ -559,7 +560,7 @@ a:hover {
       }
     
     .gallery-item {
-        max-width: 485px;
+        width: 485px;
         height: auto;
         margin:0 8px 70px;
         padding:0;

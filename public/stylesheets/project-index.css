@@ -109,7 +109,7 @@ a:hover {
 
     .title-image {
         height:352px;
-        max-width:485px;
+        width:485px;
         object-fit: cover;
         padding:0;
         transition: all .2s ease-in-out;    

@@ -73,7 +73,7 @@
 
 @media all and (min-width: 900px) {
     .project-card {
-        max-width:485px;
+        width:485px;
         margin:0 10px 40px;
     }
     .article-title-index {
@@ -89,9 +89,4 @@
     .createdDate {
         font-size: 14px;
     }
-}
-
-
-.fancy {
-    width:453px;
 }
