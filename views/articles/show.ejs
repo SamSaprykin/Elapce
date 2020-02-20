@@ -65,9 +65,9 @@
         <% articlesMore.forEach(function(article){ %>
             <div class="project-card">
                 
-                <a href="/articles/<%= article._id %>"><img class="title-image"
-                src="<%= image_url(article.images[0].public_id, {width: 300, height: 240,  crop: "fit"}) %>"
-                
+                <a href="/articles/<%= article._id %>"><img class="title-image lazy"
+                data-src="<%= image_url(article.images[0].public_id, {width: 300, height: 240,  crop: "fit"}) %>"
+                src="<%= image_url(article.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>" 
                 alt="<%= article.title %>"></a>    
                 <h2 class="project-title-index"><%= article.title %></h2>    
             </div> 
