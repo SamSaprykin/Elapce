@@ -15,8 +15,10 @@
             
             
             <figure class="card-wrapper">
-                <a href="/guides/<%= guide.id %>" class=""><img class="card-image" 
-                    src="<%= guide.images[0].url %>"
+                <a href="/guides/<%= guide.id %>" class=""><img class="card-image lazy" 
+                    
+                    data-src="<%= image_url(guide.images[0].public_id, {width: 800, height: 600,  crop: "fit"}) %>"
+                    src="<%= image_url(guide.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
                     alt="<%= guide.title %>"></a>    
                     
                     <a href="/guides/<%= guide.id %>" >
@@ -33,3 +35,28 @@
 </div>
 
 <% include ../partials/paginateGuides %>
+
+<script>
+    const myImgs = document.querySelectorAll('.lazy');
+    const config = {
+        rootMargin: '50px 20px 75px 30px',
+        threshold: [0, 0.25, 0.75, 1]
+    };
+    observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log('in the view',entry.target);
+                const lazyImage = entry.target
+                lazyImage.src = lazyImage.dataset.src
+                lazyImage.classList.remove("lazy");
+                
+            }
+        });
+    },config);
+
+    myImgs.forEach(image => {
+        observer.observe(image);
+    });
+
+    
+</script>
