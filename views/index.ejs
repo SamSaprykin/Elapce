@@ -114,8 +114,9 @@
                 
                 
                         <div class="swiper-slide" style="background-color: transparent;">
-                            <a href="/projects/<%= project.id %>"><img class="title-image image-gallery swiper-lazy"
+                            <a href="/projects/<%= project.id %>"><img class="title-image image-gallery lazy"
                                 data-src="<%= image_url(project.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
+                                src="<%= image_url(project.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
                                 alt="<%= project.title %>"
                                 
                             >
@@ -224,9 +225,9 @@
                         
                     
                         <div class="swiper-slide" style="background-color: transparent;">
-                            <a href="/articles/<%= article.id %>"><img class="title-image image-gallery swiper-lazy"
+                            <a href="/articles/<%= article.id %>"><img class="title-image image-gallery lazy"
                                 data-src="<%= image_url(article.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
-                                
+                                src="<%= image_url(article.images[0].public_id, {width: 85, height: 60,  crop: "fit"}) %>"
                                 alt="<%= article.title %>"></a>       
                             <a class="project-price-index" href="/articles/<%= article.id %>"><div class="index-articles-link"><%= article.title %></div></a>      
                         </div> 
@@ -254,8 +255,9 @@
             <% guidesMain.forEach(function(guide){ %>
             
                 <figure class="card-wrapper">
-                    <a href="/guides/<%= guide.id %>" class=""><img class="card-image-guide" 
-                        src="<%= image_url(guide.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
+                    <a href="/guides/<%= guide.id %>" class=""><img class="card-image-guide lazy" 
+                        data-src="<%= image_url(guide.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
+                        src="<%= image_url(guide.images[0].public_id, {width: 85, height: 60,  crop: "fit"}) %>"
                         alt="<%= guide.title %>"></a>    
                         
                         <a href="/guides/<%= guide.id %>" >
@@ -277,7 +279,26 @@
 
 
 <script>
-    
+    const myImgs = document.querySelectorAll('.lazy');
+    const config = {
+        rootMargin: '50px 20px 75px 30px',
+        threshold: [0, 0.25, 0.75, 1]
+    };
+    observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log('in the view',entry.target);
+                const lazyImage = entry.target
+                lazyImage.src = lazyImage.dataset.src
+                lazyImage.classList.remove("lazy");
+                
+            }
+        });
+    },config);
+
+    myImgs.forEach(image => {
+        observer.observe(image);
+    });
     var swiperProjects = new Swiper('.swiper-container', {
         lazy: {
             loadPrevNext: true,

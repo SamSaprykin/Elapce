@@ -15,9 +15,9 @@
             <div class="shape-white-articles"></div>
             <div class="project-card">
             
-                <a href="/articles/<%= article.id %>"><img class="article-image"
-                src="<%= image_url(article.images[0].public_id, {width: 460, height: 360,  crop: "fit"}) %>"
-                
+                <a href="/articles/<%= article.id %>"><img class="article-image lazy"
+                data-src="<%= image_url(article.images[0].public_id, {width: 460, height: 360,  crop: "fit"}) %>"
+                src="<%= image_url(article.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
                 alt="<%= article.title %>"></a>    
                 
                 <a href="/articles/<%= article.id %>">
@@ -33,3 +33,28 @@
 
 
 <% include ../partials/paginateArticles %>
+
+<script>
+    const myImgs = document.querySelectorAll('.lazy');
+    const config = {
+        rootMargin: '50px 20px 75px 30px',
+        threshold: [0, 0.25, 0.75, 1]
+    };
+    observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                console.log('in the view',entry.target);
+                const lazyImage = entry.target
+                lazyImage.src = lazyImage.dataset.src
+                lazyImage.classList.remove("lazy");
+                
+            }
+        });
+    },config);
+
+    myImgs.forEach(image => {
+        observer.observe(image);
+    });
+
+    
+</script>
