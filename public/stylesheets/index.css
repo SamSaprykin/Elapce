@@ -365,7 +365,7 @@ a:hover {
   height: 114px;
   background-size: 100%;
   background-repeat: no-repeat;
-  margin-top:50px;
+  margin-top:40px;
 }
 
 .globe-about {
@@ -397,7 +397,7 @@ a:hover {
 }
 
 .keys-content {
-  margin-top:-160px;
+  margin-top:-150px;
   margin-left:150px;
   width: 278px;
   
@@ -826,8 +826,6 @@ figure {
   .card-image {
     display: block;
     min-height: 35rem; /* layout hack */
-    
-    
     filter: blur(3px); /* blur the lowres image */
   }
 
@@ -909,6 +907,7 @@ figure {
   }
 
   .keys-about {
+    margin-top: 0;
     width: 287px;
     height: 370px;
     background-size: 100%;
@@ -948,21 +947,21 @@ figure {
   }
 
   .keys-content {
-    margin-top:-350px;
+    margin-top:-340px;
     margin-left:120px;
     width: 278px;
     
   }
   
   .search-content {
-    margin-top:-370px;
+    margin-top:-410px;
     margin-left:150px;
     width: 240px;
     
   }
   
   .buildings-content {
-    margin-top:-480px;
+    margin-top:-510px;
     margin-left:240px;
     width: 196px;
     
