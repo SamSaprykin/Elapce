@@ -269,7 +269,7 @@
     observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                console.log('in the view',entry.target);
+                
                 const lazyImage = entry.target
                 lazyImage.src = lazyImage.dataset.src
                 lazyImage.classList.remove("lazy");
