@@ -78,22 +78,34 @@
 
 
 <script>
-    const myImgs = document.querySelectorAll('.lazy');
-    const config = {
-        rootMargin: '50px 20px 75px 30px',
-        threshold: [0, 0.25, 0.75, 1]
-    };
-    observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                console.log('in the view',entry.target);
-                const lazyImage = entry.target
-                lazyImage.src = lazyImage.dataset.src
-                lazyImage.classList.remove("lazy");
-                
-            }
+    if (
+    !'IntersectionObserver' in window &&
+    !'IntersectionObserverEntry' in window &&
+    !'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+        var myImgs = document.querySelectorAll('.lazy');
+        myImgs.src = myImgs.dataset.src
+    } else {
+        var myImgs = document.querySelectorAll('.lazy');
+        var config = {
+            rootMargin: '50px 20px 75px 30px',
+            threshold: [0, 0.25, 0.75, 1]
+        };
+        observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+    
+                    var lazyImage = entry.target
+                    lazyImage.src = lazyImage.dataset.src
+                    lazyImage.classList.remove("lazy");
+                    
+                }
+            });
+        },config);
+
+        myImgs.forEach(image => {
+            observer.observe(image);
         });
-    },config);
+    }
 
     myImgs.forEach(image => {
         observer.observe(image);
