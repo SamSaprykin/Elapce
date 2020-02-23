@@ -280,30 +280,24 @@
 
 <script>
     
-        var myImgs = document.querySelectorAll('.lazy');
-        myImgs.src = myImgs.dataset.src
-    
-        var myImgs = document.querySelectorAll('.lazy');
-        var config = {
-            rootMargin: '50px 20px 75px 30px',
-            threshold: [0, 0.25, 0.75, 1]
-        };
-        observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-    
-                    var lazyImage = entry.target
-                    lazyImage.src = lazyImage.dataset.src
-                    lazyImage.classList.remove("lazy");
-                    
-                }
-            });
-        },config);
-
-        myImgs.forEach(image => {
-            observer.observe(image);
+    const myImgs = document.querySelectorAll('.lazy');
+    const config = {
+        rootMargin: '50px 20px 75px 30px',
+        threshold: [0, 0.25, 0.75, 1]
+    };
+    observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const lazyImage = entry.target
+                lazyImage.src = lazyImage.dataset.src
+                lazyImage.classList.remove("lazy");
+            }
         });
-    
+    },config);
+
+    myImgs.forEach(image => {
+        observer.observe(image);
+    });
     
     var swiperProjects = new Swiper('.swiper-container', {
         lazy: {
