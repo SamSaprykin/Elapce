@@ -12,7 +12,7 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const methodOverride = require('method-override');
 const favicon = require('serve-favicon');
-
+var compression = require('compression')
 
 
 const indexRouter = require('./routes/index');
@@ -21,7 +21,7 @@ const reviewsRouter = require('./routes/reviews');
 const artcilesRouter = require('./routes/articles');
 const guidesRouter = require('./routes/guides');
 const app = express();
-
+app.use(compression())
 // connect ro the database
 
 mongoose.connect('mongodb+srv://sam:12ctyz12@cluster0-nouez.mongodb.net/elapce?retryWrites=true&w=majority', {useNewUrlParser: true, useCreateIndex:true, useUnifiedTopology:true});
