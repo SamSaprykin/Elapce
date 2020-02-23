@@ -279,13 +279,10 @@
 
 
 <script>
-    if (
-    !'IntersectionObserver' in window &&
-    !'IntersectionObserverEntry' in window &&
-    !'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
+    
         var myImgs = document.querySelectorAll('.lazy');
         myImgs.src = myImgs.dataset.src
-    } else {
+    
         var myImgs = document.querySelectorAll('.lazy');
         var config = {
             rootMargin: '50px 20px 75px 30px',
@@ -306,7 +303,7 @@
         myImgs.forEach(image => {
             observer.observe(image);
         });
-    }
+    
     
     var swiperProjects = new Swiper('.swiper-container', {
         lazy: {
