@@ -84,6 +84,9 @@
     !'intersectionRatio' in window.IntersectionObserverEntry.prototype) {
         var myImgs = document.querySelectorAll('.lazy');
         myImgs.src = myImgs.dataset.src
+        myImgs.forEach(image => {
+            image.src = image.dataset.src
+        });
     } else {
         var myImgs = document.querySelectorAll('.lazy');
         var config = {
