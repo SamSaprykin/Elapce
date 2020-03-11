@@ -34,8 +34,6 @@ a:hover {
 /* Lazy Load Styles */
 .card-image {
 	display: block;
-	
-	
 	background-size: cover;
 	filter: blur(3px); /* blur the lowres image */
 }
@@ -140,7 +138,7 @@ a:hover {
 .image-gallery {  
   object-fit: cover;
   max-width:480px;
-  width: 100%;
+  
   min-height: 360px;
   height:auto;
   transition: all .2s ease-in-out;  
@@ -684,7 +682,8 @@ figure {
   .image-gallery {  
     object-fit: cover;
     max-width:485px;
-    min-height: 360px;;  
+    
+    min-height: 360px;
   }
 
     .project-price-index {
