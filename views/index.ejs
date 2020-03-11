@@ -279,30 +279,35 @@
 
 
 <script>
-    if (!('IntersectionObserver' in window)) {
-        alert('lazy load is broken')
-    }
     var myImgs = document.querySelectorAll('.lazy');
     var config = {
         rootMargin: '50px 20px 75px 30px',
         threshold: [0, 0.25, 0.75, 1]
     };
+    if (!('IntersectionObserver' in window)) {
+        alert('lazy load is broken')
+        myImgs.forEach(img => img.src = img.dataset.src)
+        
+    } else {
+        
     
-    observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                
-                const lazyImage = entry.target
-                lazyImage.src = lazyImage.dataset.src
-                lazyImage.classList.remove("lazy");
-                
-            }
-        });
-    },config);
+        observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    
+                    const lazyImage = entry.target
+                    lazyImage.src = lazyImage.dataset.src
+                    lazyImage.classList.remove("lazy");
+                    
+                }
+            });
+        },config);
 
-    myImgs.forEach(image => {
-        observer.observe(image);
-    });
+        myImgs.forEach(image => {
+            observer.observe(image);
+        });
+    }
+    
     var swiperProjects = new Swiper('.swiper-container', {
         lazy: {
             loadPrevNext: true,
