@@ -138,7 +138,7 @@ a:hover {
 .image-gallery {  
   object-fit: cover;
   max-width:480px;
-  
+  width:100%;
   min-height: 360px;
   height:auto;
   transition: all .2s ease-in-out;  
@@ -681,7 +681,7 @@ figure {
 
   .image-gallery {  
     object-fit: cover;
-    max-width:485px;
+    width:485px;
     
     min-height: 360px;
   }

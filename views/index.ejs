@@ -285,9 +285,7 @@
         threshold: [0, 0.25, 0.75, 1]
     };
     if (!('IntersectionObserver' in window)) {
-        alert('lazy load is broken')
         myImgs.forEach(img => img.src = img.dataset.src)
-        
     } else {
         
     
