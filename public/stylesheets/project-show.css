@@ -221,7 +221,6 @@ a:hover {
 .input-submit-head {
     background-image: linear-gradient(315.87deg, #F34B31 -11.35%, #FFA782 106.98%);
     padding: 13px 24px;
-    
     color:white;
     border:none;
     text-transform: uppercase;
@@ -781,6 +780,7 @@ a:hover {
         width: 90%;
         height:auto;
         margin-left:-10vw;
+        max-height: 300px;
         object-fit: cover;
       }
       
