@@ -778,10 +778,7 @@ a:hover {
       }
       .swiper-slide:nth-child(1) {
         width: 90%;
-        height:100%;
         margin-left:-10vw;
-        
-        object-fit: cover;
       }
       
 }

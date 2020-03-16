@@ -310,6 +310,7 @@ a:hover {
   -ms-flex-align: start;
   align-items: flex-start;
   max-width:991px;
+  margin: 0 auto;
 }
 
 
