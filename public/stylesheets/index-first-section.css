@@ -498,15 +498,15 @@ input[type="search"]::-webkit-search-cancel-button  {
     border-left: none;
     padding-left: 0;
   }
-  .left-section {
-    margin:inherit auto;
-  }
+  
+  
   .main-section .input-group {
     margin-top:6vw;
     flex-direction: column;
     max-width:400px;
     width:100%;
   }
+  
   .input-text-head {
     margin:5px auto;
     width:100%;
@@ -517,9 +517,16 @@ input[type="search"]::-webkit-search-cancel-button  {
     line-height: 20px;
     background-position:  center right ;
   }
+  .left-section {
+    max-width:1200px;
+   
+  }
   .input-submit-head {
     padding: 18px 109px;
     margin:10px auto;
+  }
+  .text-index-title {
+    margin:52px 32px 0;
   }
   .header-title {
     font-size: 48px;
@@ -529,7 +536,7 @@ input[type="search"]::-webkit-search-cancel-button  {
   .copter {
     background-image: url('../images/copter.png');
     max-width:120px;
-    height:175px;
+    height:100px;
     margin-top:-30px;    
   } 
 }
@@ -559,7 +566,8 @@ input[type="search"]::-webkit-search-cancel-button  {
   .second {
     border-left: none;
     padding-left: 0;
-  }   
+  }
+   
 }​
 
 
