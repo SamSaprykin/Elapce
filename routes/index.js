@@ -12,7 +12,8 @@ const { postRegister,
         putForgotPw,
         getReset,
         putReset,
-        postContactUs
+        postContactUs,
+        postFullForm
       } = require('../controllers');
 
 const { asyncErrorHandler,isLoggedIn, isValidPassword, changePassword } = require('../middleware');
@@ -72,5 +73,7 @@ router.put('/reset/:token', asyncErrorHandler(putReset));
 router.get('/contacts', getContacts);
 
 router.post('/contactUs',asyncErrorHandler(postContactUs));
+
+router.post('/contactUsFull',asyncErrorHandler(postFullForm));
 
 module.exports = router;

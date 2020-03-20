@@ -54,34 +54,37 @@
             
             <a class="contact-us" href="#modal-full" uk-toggle>Связаться</a> 
     </div>
-    <div id="modal-full" class="uk-modal-full" uk-modal>
-        <div class="uk-modal-dialog">
-            <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
-            <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
-                <div class="uk-background-cover" style="background-image: url('../images/three.jpg'); " uk-height-viewport></div>
-                <div class="uk-padding-large">
-                    <h2>Свяжитесь со мной</h2>
-                    <div class="uk-form-controls">
-                        <label class="uk-form-label" for="form-stacked-text">Имя и фамилия</label>
-                        <input class="uk-input" name="name" id="form-stacked-text" type="text" placeholder="">
+   
+        <div id="modal-full" class="uk-modal-full" uk-modal>
+            <div class="uk-modal-dialog">
+                <button class="uk-modal-close-full uk-close-large" type="button" uk-close></button>
+                <div class="uk-grid-collapse uk-child-width-1-2@s uk-flex-middle" uk-grid>
+                    <div class="uk-background-cover" style="background-image: url('../images/three.jpg'); " uk-height-viewport></div>
+                    <div class="uk-padding-large">
+                        <h2>Свяжитесь со мной</h2>
+                        <form action="/contactUsFull" method="POST" >
+                            <div class="uk-form-controls">
+                                <label class="uk-form-label" for="form-stacked-text">Имя и фамилия</label>
+                                <input class="uk-input" name="name" id="form-stacked-text" type="text" placeholder="" required>
+                            </div>
+                            <div class="uk-margin">
+                                <label class="uk-form-label" for="form-stacked-text">Телефон</label>
+                                <div class="uk-form-controls">
+                                    <input class="uk-input" name="mobile" id="form-stacked-text" type="text" placeholder="" required>
+                                </div>
+                            </div>
+                            <div class="uk-margin">
+                                <textarea class="uk-textarea" id="form-s-textarea" rows="5" placeholder="Сообщение..." name="text"></textarea>
+                            </div>
+                            <div uk-alert="" class="uk-alert">Гарантируем сохранность личных данных.</div>
+                            <input type="submit" class="uk-button uk-button-secondary">
+                        </form> 
                     </div>
-                    <div class="uk-margin">
-                        <label class="uk-form-label" for="form-stacked-text">Телефон</label>
-                        <div class="uk-form-controls">
-                            <input class="uk-input" name="mobile" id="form-stacked-text" type="text" placeholder="">
-                        </div>
-                    </div>
-                    <div class="uk-form-controls">
-                        <input class="uk-input" name="mobile" id="form-stacked-text" type="text" placeholder="">
-                    </div>
-                    <div class="uk-margin">
-                        <textarea class="uk-textarea" id="form-s-textarea" rows="5" placeholder="Сообщение..." name="text"></textarea>
-                    </div>
-                    <div uk-alert="" class="uk-alert">Гарантируем сохранность личных данных.</div>
                 </div>
             </div>
         </div>
-    </div>
+    
+    
     
 </div>
 

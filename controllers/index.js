@@ -210,6 +210,18 @@ module.exports = {
 		await sgMail.send(msg);
 		req.session.success = `Благодарим за доверие ${req.body.name}, наши менеджеры скоро свяжутся с Вами!`
 		res.redirect('/');
+	},
+	async postFullForm(req, res, next) {
+		const msg = {
+			to: 'infoelapce@gmail.com',
+			from: 'Elapce admin <admin@elapce.com>',
+			subject: 'Elapce - новая заявка, форма связаться с нами',
+			text: `Новый клиент, ${req.body.name} ${req.body.mobile}.Сообщение: ${req.body.text}.`.replace(/		  /g, '')
+		};
+
+		await sgMail.send(msg);
+		req.session.success = `Благодарим за доверие ${req.body.name}, наши менеджеры скоро свяжутся с Вами!`
+		res.redirect('/');
 	}
 
     
