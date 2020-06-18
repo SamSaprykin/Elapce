@@ -8,7 +8,7 @@ a:hover {
 }
 
 .content-wrapper {
-    max-width:1535px;
+    max-width:1240px;
     margin:0 auto;
     padding: 0 15px;
     display: flex;
@@ -23,23 +23,25 @@ a:hover {
 
 .wrapper-project-index {
     display: flex;
-    justify-content: space-evenly;
-    
+    justify-content: flex-start;
+    max-width: 1170px;
     flex-wrap: wrap;
     position: relative;
     z-index: 1000;
+    margin:0 auto;
 }
 
 
 .project-card {
-    max-width:485px;
+    
     margin:0 0 40px;
     height:auto;
     box-sizing: border-box;
+    flex: 0 0 30.33333333%;
+    max-width: 30.33333333%;
 }    
 
 .title-image {
-    
     max-width:470px;
     width:100%;
     height:auto;   
@@ -81,7 +83,7 @@ a:hover {
     line-height: 130%;
     color: #4B535F;
     margin:34px 0 24px;
-    
+    max-width: 1170px;
 }
 
 .project-short-info {
@@ -108,8 +110,6 @@ a:hover {
     }
 
     .title-image {
-        height:352px;
-        width:485px;
         object-fit: cover;
         padding:0;
         transition: all .2s ease-in-out;    

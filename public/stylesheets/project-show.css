@@ -112,8 +112,8 @@ a:hover {
 
 
 .content-project-wrapper {
-    max-width:1536px;
-    margin:0 auto;
+    max-width:1170px;
+    margin:20px auto;
 }
 
 
@@ -264,16 +264,18 @@ a:hover {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    
+    justify-content: flex-start;
     position: relative;
+    max-width: 1170px;
+    margin:0 auto;
   }
 
   .gallery-item {
-    max-width: 475px;
-    height: auto;
     margin-bottom: 70px;
     padding: 0 16px;
     cursor: pointer;
+    flex: 0 0 30.33333333%;
+    max-width: 30.33333333%;
   }
 
   .gallery-title {
