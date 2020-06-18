@@ -112,7 +112,7 @@ a:hover {
 
 
 .content-project-wrapper {
-    max-width:1170px;
+    max-width:1536px;
     margin:20px auto;
 }
 
@@ -273,6 +273,7 @@ a:hover {
   .gallery-item {
     margin-bottom: 70px;
     padding: 0 16px;
+    height: auto;
     cursor: pointer;
     flex: 0 0 30.33333333%;
     max-width: 30.33333333%;
@@ -430,7 +431,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    max-width:1535px;
+    max-width:1240px;
     margin:0 auto;
 }
 
@@ -459,6 +460,12 @@ a:hover {
     margin-left:16px;
 }
 
+@media (min-width: 1281px) {
+    .content-project-wrapper {
+        max-width: 1170px;
+    }
+}    
+
 @media all and (min-width: 900px) { 
     .swiper-container-mobile {
         width: 100%;
@@ -481,7 +488,7 @@ a:hover {
         
     }   
     .text-information {
-        max-width: 764px;
+        max-width: 50%;
     }
     
     .text-content {
@@ -490,7 +497,7 @@ a:hover {
         padding:0;
     }
     .details-information {
-        max-width:550px;
+        max-width:42%;
         
         padding:0;
         margin-bottom: 0;
@@ -537,7 +544,7 @@ a:hover {
     }
     .input-submit-head {
         padding: 27px 41px 27px 40px;
-      }
+    }
 
       .add-favourite {
         font-family: "Lato-Regular";
@@ -590,7 +597,7 @@ a:hover {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
-        max-width:1535px;
+        max-width:1240px;
         margin:0 auto;
     }
     
@@ -727,17 +734,15 @@ a:hover {
 
 @media (max-width:1320px) {
     .information-wrapper {
-        justify-content: center;
+        justify-content: space-between;
     }
     .details-information {
         margin-bottom:30px;
     }
-    
-    .gallery-show {
-        align-items: center;
-        flex-direction: column;
-        
+    .input-submit-head {
+        padding: 24px 30px;
     }
+    
     .map-info {
         margin:10px 16px;
         
@@ -745,8 +750,7 @@ a:hover {
 
     .more-wrapper {
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        
         margin:0 auto;
         max-width: 1545px;
         width:100%;
@@ -766,7 +770,9 @@ a:hover {
     }
     
     
-    
+    .input-submit-head {
+        padding: 14px 18px;
+    }
     
       .swiper-container-mobile {
         margin:0 16px;
