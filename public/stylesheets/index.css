@@ -1123,4 +1123,29 @@ figure {
   } 
 }​
 
+@media (max-width: 1600px) {
+  .content-wrapper, .goals-section, .about-guides {
+      max-width:1535px;   
+  } 
+  .news-title {
+    max-width:1535px;   
+    width: 100%;
+    margin:0 auto 95px;
+  }
+}
+
+@media (max-width: 1440px)  {
+  .new-objects-catalog, .goals-section, .about-guides{
+    max-width:1240px;
+  }
+  .news-title {
+    max-width:1240px;
+    width: 100%;
+    margin:0 auto 95px;
+  }
+  .wrapper-guides {
+    padding:0;
+  }
+}
+
 
