@@ -9,8 +9,11 @@
 }
 
 .content-wrapper {
-    margin-top:25px;
+    margin-top:32px;
     height: auto;
+    flex: 0 0 50%;
+    max-width: 50%;
+   
 }
 
        
@@ -24,10 +27,13 @@
 }
 
 .project-card {
-    max-width:485px;
-    padding:0 16px;
-    margin:0;
-    transition: all .2s ease-in-out; 
+    padding:32px 16px;
+    margin:0 8px;
+    transition: all .2s ease-in-out;
+    box-shadow: 0 0 1px 0 rgba(18,52,64,0.15), 0 8px 8px 0 rgba(18,52,64,0.05), 0 16px 16px 0 rgba(18,52,64,0.05);
+    position: relative;
+    z-index: 111;
+    background-color: #EEF0F3;
 }
 
 .project-card:hover {  
@@ -70,10 +76,21 @@
     margin:0;
 }
 
+@media (max-width: 1600px) {
+    .content-wrapper, .wrapper-articles  {
+        max-width:1535px;
+    } 
+}
+
+@media (max-width: 1440px)  {
+    .content-wrapper, .wrapper-articles  {
+        max-width:1240px;
+    } 
+}
+
 
 @media all and (min-width: 900px) {
     .project-card {
-        width:485px;
         margin:0 10px 40px;
     }
     .article-title-index {
@@ -83,10 +100,22 @@
 
     .content-wrapper {
         margin-top:101px;
+        flex: 0 0 33%;
+        max-width: 33%;
         
     }
 
     .createdDate {
         font-size: 14px;
+    }
+}
+
+@media (max-width: 576px) {
+    .content-wrapper {
+        margin-top:32px;
+        height: auto;
+        flex: 0 0 75%;
+        max-width: 75%;
+       
     }
 }

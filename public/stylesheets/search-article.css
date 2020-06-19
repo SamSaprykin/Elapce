@@ -32,15 +32,15 @@ h1 {
 
   .checklabel {
     display:block;
-    width:125px;
+    max-width:125px;
     cursor: pointer;
     color:#5570BA;
     text-decoration: underline;
     text-align:center;
-    padding:5px;
     text-transform: uppercase;
     font-size: 18px;
     line-height: 100%;
+    padding:8px 16px;
   }
   .checklabel:hover {
     cursor: pointer;
@@ -80,6 +80,27 @@ h1 {
     margin-bottom:20px;
 } 
 
+@media (max-width: 1600px) {
+  .search-filter  {
+      max-width:1535px;
+      
+  } 
+}
+
+@media (max-width: 1440px)  {
+  .search-filter  {
+      max-width:1240px;
+      
+  } 
+  .checklabel {
+    margin-top:16px;
+    text-align: center;
+    width:auto;
+    max-width: 225px;
+    padding:8px 32px;
+  }
+}
+
 @media all and (min-width: 900px) { 
   .input-submit-head {
     width: auto;
@@ -110,7 +131,7 @@ h1 {
 
   .checklabel {
     font-size:1.2rem;
-    width:185px;
+    max-width: 225px;
   }
   
   .title-text {

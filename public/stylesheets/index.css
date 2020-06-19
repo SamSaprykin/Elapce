@@ -84,6 +84,16 @@ a:hover {
   height: auto;
   flex-direction: column;
   margin:0;
+  
+  margin:32px 0;
+  padding:32px 16px;
+  height:auto;
+  box-sizing: border-box;
+  transition: all .2s ease-in-out;
+  box-shadow: 0 0 1px 0 rgba(18,52,64,0.15), 0 8px 8px 0 rgba(18,52,64,0.05), 0 16px 16px 0 rgba(18,52,64,0.05);
+  position: relative;
+  z-index: 111;
+  background-color: #EEF0F3 !important;
 
 }
 
@@ -146,7 +156,7 @@ a:hover {
 
 
 
-.image-gallery:hover {  
+.swiper-slide:hover {  
   animation: scale 1s infinite;
   cursor: pointer;
   transform: scale(1.05);
@@ -682,7 +692,7 @@ figure {
 
   .image-gallery {  
     object-fit: cover;
-    width:485px;
+    max-width:485px;
     
     min-height: 360px;
   }
