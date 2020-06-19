@@ -99,6 +99,13 @@ a:hover {
     margin-top:0 !important;
 }
 
+@media (min-width: 1600px) {
+    .content-wrapper {
+        max-width:1535px;
+        
+    } 
+}
+
 @media (min-width: 1281px) {
     .content-wrapper {
         max-width:1240px;
