@@ -8,6 +8,7 @@
     grid-template-rows: repeat(4, 354px);
     grid-column-gap: 20px;
     grid-row-gap: 20px;
+    
 }
 
 
@@ -102,4 +103,13 @@ figure {
         max-width: 640px;
         
     }
+}
+
+
+
+
+@media (max-width: 1440px)  {
+    .wrapper-guides {
+        max-width:1240px;    
+    } 
 }

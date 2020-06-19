@@ -90,7 +90,7 @@ h1 {
 @media (max-width: 1440px)  {
   .search-filter  {
       max-width:1240px;
-      
+      overflow-x: hidden;
   } 
   .checklabel {
     margin-top:16px;
