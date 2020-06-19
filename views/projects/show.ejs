@@ -237,23 +237,24 @@
 </div>
 
 <div class="more-objects">
-    <h2 class="project-title gallery-title more-title" >Больше объектов</h2>
     <div class="more-wrapper">
-        
-        <% projectsMore.forEach(function(project){ %>
-            <div class="project-card">
-                
-                <a href="/projects/<%= project._id %>"><img class="title-image lazy"
-                data-src="<%= image_url(project.images[0].public_id, {width: 460, height: 360,  crop: "fit"}) %>"
-                src="<%= image_url(project.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
-                alt="<%= project.title %>"></a>    
-                
-                <h2 class="project-title-index"><%= project.title %></h2>
-               <h5 class="project-short-info"> Месторасположение:  <%= project.location %></h5>
-                <a class="project-price-index" href="/projects/<%= project._id %>"><div>Цена от: <%= project.price %>$</div></a>
-                
-            </div> 
-        <% }); %>
+        <h2 class="project-title gallery-title more-title" >Больше объектов</h2>
+        <div class="more-objects-wrapper">
+            <% projectsMore.forEach(function(project){ %>
+                <div class="project-card">
+                    
+                    <a href="/projects/<%= project._id %>"><img class="title-image lazy"
+                    data-src="<%= image_url(project.images[0].public_id, {width: 460, height: 360,  crop: "fit"}) %>"
+                    src="<%= image_url(project.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
+                    alt="<%= project.title %>"></a>    
+                    
+                    <h2 class="project-title-index"><%= project.title %></h2>
+                   <h5 class="project-short-info"> Месторасположение:  <%= project.location %></h5>
+                    <a class="project-price-index" href="/projects/<%= project._id %>"><div>Цена от: <%= project.price %>$</div></a>
+                    
+                </div> 
+            <% }); %>
+        </div>
     </div>
     
 </div>
