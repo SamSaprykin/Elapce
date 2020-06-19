@@ -106,7 +106,7 @@ a:hover {
     } 
 }
 
-@media (max-width: 1281px)  {
+@media (max-width: 1440px)  {
     .content-wrapper {
         max-width:1240px;
         
