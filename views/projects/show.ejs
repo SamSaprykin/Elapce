@@ -146,10 +146,10 @@
     <% if(currentUser) { %>
     <h3>Добавить отзыв</h3>
     <form action="/projects/<%= project.id %>/reviews" method="POST">
-        <textarea name="review[body]" required></textarea>
+        <textarea class="uk-textarea uk-width-1-2@s"  name="review[body]" required></textarea>
         <fieldset class="starability-basic">
             <legend>Рейтинг</legend>
-            <button class="clear-rating btn btn-light mt-2" type="button">Очистить рейтинг</button>
+            <button class="button-show clear-rating" type="button">Очистить</button>
             <input type="radio" id="rate0" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No rating." />
             <input type="radio" id="rate1" name="review[rating]" value="1" />
             <label for="rate1" title="Terrible">1 star</label>
@@ -165,7 +165,7 @@
             
         </fieldset>
         
-        <input type="submit" class="btn btn-light mt-2">
+        <input type="submit" class="button-show">
     </form>
     
         <% } else { %>
@@ -173,20 +173,27 @@
         <% } %>
     
         <% project.reviews.forEach(function(review){ %>
-            <div class="review-body"> 
-                    Автор:<%= review.author.username %><br> 
-                    <%= review.body %><br>
-                    Rating: <%= review.rating %>
-                    
+            <div class="review-body">
+                <div class="review-header">
+                    <img src="<%= image_url(review.author.image.public_id, {width: 160, height: 160,  crop: "fit"}) %>" alt="<%= review.author.username %>" class="author-icon" >
+                    <div>
+                        <a class="author-name"><%= review.author.username %></a>
+                        <p class="review-date"><%= review.date %></p>
+                    </div>
+
+                </div>
+                    <p><%= review.body %></p>
+                    <p class="review-rate"> Рейтинг: <%= review.rating %></p>
             </div>
             <% if(currentUser && review.author.equals(currentUser._id)) { %>
             <div>
-                <button class="toggle-edit-form">Edit</button>
+                
+                <input class="uk-input uk-width-1-4@s" type="text" placeholder="Изменить отзыв">
                 <form action="/projects/<%= project.id %>/reviews/<%= review.id %>?_method=PUT" method="POST" class="edit-review-form">
-                    <textarea name="review[body]" required><%= review.body %></textarea>
+                    <textarea name="review[body]" class="uk-textarea uk-width-1-2@s" required><%= review.body %></textarea>
                     <fieldset class="starability-basic">
-                        <legend>Rating:</legend>
-                        <button class="clear-rating" type="button">Очистить рейтинг</button>
+                        <legend>Рейтинг:</legend>
+                        <button class="button-show clear-rating" type="button">Очистить</button>
                         <input type="radio" id="edit-rate0" class="input-no-rate" name="review[rating]" value="0" checked aria-label="No rating." />
                         <input type="radio" id="edit-rate1" name="review[rating]" value="1" />
                         <label for="edit-rate1" title="Terrible">1 star</label>
@@ -200,7 +207,7 @@
                         <label for="edit-rate5" title="Amazing">5 stars</label>
                     </fieldset>
                     
-                    <input type="submit" value="Update" class="btn btn-light mt-2">   
+                    <input type="submit" value="Обновить" class="button-show">   
                 </form>
     
                 <script>
@@ -208,7 +215,7 @@
                 </script>
                 
                 <form action="/projects/<%= project.id %>/reviews/<%= review.id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete">
+                    <input type="submit" value="Удалить" class="button-show">
                 </form>
     
                 

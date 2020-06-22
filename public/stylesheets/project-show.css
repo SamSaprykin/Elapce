@@ -466,6 +466,11 @@ a:hover {
 
 .review-body {
     margin-left:16px;
+    background-color: white;
+    padding: 20px 30px;
+    border-radius: 3px;
+    max-width: 500px;
+    margin-top: 16px;
 }
 
 @media (max-width: 1600px) {
@@ -822,6 +827,66 @@ a:hover {
       
 }
 
+
+.button-show {
+    background: #FFFFFF;
+    border-radius: 5px;
+    padding: 16px 24px;
+    color: #5570BA;
+    text-decoration: none;
+    display: inline-block;
+    position: relative;
+    max-width: 400px;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    margin:16px 0;
+}
+
+.button-show:hover {
+    box-shadow: 0 4px 8px 0 #5570BA;
+    moz-transition: all .5s ease-in-out;
+    -o-transition: all .5s ease-in-out;
+    -webkit-transition: all .5s ease-in-out;
+    transition: all .5s ease-in-out;
+}
+
+.author-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.author-name {
+    font-size: 16px;
+    line-height: 1.4;
+    color:#5570BA;
+    margin-top:0;
+    padding-left: 10px;
+}
+
+.review-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.review-date {
+    font-size: 14px;
+    color: rgba(0,0,0,.54)!important;
+    margin-top:0;
+    padding-left: 10px;
+}
+
+.review-rate {
+    font-size: 15px;
+    color: rgba(0,0,0,.74)!important;
+}
 
 
 

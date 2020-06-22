@@ -34,12 +34,18 @@ module.exports = {
 		
     },
     async postRegister(req, res, next) {
+		
 		try {
 			if(req.file) {
                 const { secure_url, public_id} = req.file;
-                req.body.image = { secure_url, public_id };
-            }
+				req.body.image = { secure_url, public_id };
+				
+			}
+			
 			const user = await User.register(new User(req.body), req.body.password);
+			console.log(user)
+			console.log(req.body.image)
+			console.log(req.body)
 			req.login(user, function(err) {
 				if (err) return next(err);
 				req.session.success = `Добро пожаловать в Elapce, ${user.username}!`;

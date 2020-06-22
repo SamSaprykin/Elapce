@@ -1,6 +1,7 @@
 const Project =  require('../models/project');
 const Review =  require('../models/review');
-
+var moment = require('moment');
+require('moment/locale/ru');
 
 module.exports = {
     
@@ -17,7 +18,10 @@ module.exports = {
             return res.redirect(`/projects/${project.id}`)
         }
 		// create the review
-		req.body.review.author = req.user._id;
+        req.body.review.author = req.user._id;
+        moment.locale('ru');
+        let date = moment().format('DD MMMM');
+        req.body.review.date = date
 		let review = await Review.create(req.body.review);
 		// assign review to project
 		project.reviews.push(review);

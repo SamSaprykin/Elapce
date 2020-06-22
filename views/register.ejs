@@ -44,18 +44,24 @@
 									<div class="js-upload uk-placeholder uk-text-center">
 										<span uk-icon="icon: cloud-upload"></span>
 										<span class="uk-text-middle">Загрузите фото профиля</span>
-										<div uk-form-custom>
+										<div uk-form-custom="target: true">
 											<input type="file" name="image">
-											<span class="uk-link">выберите файл</span>
+                                            <input class="uk-button uk-button-default uk-margin-top" type="text" placeholder="выберите файл" disabled>
 										</div>
 										
-									</div>
-									<progress id="js-progressbar" class="uk-progress" value="0" max="100" hidden></progress>
+                                    </div>
+                                    <% if (currentUser && currentUser.username === 'admin') { %>
+                                        <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
+                                            <label><input class="uk-checkbox" type="checkbox" name="isTeamMember" value=true> Добавить члена команды?</label>
+                                        </div>
+                                        
+                                    
+                                    <% } %>
                                     <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
                                         <label><input class="uk-checkbox" type="checkbox"> Я согласен с Условиями использования.</label>
                                     </div>
                                     <div class="uk-margin">
-                                        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Войти</button>
+                                        <button class="uk-button uk-button-primary uk-button-large uk-width-1-1">Зарегистрироваться</button>
                                     </div>
                                     <div class="uk-text-small uk-text-center">
                                         Уже есть аккаунт? <a href="#" uk-switcher-item="1">Войти</a>
@@ -115,47 +121,3 @@
 </div>
 
 
-<script>
-var bar = document.getElementById('js-progressbar');
-
-UIkit.upload('.js-upload', {
-
-	url: '',
-	multiple: true,
-
-	
-
-	loadStart: function (e) {
-		
-
-		bar.removeAttribute('hidden');
-		bar.max = e.total;
-		bar.value = e.loaded;
-	},
-
-	progress: function (e) {
-		
-
-		bar.max = e.total;
-		bar.value = e.loaded;
-	},
-
-	loadEnd: function (e) {
-		
-
-		bar.max = e.total;
-		bar.value = e.loaded;
-	},
-
-	completeAll: function () {
-		
-
-		setTimeout(function () {
-			bar.setAttribute('hidden', 'hidden');
-		}, 1000);
-
-		alert('Загрузка завершена');
-	}
-
-});
-</script>

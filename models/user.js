@@ -13,7 +13,12 @@ const UserSchema = new Schema ({
         id:String
     }],
 	resetPasswordToken: String,
-	resetPasswordExpires: Date
+	resetPasswordExpires: Date,
+	isTeamMember: { type: Boolean, default:false },
+	createdArticles: [{
+		url:String,
+		id:String
+	}]
 });
 
 

@@ -46,6 +46,17 @@ const middleware = {
 		req.session.error = 'Доступ запрещен!';
 		res.redirect('back');
 	},
+	isTeamMember: async(req,res,next) => {
+		const article = await Article.findById(req.params.id);
+		const guide = await Guide.findById(req.params.id);
+		if(req.user.isTeamMember === true || req.user.username === 'admin') {
+			res.locals.article = article;
+			res.locals.guide = guide;
+			return next();
+		}
+		req.session.error = 'Доступ запрещен!';
+		res.redirect('back');
+	},
 	isValidPassword: async (req, res, next) => {
 		const { user } = await User.authenticate()(req.user.username, req.body.currentPassword);
 		if (user) {
