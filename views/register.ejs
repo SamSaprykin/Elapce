@@ -48,14 +48,25 @@
 											<input type="file" name="image">
                                             <input class="uk-button uk-button-default uk-margin-top" type="text" placeholder="выберите файл" disabled>
 										</div>
-										
                                     </div>
                                     <% if (currentUser && currentUser.username === 'admin') { %>
                                         <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
                                             <label><input class="uk-checkbox" type="checkbox" name="isTeamMember" value=true> Добавить члена команды?</label>
                                         </div>
+                                        <div class="uk-margin">
+                                            <select class="uk-select" name="department">
+                                                <option value="SalesDep" >Отдел продаж</option>
+                                                <option value="PartnersDep" >Партнерский отдел</option>
+                                                <option value="TechDept" >Технический отдел</option>
+                                            </select>
+                                        </div>
+                                        <div class="uk-margin">
+                                            <div class="uk-inline uk-width-1-1">
+                                                <span class="uk-form-icon" uk-icon="icon:  file-text"></span>
+                                                <input class="uk-input uk-form-large" name="position" type="text" placeholder="Должость" required>
+                                            </div>
+                                        </div>
                                         
-                                    
                                     <% } %>
                                     <div class="uk-margin uk-grid-small uk-child-width-auto uk-grid">
                                         <label><input class="uk-checkbox" type="checkbox"> Я согласен с Условиями использования.</label>

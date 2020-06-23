@@ -1,0 +1,19 @@
+<% layout('layouts/boilerplate') -%>
+<head>
+    
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+
+
+
+
+<div class="wrapper-articles">
+   <div>about main</div>
+   <% teamMembers.forEach(function(teamMember){ %>
+        <p> <%= teamMember.email %></p>
+    <% }); %>
+</div>
+
+
+

@@ -38,6 +38,12 @@ ul {
     list-style-type: none;
     
 }
+.uk-dropdown {
+    padding: 16px !important;
+    margin-top:8px !important;
+    border-radius: 3px;
+    color: #4B535F !important;
+}
 
 .item a {
     font-family: "Lato-Regular", sans-serif;
@@ -49,6 +55,30 @@ ul {
     text-decoration: none;
     color: #4B535F;
 }
+
+.item-simple a {
+    font-family: "Lato-Regular", sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 24px;
+    /* identical to box height */
+    text-decoration: none;
+    color: #4B535F;
+    margin-left:8px;
+}
+
+.item-simple {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.menu .item-simple {
+    padding:4px;
+}
+
+
 
 
 .item a:hover {
@@ -92,6 +122,7 @@ ul {
     padding: 15px 5px;
     white-space: nowrap;
 }
+
 
 /* Mobile menu */
 .menu {

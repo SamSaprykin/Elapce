@@ -20,6 +20,7 @@ const projectsRouter = require('./routes/projects');
 const reviewsRouter = require('./routes/reviews');
 const artcilesRouter = require('./routes/articles');
 const guidesRouter = require('./routes/guides');
+const aboutRouter = require('./routes/about')
 const app = express();
 app.use(compression())
 // connect ro the database
@@ -87,6 +88,7 @@ app.use('/projects', projectsRouter);
 app.use('/articles', artcilesRouter);
 app.use('/guides', guidesRouter);
 app.use('/projects/:id/reviews', reviewsRouter);
+app.use('/about', aboutRouter)
 
 
 

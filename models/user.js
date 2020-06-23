@@ -15,6 +15,8 @@ const UserSchema = new Schema ({
 	resetPasswordToken: String,
 	resetPasswordExpires: Date,
 	isTeamMember: { type: Boolean, default:false },
+	department: { type: String, default:false },
+	position: { type: String, default:false },
 	createdArticles: [{
 		url:String,
 		id:String
