@@ -1,19 +1,72 @@
 <% layout('layouts/boilerplate') -%>
 <head>
-    
+    <link rel='stylesheet' href='/stylesheets/about-us-goals.css' />
+    <link rel="stylesheet" href='/stylesheets/circles.css'>    
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
 </head>
-
-
-
-
-
-<div class="wrapper-articles">
-   <div>about main</div>
-   <% teamMembers.forEach(function(teamMember){ %>
-        <p> <%= teamMember.email %></p>
-    <% }); %>
+<div class="page-wrapper">
+    <div class="shape-white-about-goals"></div>
+    <div class="wrapper-about">
+        
+        <% aboutGoalsData.forEach(function(goal){ %>
+            <div class="content-wrapper">
+                <h3 class="title-about "><%= goal.title %></h3>
+                <p class="intro-about"><%= goal.introduction %></p>
+                <h5 class="services-about-title">Спект услуг компании</h5>
+                <% goal.services.forEach(function(service){ %>
+                    <p class="services-about"><%= service %></p>
+                <%  }); %>
+               <div class="content-about-wrapper">
+                    
+                    <img class="main-image lazy" 
+                        data-src="<%= image_url(goal.iconImage[0].public_id, {width: 360, height: 360,  crop: "fit"}) %>"
+                        src="<%= image_url(goal.iconImage[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>" 
+                        alt="<%= goal.title %>"
+                    >
+                    <div id="root">
+                        
+                    </div>
+                    
+               </div>
+               
+            </div>     
+        <% }); %>
+    </div>
 </div>
+
+
+<script>
+    const myImgs = document.querySelectorAll('.lazy');
+    const config = {
+        rootMargin: '50px 20px 75px 30px',
+        threshold: [0, 0.25, 0.75, 1]
+    };
+    observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const lazyImage = entry.target
+                lazyImage.src = lazyImage.dataset.src
+                lazyImage.classList.remove("lazy");
+            }
+        });
+    },config);
+
+    myImgs.forEach(image => {
+        observer.observe(image);
+    });
+   
+   var body = { features: <%- JSON.stringify(aboutGoalsData) %> };
+   var stringHTML = body.features[0].body;
+
+   //Create temp element holder
+   var tempElement = document.createElement("div");
+   //Add fetched HTML to tempElement
+   tempElement.innerHTML = stringHTML;
+
+   //Now you can query it as it was a normal DOM element
+   document.getElementById('root').appendChild(tempElement);
+
+</script>
 
 
 
