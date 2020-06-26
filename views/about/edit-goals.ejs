@@ -1,0 +1,76 @@
+<% layout('layouts/boilerplate') -%>
+
+<head>
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
+   	
+</head>
+
+<div class="uk-container uk-container-expand">
+	<form action="/about/?_method=PUT" method="POST" enctype="multipart/form-data" >
+		<h1>Обновить страницу цели в разделе О нас</h1>
+		<div >
+			<div >
+				<p class="uk-text-bolder uk-margin-top">Заголовок:</p>
+				<input type="text" class="uk-input uk-width-1-3" name="title" placeholder="Название" value="<%= aboutGoal.title %>">
+			</div>	
+		</div>
+		
+		<div>
+			<p class="uk-text-bolder uk-margin-top" for="inputGroupFile01">Фотография к странице:</p>
+				<div class="uk-margin">
+					<div uk-form-custom>
+						<input type="file" accept="images/*" name="iconImage" id="inputGroupFile01" multiple>
+						<button class="uk-button uk-button-default" type="button" tabindex="-1">Загрузить</button>
+					</div>
+			</div>
+			<!-- <input name="file1" type="file" accept="application/pdf"> */ -->
+			<% aboutGoal.iconImage.forEach(function(image, i) { %>
+				<div class="card m-1" style="width: 18rem;">
+					<img class="card-img-top" src="<%= image.url %>"/>
+					<div class="card-body">
+						<p class="uk-text-bolder uk-margin-top" for="image<%= i %>">Delete?</label>
+						<input type="checkbox" class="uk-checkbox" name="deleteImages[]" id="image<%= i %>" value="<%= image.public_id %>">
+					</div>
+				</div>	
+			<% }) %>
+		</div>
+		
+		<div >
+			<div >
+				<p class="uk-text-bolder uk-margin-top">Предоставляемые услуги:</p>
+				<input type="text" class="uk-input uk-width-1-3" name="services" placeholder="Данные" >
+				<input type="text" class="uk-input uk-width-1-3" name="services" placeholder="Данные" >
+				<input type="text" class="uk-input uk-width-1-3" name="services" placeholder="Данные" >
+				<input type="text" class="uk-input uk-width-1-3" name="services" placeholder="Данные" >
+				<input type="text" class="uk-input uk-width-1-3" name="services" placeholder="Данные" >
+                <input type="text" class="uk-input uk-width-1-3" name="services" placeholder="Данные" >
+                <input type="text" class="uk-input uk-width-1-3" name="services" placeholder="Данные" >
+                <input type="text" class="uk-input uk-width-1-3" name="services" placeholder="Данные" >
+                <input type="text" class="uk-input uk-width-1-3" name="services" placeholder="Данные" >
+			</div>	
+		</div>
+		
+		<div >
+			<div >
+				<p class="uk-text-bolder uk-margin-top">Вступление - первые строки:</p>
+				<textarea type="text" class="uk-textarea" rows="5" name="introduction"><%= aboutGoal.introduction %></textarea>
+			</div>	
+		</div>
+	
+	
+		<div >
+			<div >
+				<p class="uk-text-bolder uk-margin-top">Основной текст:</p>
+				<textarea type="text" class="uk-textarea" rows="5" name="body"><%= aboutGoal.body %></textarea>
+			</div>
+			<input type="submit" class="uk-button uk-button-secondary uk-margin">	
+		</div>
+	
+		
+	</form>
+</div>

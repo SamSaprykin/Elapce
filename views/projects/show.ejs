@@ -231,12 +231,12 @@
         
             <div>
                 <a href="/projects/<%= project.id %>/edit">
-                    <button class="btn btn-light mt-2">Изменить объект</button>
+                    <button class="button-show">Изменить объект</button>
                 </a> 
             </div>
             <div>
                 <form action="/projects/<%= project.id %>?_method=DELETE" method="POST">
-                    <input type="submit" value="Удалить обьект"  class="btn btn-light mt-2">
+                    <input type="submit" value="Удалить обьект"  class="button-show">
                 </form>
             </div>
         <% } %>

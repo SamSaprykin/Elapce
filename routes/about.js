@@ -11,18 +11,26 @@ const {
     aboutTeam,
     aboutPress,
     aboutGoalsNew,
-    aboutGoalsCreate
+    aboutGoalsCreate,
+    aboutGoaslEdit,
+    aboutGoaslUpdate
 } = require('../controllers/about')
 
 
-/* Get articles index /articles */
+/* Get about index /about */
 
 router.get('/',asyncErrorHandler(aboutIndex));
 
-/* Get guides new /guide */  
+/* Get about new /guide */  
 router.get('/new-goals', isLoggedIn,asyncErrorHandler(isAdmin), aboutGoalsNew);
 
 router.post('/new-goals',isLoggedIn,upload.array('iconImage', 1),asyncErrorHandler(isAdmin),  asyncErrorHandler(aboutGoalsCreate));
+
+/* Get about edit  */  
+router.get('/edit-goals',isLoggedIn, asyncErrorHandler(isAdmin), aboutGoaslEdit);
+
+/* PUT guides update /about */  
+router.put('/',isLoggedIn,upload.array('iconImage', 1),asyncErrorHandler(isAdmin), asyncErrorHandler(aboutGoaslUpdate));
 
 router.get('/history', asyncErrorHandler(aboutHistory));
 

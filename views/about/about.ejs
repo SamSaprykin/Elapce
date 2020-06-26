@@ -17,12 +17,13 @@
                     <p class="services-about"><%= service %></p>
                 <%  }); %>
                <div class="content-about-wrapper">
-                    
-                    <img class="main-image lazy" 
-                        data-src="<%= image_url(goal.iconImage[0].public_id, {width: 360, height: 360,  crop: "fit"}) %>"
-                        src="<%= image_url(goal.iconImage[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>" 
-                        alt="<%= goal.title %>"
-                    >
+                    <% if (goal.iconImage[0].public_id) { %>
+                        <img class="main-image lazy" 
+                            data-src="<%= image_url(goal.iconImage[0].public_id, {width: 360, height: 360,  crop: "fit"}) %>"
+                            src="<%= image_url(goal.iconImage[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>" 
+                            alt="<%= goal.title %>"
+                        >
+                    <% } %>
                     <div id="root">
                         
                     </div>
@@ -31,7 +32,15 @@
                
             </div>     
         <% }); %>
+        <% if (currentUser && currentUser.username === 'admin') { %>
+            <div>
+                <a href="/about/edit-goals">
+                    <button class="button-show">Изменить объект</button>
+                </a> 
+            </div> 
+        <% } %>
     </div>
+    
 </div>
 
 
