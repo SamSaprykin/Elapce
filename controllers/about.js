@@ -49,7 +49,7 @@ module.exports = {
 	async aboutGoaslUpdate(req, res, next) {
 
 		const {aboutGoal} = res.locals;
-		console.log(aboutGoal)
+		
 		if(req.body.deleteImages && req.body.deleteImages.length ) {
             let deleteImages = req.body.deleteImages;
 
