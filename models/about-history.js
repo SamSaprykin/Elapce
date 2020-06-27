@@ -4,13 +4,15 @@ const Schema = mongoose.Schema;
 
 const AboutHistorySchema = new Schema ({
     title: String,
-    introduction: String,
-    services:[String],
-    iconImage: [{
-        url:String,
-        public_id:String
-    }],
-	body: String,
+    historyPoints: [{
+        pointImage: [{
+            url:String,
+            public_id:String
+        }],
+        date: Date,
+        textPoint: String,
+        reversed: Boolean
+    }]
 });
 
 
