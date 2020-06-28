@@ -4,6 +4,7 @@ const Project  = require('../models/project');
 const Article  = require('../models/article');
 const Guide = require('../models/guide');
 const AboutGoals = require('../models/about-goals');
+const AboutHistory = require('../models/about-history');
 const { cloudinary } = require('../cloudinary');
 const bboxPolygon = require('@turf/bbox-polygon');
 const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
@@ -39,12 +40,14 @@ const middleware = {
 		const article = await Article.findById(req.params.id);
 		const guide = await Guide.findById(req.params.id);
 		const aboutGoalsData = await AboutGoals.find({});
+		const AboutHistoryData = await AboutHistory.find({});
 		let aboutGoal = aboutGoalsData[0];
 		if(req.user.username === 'admin') {
 			res.locals.project = project;
 			res.locals.article = article;
 			res.locals.guide = guide;
 			res.locals.aboutGoal = aboutGoal;
+			res.locals.AboutHistoryData = AboutHistoryData;
 			return next();
 		}
 		req.session.error = 'Доступ запрещен!';

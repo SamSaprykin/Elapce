@@ -10,24 +10,65 @@
 
 
 <div class="wrapper-history">
-    <h3 class="title-about ">История</h3>
-    <div class="timeline">
-        <div class="container-wrapper">
-            <div class="container data">
-                <i class="icon fa fa-home"></i>
-                <div class="date">15.12.2020</div>
-                <div class="content">
-                  <h2 class="content-date">Lorem ipsum dolor sit amet</h2>
-                  <p class="content-text">
-                    Lorem ipsum dolor sit amet elit.
-                  </p>
+    <h3 class="title-about "><%= aboutAboutHistoryData[0].title %></h3>
+    
+    <% aboutAboutHistoryData[0].historyPoints.forEach(function(point, i) { %>
+        <div class="timeline">
+            <div class="container-wrapper">
+                <div class="container data">
+                    <i class="icon fa fa-home"></i>
+                    <div class="date"><%= point.date.toLocaleDateString('ru-RU') %></div>
+                    <div class="content">
+                      <h2 class="content-date"></h2>
+                      <p class="content-text">
+                        <%= point.textPoint %>
+                      </p>
+                    </div>
+                </div>
+                <div class="container image">
+                    <img class="card-image lazy" 
+                         data-src="<%= image_url(point.pointImage[0].public_id, {width: 800, height: 600,  crop: "fit"}) %>"
+                         src="<%= image_url(point.pointImage[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
+                         alt="<%= point.textPoint %>"
+                    >
                 </div>
             </div>
-            <div class="container image">
-                <img src="./../images/timesTemp.png" alt="">
-            </div>
-        </div>
-        
-       
-    </div>   
+            
+           
+        </div> 
+    <% }) %>
+    
+    <% if (currentUser && currentUser.username === 'admin') { %>
+        <div>
+            <a href="/about/edit-history">
+                <button class="button-show">Изменить данные</button>
+            </a> 
+        </div> 
+    <% } %>  
 </div>
+
+
+<script>
+    const myImgs = document.querySelectorAll('.lazy');
+    const config = {
+        rootMargin: '50px 20px 75px 30px',
+        threshold: [0, 0.25, 0.75, 1]
+    };
+    observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                
+                const lazyImage = entry.target
+                lazyImage.src = lazyImage.dataset.src
+                lazyImage.classList.remove("lazy");
+                
+            }
+        });
+    },config);
+
+    myImgs.forEach(image => {
+        observer.observe(image);
+    });
+
+    
+</script>

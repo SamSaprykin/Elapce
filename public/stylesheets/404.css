@@ -38,7 +38,7 @@ a:hover {
     color: #4B535F;
 }
 
-img {
+.not-found-image {
     width:100%;
     max-width:582px;
     margin-top: -70px;

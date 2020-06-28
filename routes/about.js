@@ -13,28 +13,49 @@ const {
     aboutGoalsNew,
     aboutGoalsCreate,
     aboutGoaslEdit,
-    aboutGoaslUpdate
+    aboutGoaslUpdate,
+    aboutHistoryNew,
+    aboutHistoryCreate,
+    aboutHistoryEdit,
+    aboutHistoryUpdate
 } = require('../controllers/about')
 
 
-/* Get about index /about */
+/* About Goals routes */
 
 router.get('/',asyncErrorHandler(aboutIndex));
 
-/* Get about new /guide */  
+
 router.get('/new-goals', isLoggedIn,asyncErrorHandler(isAdmin), aboutGoalsNew);
 
 router.post('/new-goals',isLoggedIn,upload.array('iconImage', 1),asyncErrorHandler(isAdmin),  asyncErrorHandler(aboutGoalsCreate));
 
-/* Get about edit  */  
+
 router.get('/edit-goals',isLoggedIn, asyncErrorHandler(isAdmin), aboutGoaslEdit);
 
-/* PUT guides update /about */  
 router.put('/',isLoggedIn,upload.array('iconImage', 1),asyncErrorHandler(isAdmin), asyncErrorHandler(aboutGoaslUpdate));
+
+
+/* About History routes */
 
 router.get('/history', asyncErrorHandler(aboutHistory));
 
+router.get('/new-history', isLoggedIn,asyncErrorHandler(isAdmin), aboutHistoryNew);
+
+router.post('/new-history',isLoggedIn,upload.array('timesTempImage', 1),asyncErrorHandler(isAdmin),  asyncErrorHandler(aboutHistoryCreate));
+
+router.get('/edit-history',isLoggedIn, asyncErrorHandler(isAdmin), aboutHistoryEdit);
+
+router.put('/history',isLoggedIn,upload.array('timesTempImage', 1),asyncErrorHandler(isAdmin), asyncErrorHandler(aboutHistoryUpdate));
+
+/* About Team routes */
+
 router.get('/team', asyncErrorHandler(aboutTeam));
+
+
+
+
+/* About Press routes */
 
 router.get('/press', asyncErrorHandler(aboutPress));
 

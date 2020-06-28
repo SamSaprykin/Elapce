@@ -1,4 +1,5 @@
 const AboutGoals = require('../models/about-goals');
+const AboutHistory = require('../models/about-history');
 const User = require('../models/user');
 const { cloudinary } = require('../cloudinary');
 const showdown  = require('showdown');
@@ -88,10 +89,73 @@ module.exports = {
 		aboutGoal.save();
 		res.redirect(`/about`);
     },
-	aboutHistory(req, res, next) {
-		res.render('about/history');
+	async aboutHistory(req, res, next) {
+		const aboutAboutHistoryData = await AboutHistory.find({})
+		res.render('about/history', {aboutAboutHistoryData, image_url: cloudinary.url});
 	},
+	aboutHistoryNew(req, res, next) {
+		res.render('about/new-history');
+	},
+	async aboutHistoryCreate(req, res, next) {
+		const {AboutHistoryData} = res.locals;
+        if (AboutHistoryData.length) {
+			
+			if (req.body.title) {
+				req.session.error = 'Если вам необходимо изменить заголовок - нажмите редактировать';
+				res.redirect(`/about/history`);
+			}
+			req.body.timesTempImage = [];
+        
+			for(const file of req.files) {
+				
+				req.body.timesTempImage.push({
+					url: file.secure_url,
+					public_id: file.public_id
+				});
+			}
+			let Point = {
+				pointImage: req.body.timesTempImage,
+				date: req.body.date,
+				textPoint: req.body.text,
+			}
+			console.log(AboutHistoryData)
+			AboutHistoryData[0].historyPoints.push(Point)
+			console.log(AboutHistoryData[0].historyPoints)
+			await AboutHistoryData[0].save();
+			
+			res.redirect(`/about/history`);
+		} else {
+			req.body.timesTempImage = [];
+        
+			for(const file of req.files) {
+				
+				req.body.timesTempImage.push({
+					url: file.secure_url,
+					public_id: file.public_id
+				});
+			}
+			let Point = {
+				pointImage: req.body.timesTempImage,
+				date: req.body.date,
+				textPoint: req.body.text,
+			}
+			req.body.historyPoints = [];
+			
+			req.body.historyPoints.push(Point)
 	
+			console.log(req.body)
+			
+			
+			let AboutHistoryTemp = new AboutHistory(req.body);
+			await AboutHistoryTemp.save();
+			res.redirect(`/about/history`);
+		}
+	},
+	async aboutHistoryEdit(req, res, next) {
+		const aboutAboutHistoryData = await AboutHistory.find({})
+		const aboutAboutHistory = aboutAboutHistoryData[0]
+        res.render('about/edit-history', {aboutAboutHistory});
+	},
 	aboutTeam(req, res, next) {
 		res.render('about/team');
 	},

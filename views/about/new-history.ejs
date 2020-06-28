@@ -1,0 +1,59 @@
+<% layout('layouts/boilerplate') -%>
+
+<head>
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
+   	
+</head>
+
+<div class="uk-container uk-container-expand uk-margin-bottom">
+	<form action="/about/new-history" method="POST" enctype="multipart/form-data" >
+		<h1>Добавить данные странице история,раздел о нас</h1>
+		<div >
+			<div >
+				<p class="uk-text-bolder uk-margin-top">Заголовок:</p>
+				<input type="text" class="uk-input uk-width-1-3" name="title" placeholder="Название" >
+			</div>	
+		</div>
+
+		<h2>Данные отметки времени</h2>
+		
+		<div class="uk-margin-bottom">
+			<p class="uk-text-bolder uk-margin-top" for="inputGroupFile01">Фотография:</p>
+				<div class="uk-margin">
+					<div uk-form-custom>
+						<input type="file" accept="images/*" name="timesTempImage" id="inputGroupFile01" multiple>
+						<button class="uk-button uk-button-default" type="button" tabindex="-1">Загрузить</button>
+					</div>
+			</div>
+			<!-- <input name="file1" type="file" accept="application/pdf"> */ -->
+			
+		</div>
+		<div >
+			<div >
+				<p class="uk-text-bolder uk-margin-top">Дата:</p>
+				<input type="date" class="uk-input uk-width-1-3" name="date" >
+			</div>	
+		</div>
+		<div >
+			<div >
+				<p class="uk-text-bolder uk-margin-top">Заголовок отметки:</p>
+				<input type="text" class="uk-input uk-width-1-3" name="subhead" placeholder="Название" >
+			</div>	
+		</div>
+		<div>
+			<div>
+				<p class="uk-text-bolder uk-margin-top">Текст статьи:</p>
+				<textarea class="uk-textarea uk-width-1-3" name="text" placeholder="Текст статьи"  rows="5"></textarea>
+			</div>
+			
+		</div>
+		<input type="submit" class="uk-button uk-button-secondary uk-margin">	
+	</form>
+</div>
+
+

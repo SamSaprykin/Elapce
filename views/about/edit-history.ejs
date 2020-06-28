@@ -1,0 +1,40 @@
+<% layout('layouts/boilerplate') -%>
+
+<head>
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/css/uikit.min.css" />
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.3.0/dist/js/uikit-icons.min.js"></script>
+   	
+</head>
+
+<div class="uk-container uk-container-expand">
+	<form action="/about/history?_method=PUT" method="POST" enctype="multipart/form-data" >
+		<h1>Обновить страницу история в разделе О нас</h1>
+		<div >
+			<div >
+				<p class="uk-text-bolder uk-margin-top">Заголовок:</p>
+				<input type="text" class="uk-input uk-width-1-3" name="title" placeholder="Название" value="<%= aboutAboutHistory.title %>">
+			</div>	
+        </div>
+		<% aboutAboutHistory.historyPoints.forEach(function(point, i) { %>
+			<h4>Временные точки:</h4>
+            <div>
+				<p class="uk-text-bolder uk-margin-top">Текст точки:</p>
+				<textarea name="body" placeholder="Текст гида" class="uk-textarea uk-width-1-3" rows="4"><%= point.textPoint %></textarea>
+			</div>	
+			<div class="card m-1" style="width: 18rem;">
+				<p class="uk-text-bolder uk-margin-top">Картинка точки:</p>
+                <img class="card-img-top" src="<%= point.pointImage[0].url %>"/>
+                <div class="card-body">
+                    <label for="image<%= i %>">Delete?</label>
+                    <input type="checkbox" class="imageDeleteCheckbox" name="deleteImages[]" id="image<%= i %>" value="<%= point.pointImage[0].public_id %>">
+                </div>
+            </div>	
+        <% }) %>
+       
+        <input type="submit" class="uk-button uk-button-secondary uk-margin">	
+	</form>
+</div>
