@@ -26,11 +26,12 @@
                     </div>
                 </div>
                 <div class="container image">
-                    <img class="card-image lazy" 
-                         data-src="<%= image_url(point.pointImage[0].public_id, {width: 800, height: 600,  crop: "fit"}) %>"
-                         src="<%= image_url(point.pointImage[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
-                         alt="<%= point.textPoint %>"
-                    >
+                    <figure class="card-wrapper">
+                        <img class="title-image lazy"
+                            data-src="<%= image_url(point.pointImage[0].public_id, {width: 460, height: 360,  crop: "fit"}) %>"
+                            src="<%= image_url(point.pointImage[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
+                            alt="<%= point.textPoint %>">
+                    </figure>
                 </div>
             </div>
             

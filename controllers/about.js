@@ -42,12 +42,12 @@ module.exports = {
         
 	},
 	
-	async aboutGoaslEdit(req, res, next) {
+	async aboutGoalsEdit(req, res, next) {
 		const aboutGoalsData = await AboutGoals.find({})
 		const aboutGoal = aboutGoalsData[0]
         res.render('about/edit-goals', {aboutGoal});
 	},
-	async aboutGoaslUpdate(req, res, next) {
+	async aboutGoalsUpdate(req, res, next) {
 
 		const {aboutGoal} = res.locals;
 		
@@ -74,6 +74,14 @@ module.exports = {
                     public_id: file.public_id
                 });
             }
+		}
+		
+		if(req.body.services && req.body.services.length) {
+            const dataNew = req.body.services
+            for(value of dataNew ) {
+                aboutGoal.services = dataNew
+            }
+            
         }
         
 		
@@ -142,8 +150,6 @@ module.exports = {
 			req.body.historyPoints = [];
 			
 			req.body.historyPoints.push(Point)
-	
-			console.log(req.body)
 			
 			
 			let AboutHistoryTemp = new AboutHistory(req.body);
@@ -156,6 +162,49 @@ module.exports = {
 		const aboutAboutHistory = aboutAboutHistoryData[0]
         res.render('about/edit-history', {aboutAboutHistory});
 	},
+	async aboutHistoryUpdate(req, res, next) {
+		const {AboutHistoryData} = res.locals;
+		AboutHistoryData[0].title = req.body.title
+
+		if(req.body.deleteImages && req.body.deleteImages.length ) {
+            let deleteImages = req.body.deleteImages;
+
+            for(const public_id of deleteImages) {
+                // delete images from cloudinary
+				await cloudinary.v2.uploader.destroy(public_id);    
+				AboutHistoryData[0].historyPoints.forEach((element, i) => {
+
+					if (AboutHistoryData[0].historyPoints[i].pointImage[0].public_id === public_id && req.files.length != 0) {
+						
+						AboutHistoryData[0].historyPoints[i].pointImage.shift()
+						if(req.files) {
+							console.log(req.files)
+							for(const file of req.files) {
+                
+								AboutHistoryData[0].historyPoints[i].pointImage.push({
+									url: file.secure_url,
+									public_id: file.public_id
+								});
+							}
+						}
+						req.session.success = 'Данные обновлены!';
+                    } else  {
+						req.session.error = 'Проверьте добавление новой картинки!';
+					}
+				});
+            }
+		}
+		
+		if(req.body.textPoint) {
+			AboutHistoryData[0].historyPoints.forEach((element, i) => {
+				element.textPoint = req.body.textPoint[i]
+			});
+		}
+		
+		
+		await AboutHistoryData[0].save();
+		res.redirect(`/about/history`);
+    },
 	aboutTeam(req, res, next) {
 		res.render('about/team');
 	},

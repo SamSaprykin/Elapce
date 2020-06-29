@@ -12,8 +12,8 @@ const {
     aboutPress,
     aboutGoalsNew,
     aboutGoalsCreate,
-    aboutGoaslEdit,
-    aboutGoaslUpdate,
+    aboutGoalsEdit,
+    aboutGoalsUpdate,
     aboutHistoryNew,
     aboutHistoryCreate,
     aboutHistoryEdit,
@@ -31,9 +31,9 @@ router.get('/new-goals', isLoggedIn,asyncErrorHandler(isAdmin), aboutGoalsNew);
 router.post('/new-goals',isLoggedIn,upload.array('iconImage', 1),asyncErrorHandler(isAdmin),  asyncErrorHandler(aboutGoalsCreate));
 
 
-router.get('/edit-goals',isLoggedIn, asyncErrorHandler(isAdmin), aboutGoaslEdit);
+router.get('/edit-goals',isLoggedIn, asyncErrorHandler(isAdmin), aboutGoalsEdit);
 
-router.put('/',isLoggedIn,upload.array('iconImage', 1),asyncErrorHandler(isAdmin), asyncErrorHandler(aboutGoaslUpdate));
+router.put('/',isLoggedIn,upload.array('iconImage', 1),asyncErrorHandler(isAdmin), asyncErrorHandler(aboutGoalsUpdate));
 
 
 /* About History routes */
