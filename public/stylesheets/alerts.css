@@ -57,7 +57,7 @@
 }
 
 @media  (max-width: 900px) { 
-    .alert {
+    .alert-header  {
         font-size: 18px !important;
     }
 }
