@@ -44,7 +44,8 @@ a:hover {
     position: relative;
     z-index: 111;
     background-color: #EEF0F3;
-}    
+}   
+ 
 
 .project-card:hover {
     animation: scale 1s infinite;

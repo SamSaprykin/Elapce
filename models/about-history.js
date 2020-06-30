@@ -11,7 +11,8 @@ const AboutHistorySchema = new Schema ({
         }],
         date: Date,
         textPoint: String,
-        reversed: Boolean
+        reversed: Boolean,
+        icon: String,
     }]
 });
 

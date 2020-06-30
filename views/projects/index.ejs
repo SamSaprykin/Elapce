@@ -24,15 +24,16 @@
         <% projects.docs.forEach(function(project){ %>
             <div class="project-card">
                 
-                <a href="/projects/<%= project.id %>"><img class="title-image lazy"
-                data-src="<%= image_url(project.images[0].public_id, {width: 460, height: 360,  crop: "fit"}) %>"
-                src="<%= image_url(project.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
-                alt="<%= project.title %>"></a>    
+                <a href="/projects/<%= project.id %>">
+                    <img class="title-image lazy"
+                         data-src="<%= image_url(project.images[0].public_id, {width: 460, height: 360,  crop: "fit"}) %>"
+                         src="<%= image_url(project.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
+                         alt="<%= project.title %>"> 
                 
-                <h2 class="project-title-index"><%= project.title %></h2>
-               <h5 class="project-short-info">  <%= project.area %> м2 | <%= project.bedrooms %> спальни</h5>
-                <a class="project-price-index" href="/projects/<%= project.id %>"><div><%= project.price %> $</div></a>
-                
+                    <h2 class="project-title-index"><%= project.title %></h2>
+                    <h5 class="project-short-info">  <%= project.area %> м2 | <%= project.bedrooms %> спальни</h5>
+                    <a class="project-price-index" href="/projects/<%= project.id %>"><div><%= project.price %> $</div></a>
+                </a>  
             </div> 
         <% }); %>
     </div>

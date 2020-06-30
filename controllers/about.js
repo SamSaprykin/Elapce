@@ -125,6 +125,7 @@ module.exports = {
 				pointImage: req.body.timesTempImage,
 				date: req.body.date,
 				textPoint: req.body.text,
+				icon: req.body.icon,
 			}
 			console.log(AboutHistoryData)
 			AboutHistoryData[0].historyPoints.push(Point)
@@ -200,13 +201,28 @@ module.exports = {
 				element.textPoint = req.body.textPoint[i]
 			});
 		}
+
+		if(req.body.date) {
+			AboutHistoryData[0].historyPoints.forEach((element, i) => {
+				element.date = req.body.date[i]
+			});
+		}
+
+		if(req.body.icon) {
+			AboutHistoryData[0].historyPoints.forEach((element, i) => {
+				element.icon = req.body.icon[i]
+			});
+		}
 		
 		
 		await AboutHistoryData[0].save();
 		res.redirect(`/about/history`);
     },
-	aboutTeam(req, res, next) {
-		res.render('about/team');
+	async aboutTeam(req, res, next) {
+		const salesDept = await User.find({ isTeamMember: { $eq: true }, department: {$eq:'Отдел по работе с клиентами'} });
+		const ceoDept = await User.find({ isTeamMember: { $eq: true }, department: {$eq:'CEO'} });
+		res.render('about/team', {salesDept, ceoDept, image_url: cloudinary.url});
+
 	},
 
 	aboutPress(req, res, next) {

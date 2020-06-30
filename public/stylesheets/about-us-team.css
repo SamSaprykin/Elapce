@@ -1,0 +1,175 @@
+.title-about {
+    font-size: 65.6106px;
+    line-height: 114.9%;
+    color:#4B535F;
+    line-height: 115%;
+    margin-top:53px;
+    font-weight: 700;
+    margin-bottom: 0;
+}
+
+.second-title {
+    font-size: 48px;
+}
+
+
+.wrapper-team {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width:1535px;
+    margin:0 auto;
+    flex-wrap: wrap;
+    font-family: "Lato-Regular", sans-serif;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.card-wrapper {
+    position: relative;
+    transition: all .2s ease-in-out; 
+    margin-top:66px;
+    width:442px;
+}
+
+.member-card-wrapper {
+    position: relative;
+    transition: all .2s ease-in-out; 
+    margin-top:66px;
+    width:100%;
+}
+
+  
+  
+figure {
+    margin:0;
+}
+
+.member-image {
+    max-width:442px;
+    max-height: 517px;
+    width:100%;
+    height:auto;
+    object-fit: contain;    
+}
+
+.member-photo  {
+    max-width:442px;
+    max-height: 410px;
+    height:auto;
+    width: 100%;
+    object-fit: cover; 
+    height: 310px; 
+}
+
+.member-name {
+    font-size: 36px;
+    color:#4B535F;
+    line-height: 115%;
+    margin-top:32px;
+}
+
+.member-position {
+    font-size: 24px;
+    opacity: 66%;
+    color:#4B535F;
+    line-height: 115%;
+    margin-top:16px;
+    margin-bottom:8px;
+}
+
+.member-email {
+    font-size: 16px;
+    color:#7A8392;
+    opacity: 66%;
+}
+
+.dept-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width:100%;
+    flex-wrap: wrap;
+    margin-bottom: 64px;
+}
+
+.member-card {
+    flex: 0 0 31%;;
+    max-width: 31%;
+    margin: 0 8px;
+}
+
+.member-card:nth-of-type(1) {
+    margin: 0 8px 0 0;
+}
+
+@media (max-width: 1600px) {
+    .wrapper-team  {
+        max-width:1535px;
+    } 
+}
+
+
+@media (max-width: 1440px)  {
+    .wrapper-team  {
+        max-width:1240px;
+        padding: 0 32px;
+    } 
+   
+}
+
+@media (max-width: 1024px) {
+    .member-card {
+        flex: 0 0 46%;
+        max-width: 46%;
+    }
+    .title-about {
+        font-size: 36px;
+        margin-top: 16px;
+    }
+    
+}
+
+@media (max-width: 768px)  {
+    
+   
+}
+
+@media (max-width: 576px)  {
+    .wrapper-team  {
+        padding: 0 16px;
+    }
+    .dept-section {
+        
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }
+    .member-card {
+        flex: 0 0 80%;
+        max-width: 80%;
+        margin:0;
+    }
+
+    .title-about {
+        font-size: 24px;
+        line-height: 130%;
+        margin-top:0;
+    }
+
+    .card-wrapper {
+        width:100%;
+    }
+    .member-name {
+        font-size: 24px;
+        margin-top:16px;
+    }
+    .second-title {
+        margin-top:24px;
+    }
+    .dept-section {
+        margin-bottom: 32px;
+    }
+}

@@ -1,12 +1,81 @@
 <% layout('layouts/boilerplate') -%>
 <head>
     <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel='stylesheet' href='/stylesheets/about-us-team.css' />
 </head>
 
 
 
 
 
-<div class="wrapper-articles">
-   <div>about team</div>
+<div class="wrapper-team">
+    <h3 class="title-about ">Наша команда</h3>
+    <div class="seo-section">
+        <% ceoDept.forEach(function(ceo, i) { %>
+            
+            <div class="seo-card">
+                <figure class="card-wrapper">
+                    <img class="member-image lazy"
+                         data-src="<%= image_url(ceo.image.public_id, {width: 442, height: 517,  crop: "fit"}) %>"
+                         src="<%= image_url(ceo.image.public_id, {width: 60, height: 60,  crop: "fit"}) %>"
+                         alt="<%= ceo.position %>"
+                    />
+                </figure>
+               
+                <h5 class="member-name"> <%= ceo.username %></h5>
+                <p class="member-position"> <%= ceo.position %></p>
+                <span class="member-email"> <%= ceo.email %></span>
+            </div>
+            <div class="text-part"></div>
+               
+             
+        <% }) %>
+       
+    </div>
+    <h3 class="title-about second-title ">Отдел по работе с клиентами</h3>
+    <div class="dept-section">
+        
+        <% salesDept.forEach(function(manager, i) { %>
+            
+            <div class="member-card">
+                <figure class="member-card-wrapper">
+                    <img class="member-photo lazy"
+                         data-src="<%= image_url(manager.image.public_id, {width: 442, height: 410,  crop: "fit"}) %>"
+                         src="<%= image_url(manager.image.public_id, {width: 60, height: 60,  crop: "fit"}) %>"
+                         alt="<%= manager.position %>"
+                    />
+                </figure>
+               
+                <h5 class="member-name"> <%= manager.username %></h5>
+                <p class="member-position"> <%= manager.position %></p>
+                <span class="member-email"> <%= manager.email %></span>
+            </div>
+        <% }) %>
+    </div>
 </div>
+
+
+<script>
+    const myImgs = document.querySelectorAll('.lazy');
+    const config = {
+        rootMargin: '50px 20px 75px 30px',
+        threshold: [0, 0.25, 0.75, 1]
+    };
+    observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                
+                const lazyImage = entry.target
+                lazyImage.src = lazyImage.dataset.src
+                lazyImage.classList.remove("lazy");
+                
+            }
+        });
+    },config);
+
+    myImgs.forEach(image => {
+        observer.observe(image);
+    });
+
+    
+</script>
