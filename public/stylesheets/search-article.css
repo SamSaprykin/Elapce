@@ -150,3 +150,14 @@ h1 {
   
 }
 
+@media all and (max-width: 576px) { 
+  .checklabel {
+    padding:0 8px;
+    font-size: 14px;
+  }
+  .title-text {
+    margin-bottom: 32px !important;
+  }
+}
+
+
