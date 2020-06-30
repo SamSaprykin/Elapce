@@ -55,3 +55,9 @@
         
     }
 }
+
+@media  (max-width: 900px) { 
+    .alert {
+        font-size: 18px !important;
+    }
+}
