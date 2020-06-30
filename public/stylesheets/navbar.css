@@ -257,7 +257,7 @@ ul {
     .icons {
         margin:0 5vw;
     }
-
+    
 
 }
 
@@ -307,7 +307,13 @@ ul {
     .item.icons {
         display: none;
     }
+    .menu .uk-dropdown {
+        top:310px !important;
+        
+    }
 }
+
+
 
 @media (max-width:1460px) and (min-width:700px) {
     .menu {

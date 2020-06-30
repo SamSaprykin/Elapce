@@ -178,6 +178,7 @@ figure {
   object-fit: contain;   
 }
 
+
 @media (max-width: 1024px) {
   .content-text {
     margin-top:48px;
@@ -240,9 +241,18 @@ figure {
   
 }
 @media (max-width: 576px) {
+  .wrapper-history  {
+    padding: 0 !important;
+  } 
   .content-text {
     width:160px;
     margin-top:-16px;
+  }
+  .title-about {
+    font-size: 24px;
+    line-height: 130%;
+    margin-top:0;
+    margin-left:16px;
   }
 }
 @media (max-width: 1600px) {
@@ -254,6 +264,7 @@ figure {
 @media (max-width: 1440px)  {
   .wrapper-history  {
       max-width:1240px;
+      padding: 0 32px;
   } 
   
 }
