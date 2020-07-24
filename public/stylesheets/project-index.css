@@ -200,3 +200,9 @@ a:hover {
     }
 }
 
+@media (max-width: 900px) {
+    .project-card  {
+        margin:16px 8px;
+    }    
+}
+
