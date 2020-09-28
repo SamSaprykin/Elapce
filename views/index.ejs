@@ -110,15 +110,17 @@
     <div class="swiper-wrapper"> 
             <% projectSwiper.forEach(function(project){ %>
                 <div class="swiper-slide" style="background-color: transparent;">
-                    <a href="/projects/<%= project.id %>"><img class="image-gallery lazy"
-                        data-src="<%= image_url(project.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
-                        src="<%= image_url(project.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
-                        alt="<%= project.title %>"
-                    >
-                    </a>
-                    <h2 class="project-title-index"><%= project.title %></h2>
-                    <h5 class="project-short-info">  <%= project.area %> м2 | <%= project.bedrooms %> спальни</h5>
-                    <a class="project-price-index" href="/projects/<%= project.id %>"><div><%= project.price %>$</div></a>      
+                    <div class="content-project">
+                        <a href="/projects/<%= project.id %>"><img class="image-gallery lazy"
+                            data-src="<%= image_url(project.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
+                            src="<%= image_url(project.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
+                            alt="<%= project.title %>"
+                        >
+                        </a>
+                        <h2 class="project-title-index"><%= project.title %></h2>
+                        <h5 class="project-short-info">  <%= project.area %> м2 | <%= project.bedrooms %> спальни</h5>
+                        <a class="project-price-index" href="/projects/<%= project.id %>"><div><%= project.price %>$</div></a> 
+                    </div>  
                 </div> 
             <% }) %>
             
@@ -213,11 +215,15 @@
     <div class="swiper-wrapper"> 
             <% articlesMain.forEach(function(article){ %>
                 <div class="swiper-slide" style="background-color: transparent;">
-                    <a href="/articles/<%= article.id %>"><img class="image-gallery lazy"
-                        data-src="<%= image_url(article.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
-                        src="<%= image_url(article.images[0].public_id, {width: 85, height: 60,  crop: "fit"}) %>"
-                        alt="<%= article.title %>"></a>       
-                    <a class="project-price-index" href="/articles/<%= article.id %>"><div class="index-articles-link"><%= article.title %></div></a>      
+                    <div class="content-project">
+                        <a href="/articles/<%= article.id %>"><img class="image-gallery lazy"
+                            data-src="<%= image_url(article.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
+                            src="<%= image_url(article.images[0].public_id, {width: 85, height: 60,  crop: "fit"}) %>"
+                            alt="<%= article.title %>"></a>       
+                        <a class="project-price-index" href="/articles/<%= article.id %>">
+                            <div class="index-articles-link"><%= article.title %></div>
+                        </a>      
+                    </div>
                 </div> 
             <% }) %>
             

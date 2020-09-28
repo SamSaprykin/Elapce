@@ -117,6 +117,10 @@ a:hover {
   font-size: 36px;
 }
 
+.content-project {
+  text-align: left;
+}
+
 
 .button-prev, .button-next {
   width: 68px;
@@ -184,6 +188,7 @@ a:hover {
     line-height: 30px;
     margin-top:0;
     color: #4B535F;
+    
 }
 
 
@@ -746,7 +751,7 @@ figure {
   }
 
   .index-articles-link {
-    margin-top:35px;
+    margin-top:35px !important;
     font-size: 32px;
     line-height: 40px;
     color: #4B535F;
@@ -1015,20 +1020,28 @@ figure {
 @media (min-width: 480px) and (max-width: 800px) { 
   .image-gallery {
     height: 300px !important;
-    width:100%;
+    
     object-fit: cover;
   }
 }
 @media (min-width: 320px) and (max-width: 480px) {
   .swiper-container {
-    width: 94%;
+    width: 315px;
+  }
+  .content-project {
+    box-shadow: 0 0 1px 0 rgba(18,52,64,0.15), 0 8px 8px 0 rgba(18,52,64,0.05), 0 16px 16px 0 rgba(18,52,64,0.05);
+    padding:24px 16px;
+    text-align: left;
   }
   .swiper-slide  {
     min-height: 240px;
+    box-shadow: none;
+    box-sizing: border-box;
+    margin-left: 1px;
+    padding:8px;
   }
   .image-gallery {
     height: 240px !important;
-    
     object-fit: cover;
   }
   .button-link-main {
@@ -1083,7 +1096,9 @@ figure {
   }
 
   
-  
+  .index-articles-link {
+    margin-top:16px !important;
+  }
   
 }
 
