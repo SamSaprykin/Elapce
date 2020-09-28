@@ -1025,11 +1025,10 @@ figure {
   }
   .swiper-slide  {
     min-height: 240px;
-    margin:0 16px;
   }
   .image-gallery {
     height: 240px !important;
-    width:100%;
+    
     object-fit: cover;
   }
   .button-link-main {
