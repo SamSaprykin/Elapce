@@ -146,10 +146,7 @@ a:hover {
 
 
 .image-gallery {  
-  object-fit: cover;
-  max-width:480px;
-  width:100%;
-  min-height: 360px;
+  
   height:auto;
   transition: all .2s ease-in-out;  
 }
@@ -692,7 +689,6 @@ figure {
 
   .image-gallery {  
     object-fit: cover;
-    max-width:485px;
     
     min-height: 360px;
   }
@@ -1016,13 +1012,25 @@ figure {
 
 }
 
-
+@media (min-width: 480px) and (max-width: 800px) { 
+  .image-gallery {
+    height: 300px !important;
+    width:100%;
+    object-fit: cover;
+  }
+}
 @media (min-width: 320px) and (max-width: 480px) {
   .swiper-container {
     width: 94%;
   }
-  .swiper-slide .image-gallery {
+  .swiper-slide  {
     min-height: 240px;
+    margin:0 16px;
+  }
+  .image-gallery {
+    height: 240px !important;
+    width:100%;
+    object-fit: cover;
   }
   .button-link-main {
     padding:16px 80px;

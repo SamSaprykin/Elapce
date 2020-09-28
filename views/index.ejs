@@ -73,16 +73,11 @@
       
     </div>
     <div class="right-section">
-            <h3 class="title-mobile"> Elapce - ваш гид <br> по миру зарубежной <br> недвижимости </h3>
+          <h3 class="title-mobile"> Elapce - ваш гид <br> по миру зарубежной <br> недвижимости </h3>
             <div class="copter"></div>
-            
-            
-            
-                <div class="card-image building-main" style="background-image: url('../images/buildings-middle.png');" data-image-full="../images/buildings.png">
-                    <img src="../images/buildings-middle.png" style="background-size: contain;" alt="Buildings" />    
-                </div>    
-            
-            
+              <div class="card-image building-main" style="background-image: url('../images/buildings-middle.png');" data-image-full="../images/buildings.png">
+              <img src="../images/buildings-middle.png" style="background-size: contain;" alt="Buildings" />    
+            </div>    
       </div>
     </div>
     
@@ -91,10 +86,10 @@
 <div class="second-section">
     <h3 class="title-second-mobile">Лучшие предложения</h3>
     <div class="map-points-wrapper">
-                <div class="shape-white"></div>
-                <div class="card-image map-points" style="background-image: url('../images/map-points-middle.png');" data-image-full="../images/map-points.png">
-                    <img src="../images/map-points-middle.png" alt="Map-points" />    
-                </div>    
+        <div class="shape-white"></div>
+        <div class="card-image map-points" style="background-image: url('../images/map-points-middle.png');" data-image-full="../images/map-points.png">
+            <img src="../images/map-points-middle.png" alt="Map-points" />    
+        </div>    
     </div>
     <div class="proposition-section">
         <div class="content-wrapper">
@@ -114,25 +109,17 @@
 <div class="swiper-container">
     <div class="swiper-wrapper"> 
             <% projectSwiper.forEach(function(project){ %>
-
-                
-                
-                        <div class="swiper-slide" style="background-color: transparent;">
-                            <a href="/projects/<%= project.id %>"><img class="image-gallery lazy"
-                                data-src="<%= image_url(project.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
-                                src="<%= image_url(project.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
-                                alt="<%= project.title %>"
-                                
-                            >
-                            </a>
-                            <h2 class="project-title-index"><%= project.title %></h2>
-                            <h5 class="project-short-info">  <%= project.area %> м2 | <%= project.bedrooms %> спальни</h5>
-                            <a class="project-price-index" href="/projects/<%= project.id %>"><div><%= project.price %>$</div></a>      
-                        </div> 
-                        
-                        
-                        
-                
+                <div class="swiper-slide" style="background-color: transparent;">
+                    <a href="/projects/<%= project.id %>"><img class="image-gallery lazy"
+                        data-src="<%= image_url(project.images[0].public_id, {width: 485, height: 360,  crop: "fit"}) %>"
+                        src="<%= image_url(project.images[0].public_id, {width: 60, height: 60,  crop: "fit"}) %>"
+                        alt="<%= project.title %>"
+                    >
+                    </a>
+                    <h2 class="project-title-index"><%= project.title %></h2>
+                    <h5 class="project-short-info">  <%= project.area %> м2 | <%= project.bedrooms %> спальни</h5>
+                    <a class="project-price-index" href="/projects/<%= project.id %>"><div><%= project.price %>$</div></a>      
+                </div> 
             <% }) %>
             
     </div>
